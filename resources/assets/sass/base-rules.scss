@@ -1,25 +1,30 @@
 /* Variables for distances */
-$dist-xs : 5px;
-$dist-sm : 15px;
-$dist-md : 30px;
-$dist-lg : 50px;
-$dist-xl : 70px;
+$dist-xs : 10px;
+$dist-sm : 20px;
+$dist-md : 40px;
+$dist-lg : 60px;
+$dist-xl : 80px;
 
 $dist-side : 85px;
 
 
-
+$circle-dist-xs: 20px;
+$circle-dist-sm: 30px;
+$circle-dist-md: 50px;
+$circle-dist-lg: 150px;
+$circle-dist-xl: 225px;
 
 
 
 /* padding wrapper classes */
 
 	
-/* all screens */	
-
 .reset-padding{
 	padding: 0px;
 }
+
+
+/* all screens */	
 
 .padding-xl{ padding: $dist-xl; }
 .padding-lg{ padding: $dist-lg; }
@@ -69,6 +74,7 @@ $dist-side : 85px;
 /* Large desktops and laptops */
 @media (min-width: 1200px) {
 	
+
 
 	/* resets */
 
@@ -239,12 +245,10 @@ $dist-side : 85px;
 /* Portrait tablets and small desktops */
 @media (min-width: 768px) and (max-width: 991px) {
 	
-	.xs-reset-padding{
-		padding: 0px;
-	}
-
 	/* resets */
 	
+	
+
 	.xs-space-inside-xl-none{ padding-top: 0; padding-bottom: 0; }
 	.xs-space-inside-sides-xl-none{ padding-left: 0; padding-right: 0; }
 	.xs-space-inside-down-xl-none{  padding-bottom: 0; }
@@ -500,7 +504,10 @@ $dist-side : 85px;
 
 /* margin wrapper classes */
 
-	.reset-margin{ margin: 0; }
+.reset-margin{
+	margin: 0px;
+}
+
 
 	.margin-xl{ margin: $dist-xl; }
 	.margin-lg{ margin: $dist-lg; }
@@ -965,125 +972,7 @@ $dist-side : 85px;
 
 
 
-/* sections limits */
 
-
-
-
-.max-height-xs{ max-height: 110px; overflow: hidden; }
-
-.min-height-xs{ min-height: 110px; }
-
-
-
-
-
-
-/* responsive column centering */
-
-.all-row-centered{ text-align: center; }
-.all-col-centered{ 	    display:inline-block;
-	    float:none;
-	    /* reset the text-align */
-	    text-align:left;
-	    /* inline-block space fix */
-	    margin-right:-4px; }
-
-
-/* Large desktops and laptops */
-@media (min-width: 1200px) {
-	
-
-	.lg-row-centered {
-	    text-align: center;
-	}
-
-	.lg-col-centered {
-	    display:inline-block;
-	    float:none;
-	    /* reset the text-align */
-	    text-align:left;
-	    /* inline-block space fix */
-	    margin-right:-4px;
-	}
-
-}
-
-
-/* Landscape tablets and medium desktops */
-@media (min-width: 992px) and (max-width: 1199px) {
-
-	.md-row-centered {
-	    text-align: center;
-	}
-
-	.md-col-centered {
-	    display:inline-block;
-	    float:none;
-	    /* reset the text-align */
-	    text-align:left;
-	    /* inline-block space fix */
-	    margin-right:-4px;
-	}
-
-}
-
-/* Portrait tablets and small desktops */
-@media (min-width: 768px) and (max-width: 991px) {
-
-	.sm-row-centered {
-	    text-align: center;
-	}
-
-	.sm-col-centered {
-	    display:inline-block;
-	    float:none;
-	    /* reset the text-align */
-	    text-align:left;
-	    /* inline-block space fix */
-	    margin-right:-4px;
-	}
-
-}
-
-/* Landscape phones and portrait tablets */
-@media (max-width: 767px) {
-
-	.xs-row-centered {
-	    text-align: center;
-	}
-
-	.xs-col-centered {
-	    display:inline-block;
-	    float:none;
-	    /* reset the text-align */
-	    text-align:left;
-	    /* inline-block space fix */
-	    margin-right:-4px;
-	}
-
-
-}
-
-/* Portrait phones and smaller */
-@media (max-width: 480px) {
-
-
-	.xs-row-centered {
-	    text-align: center;
-	}
-
-	.xs-col-centered {
-	    display:inline-block;
-	    float:none;
-	    /* reset the text-align */
-	    text-align:left;
-	    /* inline-block space fix */
-	    margin-right:-4px;
-	}
-
-
-}
 
 	
 
@@ -1139,11 +1028,27 @@ $dist-side : 85px;
 
 .auto{ margin-left: auto; margin-right: auto; }
 
+body{
+	font-size: 22px;
+}
 
+.row-centered {
+    text-align:center;
+}
 
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
 
-
-
+span{
+	margin: 0px;
+	padding: 0px;
+}
 
 
 /* HEADINGS AND TEXT */
@@ -1153,10 +1058,67 @@ a{
 	color: #111111;
 }
 
+h1{
+	font-size: 48px;
+	padding: 0;
+	margin: 0;
 
+}
+
+
+h2{
+	font-size: 27.5px;
+	padding: 0px;
+	margin: 0;
+	font-weight: 600;
+}
+
+
+h3{
+	font-size: 23px;
+	margin: 0;
+	padding: 0;
+	font-weight: 600;
+}
 
 
 /* text */
+
+.bold{ 
+	font-weight: 600;
+}
+
+
+
+.light{
+	font-weight: 300;
+}
+
+.italic{
+	font-style: italic;
+}
+
+.oblique{
+	font-style: oblique;
+}
+
+
+p{
+	margin: 0;
+	padding: 0;
+	color: #111111;
+	font-weight: 300;
+	display: inline-block;
+}
+
+p.white{
+	color: white;
+}
+
+p.size-14{
+	font-size: 14px;
+}
+
 
 
 
@@ -1164,8 +1126,69 @@ a{
 
 /* positioning */
 
+.overlap{
+	position: relative;
+	min-height: 1px;
+}
+
+overlap-content{
+	position: absolute;
+	bottom: 0px;
+}
+
+.overlap-bottom{
+	position: relative;
+	top: 15px;
+}
+
 .clear-floats{
 	float: none;
+}
+
+
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+
+	.lg-left{
+		float: left;
+	}
+
+	.lg-right{
+		float: right;
+	}
+	
+}
+
+
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+
+
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+
+
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+
+
+
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+
+
+
 }
 
 
@@ -1203,6 +1226,24 @@ a{
 }
 
 
+.block{
+	display: block;
+}
+
+.inline-block{
+	display: inline-block;
+}
+
+.inline{
+	display: inline;
+}
+
+
+
+.align-to-text{
+	position:relative;
+	top: 10px;
+}
 
 
 .width-auto{
@@ -1219,6 +1260,63 @@ a{
 /* shapes Afmetingen voor cirkels, rechthoeken etc */
 
 
+.circle{
+	border-radius:2000px;
+	text-align: center;
+
+}
+
+
+.circle-xs{
+	width: $circle-dist-xs;
+	height: $circle-dist-xs;
+}
+
+.circle-sm{
+	width: $circle-dist-sm;
+	height: $circle-dist-sm;
+	line-height: $circle-dist-sm;
+}
+
+
+.circle-md{
+	width: $circle-dist-md;
+	height: $circle-dist-md;
+	line-height: $circle-dist-md;
+
+}
+
+.circle-lg{
+	width: $circle-dist-lg;
+	height: $circle-dist-lg;
+
+}
+
+
+.circle-xl{
+	width: $circle-dist-xl;
+	height: $circle-dist-xl;
+}
+
+
+.rect-sm{
+	width: 150px;
+	height: 150px;
+}
+
+.rect-md{
+	
+}
+
+.rect-lg{
+	width: 225px;
+	height: 225px;	
+}
+
+.rect-xl{
+	max-width: 550px;
+	max-height: 300px;
+}
 
 
 
@@ -1237,9 +1335,44 @@ a{
 		max-height: 300px;
 	}
 
-	.lg-rect-lg{
-		width: 300px;
-		height: 200px;
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+	.md-circle-xl{
+		width: $circle-dist-xl;
+		height: $circle-dist-xl;
+	}	
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+
+	.sm-circle-xl{
+		width: $circle-dist-xl;
+		height: $circle-dist-xl;
+	}	
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+	.xs-clear-float{ float : none; }
+	.xs-circle-xl{
+		width: $circle-dist-xl;
+		height: $circle-dist-xl;
+	}
+
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+	
+	.xs-circle-xl{
+		width: $circle-dist-xl;
+		height: $circle-dist-xl;
 	}
 
 }
@@ -1248,50 +1381,3 @@ a{
 
 
 
-
-
-
-
-
-
-
-
-
-
-/* media queries for copy */
-
-
-/* Large desktops and laptops */
-@media (min-width: 1200px) {
-	
-
-
-
-}
-
-
-/* Landscape tablets and medium desktops */
-@media (min-width: 992px) and (max-width: 1199px) {
-
-
-
-}
-
-/* Portrait tablets and small desktops */
-@media (min-width: 768px) and (max-width: 991px) {
-
-
-}
-
-/* Landscape phones and portrait tablets */
-@media (max-width: 767px) {
-
-
-
-}
-
-/* Portrait phones and smaller */
-@media (max-width: 480px) {
-
-
-}

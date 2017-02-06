@@ -1,48 +1,118 @@
 .navbar-default{
-	background-color: $light-color;
-	border-color: $light-color;
-    margin-bottom: 0 !important;
-    border: none !important;
+	background-color: $main-color;
+	border-color: $main-color;
+    float: right;
 }
-
-.navbar-default .navbar-nav > .active > a{
-    background-color: $light-color !important;
-
-}
-
-
-
-
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
-    
-    background-color: $dark-color;
+    color: $secondary-color;
+    background-color: transparent;
 }
 
 .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
-
-    background-color: $light-color;
-}
-
-.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li {
-    
-    margin: 0 !important;
+    color: $secondary-color;
+    background-color: transparent;
 }
 
 .navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a {
-    
-    background-color: $light-color;
-
+    color: white;
+    background-color: transparent;
+    font-size: 12px;
     margin: 0px;
-    padding: 20px;
-    margin-right: $dist-md;
-   
-        
+    padding: 0px;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+
+    .placeholder-nav{
+        height: 0;
+        display: inline-block;
+        border-left: 109px solid transparent;
+        border-bottom: 109px solid $main-color;
+        padding-right:110px;
+        width: 100%;
+        float: right;
+        position: relative;
+    }
+
+    .navbar{
+        position:relative;
+        top: 29px;
+    }
 
 }
 
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
 
-.navbar{
-	position:relative;
-	
+    .placeholder-nav{
+
+        height: 0;
+        position:relative;
+        right: 109px;
+        display: inline-block;
+        border-left: 109px solid transparent;
+        border-bottom: 109px solid $main-color;
+        padding-right:110px;
+        width: 100%;
+        float:right;
+        position: relative;
+        left: 55px;
+    }
+
+    .navbar{
+        position:relative;
+        top: 29px;
+
+    }
+
+
 }
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .placeholder-nav{
+
+        height: 0;
+        position:relative;
+        right: 109px;
+        display: inline-block;
+        border-left: 109px solid transparent;
+        border-bottom: 109px solid $main-color;
+        padding-right:110px;
+        width: 100%;
+        float:right;
+        position: relative;
+        left: 55px;
+    }
+
+    .navbar{
+        position:relative;
+        top: 29px;
+    }
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+    .navbar{
+        margin-bottom: 0 !important;
+    }
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+    .placeholder-nav{}
+    .navbar{
+        margin-bottom: 0 !important;
+    }
+}
+
+.round{
+    border-radius: 2000px;
+}
+
+.dropdown-menu { }

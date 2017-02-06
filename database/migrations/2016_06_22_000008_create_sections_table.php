@@ -17,7 +17,6 @@ class CreateSectionsTable extends Migration
             $table->string('title', 100)->nullable();
             $table->mediumText('body')->nullable();
             $table->integer('page_id')->unsigned();
-            $table->integer('page_position')->nullable();
 
             $table->timestamps();
             $table->foreign('page_id')->references('id')->on('pages')->onDelete('cascade');
@@ -35,6 +34,6 @@ class CreateSectionsTable extends Migration
             $table->dropForeign(['page_id']);
         });
 
-        Schema::dropIfExists('sections');
+        Schema::drop('sections');
     }
 }

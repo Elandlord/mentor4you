@@ -47,13 +47,13 @@
           'linkGroup' => [
             [
               'header' => "Pagina's",
-              'cms/page' => 'Overzicht',
-              'cms/page/create' => 'Toevoegen',
+              'cms/pages' => 'Overzicht',
+              'cms/pages/create' => 'Toevoegen',
             ],
             [
               'header' => 'Secties',
-              'cms/section' => 'Overzicht',
-              'cms/section/create' => 'Toevoegen',
+              'cms/pageSections' => 'Overzicht',
+              'cms/pageSections/create' => 'Toevoegen',
             ]
           ]
         ])
@@ -61,6 +61,89 @@
 
         <!-- CUSTOM NAVIGATION LINKS GO UNDERNEATH HERE -->
 
+        <!-- section  -->
+        <li class="treeview">
+          <a href="#"><i class="ion ion-clipboard"></i> <span>Aanmeldingen</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ URL::to("cms/candidate/mentoren") }}"><i class="fa fa-circle-o text-orange"></i> Aanmeldingen mentoren </a></li>
+            <li><a href="{{ URL::to("cms/candidate/jongeren") }}"><i class="fa fa-circle-o text-orange"></i>Aanmeldingen jongeren </a></li>
+          </ul>
+        </li>
+        <!-- end of section -->
+
+        <!-- section  -->
+        <li class="treeview">
+          <a href="#"><i class="ion ion-ios-person"></i> <span>Mentoren</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+              <li><a href="{{ URL::to("cms/mentor") }}"><i class="fa fa-circle-o text-orange"></i>Overzicht </a></li>
+              <li><a href="{{ URL::to("cms/mentor/create") }}"><i class="fa fa-circle-o text-orange"></i> Toevoegen </a></li>
+          </ul>
+        </li>
+        <!-- end of section -->
+
+        <!-- section  -->
+        <li class="treeview">
+          <a href="#"><i class="ion ion-ios-paper"></i> <span>Nieuws</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ URL::to("cms/news") }}"><i class="fa fa-circle-o text-orange"></i>Overzicht </a></li>
+            <li><a href="{{ URL::to("cms/news/create") }}"><i class="fa fa-circle-o text-orange"></i>Toevoegen </a></li>
+          </ul>
+        </li>
+        <!-- end of section -->
+
+        <!-- section  -->
+        <li class="treeview">
+          <a href="#"><i class="ion ion-briefcase"></i> <span>Partners</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ URL::to("cms/partner") }}"><i class="fa fa-circle-o text-orange"></i> Overzicht </a></li>
+            <li><a href="{{ URL::to("cms/partner/create") }}"><i class="fa fa-circle-o text-orange"></i> Toevoegen </a></li>
+          </ul>
+        </li>
+        <!-- end of section -->
+
+         <!-- section  -->
+        <li class="treeview">
+          <a href="#"><i class="ion ion-person-stalker"></i> <span>Teammembers</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ URL::to("cms/teammember") }}"><i class="fa fa-circle-o text-orange"></i> Overzicht </a></li>
+            <li><a href="{{ URL::to("cms/teammember/create") }}"><i class="fa fa-circle-o text-orange"></i> Toevoegen </a></li>
+          </ul>
+        </li>
+        <!-- end of section -->
+
+        <!-- section  -->
+        <li class="treeview">
+          <a href="#"><i class="ion ion-android-happy"></i> <span>Jongeren</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ URL::to("cms/youth") }}"><i class="fa fa-circle-o text-orange"></i> Overzicht </a></li>
+            <li><a href="{{ URL::to("cms/youth/create") }}"><i class="fa fa-circle-o text-orange"></i> Toevoegen </a></li>
+          </ul>
+        </li>
+        <!-- end of section -->
 
 
 
