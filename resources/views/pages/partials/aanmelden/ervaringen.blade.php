@@ -19,8 +19,8 @@
 					<?php $section->render('body', 3, $sections); ?>
 				</p>
 			</div>
-			<div class=" space-outside-sm xs-space-outside-down-lg">
-				<a class="btn-standard bg-secondary text-color-light light" href="#bekijk-de-resultaten">Bekijk de resultaten</a>
+			<div class=" space-outside-sm xs-space-outside-down-lg hidden-lg">
+				<a class="btn-standard bg-secondary text-color-light light" href="#bekijk-de-resultaten">KAKBekijk de resultaten</a>
 			</div>
 		</div>
 	</div>

@@ -43,7 +43,6 @@
             </section>
 
         @endif
-
     	@yield('content')
 
 
@@ -189,6 +188,7 @@ jQuery(document).ready(function($){
 });
 
         </script>
+        <script type="text/javascript" src="/js/vue.js"></script>
         <script type="text/javascript" src="/js/app.js"></script>
         <script src="/js/wow.min.js"></script>
               <script>

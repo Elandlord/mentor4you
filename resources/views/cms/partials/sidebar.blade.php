@@ -47,14 +47,9 @@
           'linkGroup' => [
             [
               'header' => "Pagina's",
-              'cms/pages' => 'Overzicht',
-              'cms/pages/create' => 'Toevoegen',
+              'cms/page' => 'Overzicht',
+              'cms/page/create' => 'Toevoegen',
             ],
-            [
-              'header' => 'Secties',
-              'cms/pageSections' => 'Overzicht',
-              'cms/pageSections/create' => 'Toevoegen',
-            ]
           ]
         ])
 

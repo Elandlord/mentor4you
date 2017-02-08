@@ -9,3 +9,4 @@ Homestead.yaml
 .env
 /public/css/cms.css
 /public/js/vue.js
+/public/css/app.css

@@ -15,18 +15,13 @@
 
     <section class="content">
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-6">
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Example</h3>
 
               <div class="box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
-                  <!-- <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
-
-                  <div class="input-group-btn">
-                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                  </div> -->
                 </div>
               </div>
             </div>
@@ -35,7 +30,29 @@
             <div class="box-body table-responsive no-padding">
               <table class="table table-hover">
                 <tbody>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <th>Pagina-naam</th>
+                </tr>
 
+                @foreach($pages as $page)
+                  <tr>
+                    <td>
+                      @include('cms.core.partials.delete_button', [
+                        'type' => 'page',
+                        'id' => $page->id
+                      ])
+                    </td>
+                    <td>
+                      @include('cms.core.partials.edit_button', [
+                        'type' => 'page',
+                        'id' => $page->id
+                      ])
+                    </td>
+                    <td> {{$page->name}} </td>
+                  </tr>
+                @endforeach
 
                 </tbody>
               </table>

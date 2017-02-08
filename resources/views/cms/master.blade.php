@@ -146,9 +146,9 @@
 
 <!-- AdminLTE App -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+@yield('scripts')
 <script src="/js/app.js"></script>
 
-@yield('scripts')
 
 </body>
 </html>

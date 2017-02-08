@@ -126,7 +126,13 @@ class PagesController extends Controller
             'aanmeldbox' => Section::where('id', 13)->first(),
             'sliders' => $this->getSliders(),
         ];
-		return view('pages.over-ons', compact('data'));
+        $sections = Section::byPageName('over-ons');
+        $section = new Section;
+		return view('pages.over-ons', compact(
+            'data',
+            'sections',
+            'section'
+        ));
 	}
 
     public function ervaringen()
