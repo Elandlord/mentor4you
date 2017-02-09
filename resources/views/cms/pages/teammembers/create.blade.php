@@ -1,83 +1,93 @@
 @extends('cms.master')
 
-@section('title')
-    Teammembers toevoegen    
-@stop
-
 @section('content')
-    <h1>Teammembers toevoegen </h1>
-    <hr>
+<div id="app">
+    <section class="content-header">
+      <h1> Teammember toevoegen<small></small> </h1>
 
-    <div class="row">
-        <div class="col-lg-12"> 
-           
-            
-            <hr>
-            <div class="row">
-                    
-                    <div class="col-md-12">
+      <!--  breadcrumbs -->
+      <ol class="breadcrumb">
+        <li><a href="{{ URL::to("cms/") }}"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Teammember toevoegen</a></li>
+      </ol>
 
-                        <div class="panel panel-default">
-                           
-                            <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                       
-                                        <div class="table-responsive">
-                                            <form method='POST' action="URL::to('TeamMembersController@store')">         
-                                                <table class="table table-hover">
-                                                    <tbody>
-                                                    
-                                                        <tr>
-                                                           <td>
-                                                                <label>Voornaam</label>
-                                                                <input type='text' class='form-control' name='first_name'/>
-                                                           </td>
-                                                        </tr>
-                                                        <tr>
-                                                           <td>
-                                                                <label>Achternaam</label>
-                                                                <input type='text' class='form-control' name='last_name'/>
-                                                           </td>
+    </section>
 
-                                                        </tr>
-                                                        <tr>
-                                                           <td> 
-                                                                <label>Beschrijving</label>
-                                                                <textarea class='form-control' name='description'></textarea>
-                                                           </td>
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Gegevens</h3>
 
-                                                        </tr>
-                                                         <tr>
-                                                           <td> 
-                                                                <label>Functie</label>
-                                                                <input type='text' class='form-control' name='role'/>
-                                                           </td>
+              <div class="box-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                  <!-- <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
 
-                                                        </tr>
-                                                        
-                                                        
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <input type="submit" value="opslaan" class="btn btn-primary" name="opslaan">   
-                                                            </td>
-                                                        </tr> 
+                  <div class="input-group-btn">
+                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                  </div> -->
+                </div>
+              </div>
+            </div>
 
-                                                    </tbody>
-                                                </table>
-                                            </form>
-                                        </div>
-                                       
-                                    </div>
-                                </div>
+            <!-- /.box-header -->
+            <div class="box-body no-padding">
+              <form method="POST" action="{{ URL::to('cms/teammember') }}" >
+                {{csrf_field()}}
+                  <table class="table table-responsive">
+                    <tbody>
+                      <tr>
+                         <td>
+                              <label>Voornaam</label>
+                              <input type='text' class='form-control' name='first_name'/>
+                         </td>
+                      </tr>
+                      <tr>
+                         <td>
+                              <label>Achternaam</label>
+                              <input type='text' class='form-control' name='last_name'/>
+                         </td>
+
+                      </tr>
+                      <tr>
+                         <td> 
+                              <label>Beschrijving</label>
+                              <textarea class='form-control' name='description'></textarea>
+                         </td>
+
+                      </tr>
+                       <tr>
+                         <td> 
+                              <label>Functie</label>
+                              <input type='text' class='form-control' name='role'/>
+                         </td>
+
+                      </tr>
+
+                      <tr>
+                        <td>
+
+                            <div class="form-group">
+                              <button class="btn btn-success" type="submit" >Toevoegen</button>
                             </div>
-                           
-                        </div>
-                    </div>
 
-                </div> <!-- End row -->
-                
+                        </td>
+                       
+                      </tr>
+                    </tbody>
+                  </table>
+                </form>
+              </div>
+            <!-- /.box-body -->
+
+          </div>
+          <!-- /.box -->
         </div>
-    </div>
+        </div>
+    </section>
+</div>
+@stop
+@section('scripts')
+  <script type="text/javascript" src="/js/vue.js" ></script>
 @stop

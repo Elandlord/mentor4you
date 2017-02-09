@@ -3,12 +3,12 @@
 @section('content')
 <div id="app">
     <section class="content-header">
-      <h1> Partner toevoegen<small></small> </h1>
+      <h1> Jongere aanpassen<small></small> </h1>
 
       <!--  breadcrumbs -->
       <ol class="breadcrumb">
         <li><a href="{{ URL::to("cms/") }}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Partner toevoegen</a></li>
+        <li><a href="#">Jongere aanpassen</a></li>
       </ol>
 
     </section>
@@ -32,32 +32,40 @@
             </div>
 
             <!-- /.box-header -->
-            <div class="box-body no-padding">
-              <form method="POST" action="{{ URL::to('cms/partner') }}" >
+            <div class="box-body table-responsive no-padding">
+              <form method="POST" action="/cms/youth/{{$data['youth']->id}}" >
                 {{csrf_field()}}
+                {{ method_field('PUT') }}
                   <table class="table table-responsive">
                     <tbody>
                       <tr>
                          <td>
-                              <label>Naam</label>
-                              <input type='text' class='form-control' name='name'/>
+                              <label>Voornaam</label>
+                              <input type='text' class='form-control' value="{{ $data['youth']->first_name }}" name='first_name'/>
                          </td>
                       </tr>
                       <tr>
-                         <td> 
-                              <label>Beschrijving</label>
-                              <textarea class='form-control' name='description'></textarea>
+                         <td>
+                              <label>Achternaam</label>
+                              <input type='text' class='form-control' value="{{ $data['youth']->last_name }}" name='last_name'/>
                          </td>
 
                       </tr>
                       <tr>
                          <td> 
-                              <label>Startdatum</label>
-                              <div class="input-group date">
+                              <label>Beschrijving</label>
+                              <textarea class='form-control' name='description'>{{ $data['youth']->description }}</textarea>
+                         </td>
+
+                      </tr>
+                       <tr>
+                         <td> 
+                            <label>Geboortedatum</label>
+                            <div class="input-group date">
                                 <div class="input-group-addon">
                                   <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type='text' name='date_started' class='form-control datepicker' />
+                                <input type='text' name='date_of_birth' value="{{ $data['youth']->date_of_birth }}" class='form-control datepicker' />
                               </div>
                          </td>
 
@@ -67,16 +75,17 @@
                         <td>
 
                             <div class="form-group">
-                              <button class="btn btn-success" type="submit" >Toevoegen</button>
+                              <button class="btn btn-success" type="submit" >Aanpassen</button>
                             </div>
 
                         </td>
                        
                       </tr>
+
                     </tbody>
                   </table>
-                </form>
-              </div>
+              </form>
+            </div>
             <!-- /.box-body -->
 
           </div>

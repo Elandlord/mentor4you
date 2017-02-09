@@ -20,7 +20,7 @@ class TeamMembersController extends Controller
             'teammembers' => TeamMember::paginate(20),
         ];
 
-        return view('cms.pages.teammembers.overzicht', compact('data'));
+        return view('cms.pages.teammembers.index', compact('data'));
     }
 
     /**
@@ -69,7 +69,7 @@ class TeamMembersController extends Controller
             'teammember' => TeamMember::find($id),
         ];
 
-        return view('cms.pages.teammembers.update', compact('data'));
+        return view('cms.pages.teammembers.edit', compact('data'));
     }
 
     /**

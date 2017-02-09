@@ -3,12 +3,12 @@
 @section('content')
 <div id="app">
     <section class="content-header">
-      <h1> Partner toevoegen<small></small> </h1>
+      <h1> Partner aanpassen<small></small> </h1>
 
       <!--  breadcrumbs -->
       <ol class="breadcrumb">
         <li><a href="{{ URL::to("cms/") }}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Partner toevoegen</a></li>
+        <li><a href="#">Partner aanpassen</a></li>
       </ol>
 
     </section>
@@ -32,21 +32,22 @@
             </div>
 
             <!-- /.box-header -->
-            <div class="box-body no-padding">
-              <form method="POST" action="{{ URL::to('cms/partner') }}" >
+            <div class="box-body table-responsive no-padding">
+              <form method="POST" action="/cms/partner/{{$data['partner']->id}}" >
                 {{csrf_field()}}
+                {{ method_field('PUT') }}
                   <table class="table table-responsive">
                     <tbody>
                       <tr>
                          <td>
                               <label>Naam</label>
-                              <input type='text' class='form-control' name='name'/>
+                              <input type='text' value="{{ $data['partner']->name }}" class='form-control' name='name'/>
                          </td>
                       </tr>
                       <tr>
                          <td> 
                               <label>Beschrijving</label>
-                              <textarea class='form-control' name='description'></textarea>
+                              <textarea class='form-control' name='description'>{{ $data['partner']->description }}</textarea>
                          </td>
 
                       </tr>
@@ -57,7 +58,7 @@
                                 <div class="input-group-addon">
                                   <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type='text' name='date_started' class='form-control datepicker' />
+                                <input type='text' name='date_started' value="{{ $data['partner']->date_started }}" class='form-control datepicker' />
                               </div>
                          </td>
 
@@ -67,16 +68,17 @@
                         <td>
 
                             <div class="form-group">
-                              <button class="btn btn-success" type="submit" >Toevoegen</button>
+                              <button class="btn btn-success" type="submit" >Aanpassen</button>
                             </div>
 
                         </td>
                        
                       </tr>
+
                     </tbody>
                   </table>
-                </form>
-              </div>
+              </form>
+            </div>
             <!-- /.box-body -->
 
           </div>

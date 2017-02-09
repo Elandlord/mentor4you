@@ -21,7 +21,7 @@ class PartnersController extends Controller
             'partners' => Partner::paginate(20),
         ];
 
-        return view('cms.pages.partners.overzicht', compact('data'));
+        return view('cms.pages.partners.index', compact('data'));
     }
 
     /**
@@ -70,7 +70,7 @@ class PartnersController extends Controller
             'partner' => Partner::find($id),
         ];
 
-        return view('cms.pages.partners.update', compact('data'));
+        return view('cms.pages.partners.edit', compact('data'));
     }
 
     /**

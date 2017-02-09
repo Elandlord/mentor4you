@@ -22,7 +22,7 @@ class MentorsController extends Controller
             'mentors' => Mentor::paginate(20),
         ];
 
-        return view('cms.pages.mentors.overzicht', compact('data'));
+        return view('cms.pages.mentors.index', compact('data'));
     }
 
     /**
@@ -44,7 +44,7 @@ class MentorsController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $mentor = Mentor::create($request->all());
         
         return redirect('cms/mentor');
@@ -75,7 +75,7 @@ class MentorsController extends Controller
             'mentor' => Mentor::find($id),
         ];
 
-        return view('cms.pages.mentors.update', compact('data'));
+        return view('cms.pages.mentors.edit', compact('data'));
     }
 
     /**

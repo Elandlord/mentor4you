@@ -21,7 +21,7 @@ class NewsController extends Controller
             'news' => News::orderBy('id', 'desc')->paginate(20),
         ];
 
-        return view('cms.pages.news.overzicht', compact('data'));
+        return view('cms.pages.news.index', compact('data'));
     }
 
     /**
@@ -70,7 +70,7 @@ class NewsController extends Controller
             'news' => News::find($id),
         ];
 
-        return view('cms.pages.news.update', compact('data'));
+        return view('cms.pages.news.edit', compact('data'));
     }
 
     /**

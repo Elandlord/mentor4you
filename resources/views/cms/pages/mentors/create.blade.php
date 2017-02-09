@@ -1,84 +1,98 @@
 @extends('cms.master')
 
-@section('title')
-    Mentor toevoegen    
-@stop
-
 @section('content')
-    <h1>Mentor toevoegen </h1>
-    <hr>
+<div id="app">
+    <section class="content-header">
+      <h1> Mentor<small></small> </h1>
 
-    <div class="row">
-        <div class="col-lg-12"> 
-           
-            
-            <hr>
-            <div class="row">
-                    
-                    <div class="col-md-12">
+      <!--  breadcrumbs -->
+      <ol class="breadcrumb">
+        <li><a href="{{ URL::to("cms/") }}"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Mentor toevoegen</a></li>
+      </ol>
 
-                        <div class="panel panel-default">
-                           
-                            <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                       
-                                        <div class="table-responsive">
-                                            <form method='POST' action="URL::to('/mentors/store')">
-                                                
-                                                <table class="table table-hover">
-                                                    <tbody>
-                                                    
-                                                        <tr>
-                                                           <td>
-                                                                <label>Voornaam</label>
-                                                                <input type='text' class='form-control' name='first_name'/>
-                                                           </td>
-                                                        </tr>
-                                                        <tr>
-                                                           <td> 
-                                                                <label>Achternaam</label>
-                                                                <input type='text' class='form-control' name='last_name'/>
-                                                           </td>
+    </section>
 
-                                                        </tr>
-                                                        <tr>
-                                                           <td> 
-                                                                <label>Beschrijving</label>
-                                                                <textarea class='form-control' name='description'></textarea>
-                                                           </td>
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Gegevens</h3>
 
-                                                        </tr>
-                                                        <tr>
-                                                           <td> 
-                                                                <label>Geboortedatum</label>
-                                                                <input type='date' name='date-of-birth' class='form-control' />
-                                                           </td>
+              <div class="box-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                  <!-- <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
 
-                                                        </tr>
-                                                        
-                                                        
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <input type="submit" value="opslaan" class="btn btn-primary" name="opslaan">   
-                                                            </td>
-                                                        </tr> 
+                  <div class="input-group-btn">
+                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                  </div> -->
+                </div>
+              </div>
+            </div>
 
-                                                    </tbody>
-                                                </table>
-                                            </form>
-                                        </div>
-                                       
-                                    </div>
+            <!-- /.box-header -->
+            <div class="box-body no-padding">
+              <form method="POST" action="{{ URL::to('cms/mentor') }}" >
+                {{csrf_field()}}
+                {{ method_field('PUT') }}
+                  <table class="table table-responsive">
+                    <tbody>
+                        <tr>
+                           <td>
+                                <label>Voornaam</label>
+                                <input type='text' class='form-control' name='first_name'/>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>
+                                <label>Achternaam</label>
+                                <input type='text' class='form-control' name='last_name'/>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td> 
+                                <label>Beschrijving</label>
+                                <textarea class='form-control' name='description'></textarea>
+                           </td>
+
+                        </tr>
+                        <tr>
+                           <td> 
+                                <label>Geboortedatum</label>
+                                <div class="input-group date">
+                                  <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                  </div>
+                                  <input type='text' name='date_of_birth' class='form-control datepicker' />
                                 </div>
-                            </div>
-                           
-                        </div>
-                    </div>
+                           </td>
 
-                </div> <!-- End row -->
-                
+                        </tr>
+
+                        <tr>
+                          <td>
+
+                              <div class="form-group">
+                                <button class="btn btn-success" type="submit" >Toevoegen</button>
+                              </div>
+
+                          </td>
+                         
+                        </tr>
+                    </tbody>
+                  </table>
+                </form>
+              </div>
+            <!-- /.box-body -->
+
+          </div>
+          <!-- /.box -->
         </div>
-    </div>
+        </div>
+    </section>
+</div>
+@stop
+@section('scripts')
+  <script type="text/javascript" src="/js/vue.js" ></script>
 @stop

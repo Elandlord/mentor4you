@@ -21,7 +21,7 @@ class YouthController extends Controller
             'youth' => Youth::paginate(10),
         ];
 
-        return view('cms.pages.youth.overzicht', compact('data'));
+        return view('cms.pages.youth.index', compact('data'));
     }
 
     /**
@@ -31,7 +31,7 @@ class YouthController extends Controller
      */
     public function create()
     {
-        return view('cms.pages.mentors.create');
+        return view('cms.pages.youth.create');
     }
 
     /**
@@ -70,7 +70,7 @@ class YouthController extends Controller
             'youth' => Youth::find($id),
         ];
 
-        return view('cms.pages.youth.update', compact('data'));
+        return view('cms.pages.youth.edit', compact('data'));
     }
 
     /**

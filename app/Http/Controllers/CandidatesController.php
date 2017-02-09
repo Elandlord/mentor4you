@@ -16,15 +16,16 @@ class CandidatesController extends Controller
      */
     public function index()
     {
-        return view('cms.pages.candidates.overzicht', compact('data'));
+        return view('cms.pages.candidates.index', compact('data'));
     }
 
     public function mentoren(){
+
         $data = [
             'candidates' => Candidate::where('choices', '=', 'mentor')->paginate(10),
         ];
 
-        return view('cms.pages.candidates.overzicht', compact('data'));
+        return view('cms.pages.candidates.index', compact('data'));
     }
 
     public function jongeren(){
@@ -32,7 +33,7 @@ class CandidatesController extends Controller
             'candidates' => Candidate::where('choices', '=', 'jongere')->paginate(10),
         ];
 
-        return view('cms.pages.candidates.overzicht', compact('data'));
+        return view('cms.pages.candidates.index', compact('data'));
     }
 
 
