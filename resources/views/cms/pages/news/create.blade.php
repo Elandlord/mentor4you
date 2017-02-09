@@ -24,42 +24,42 @@
                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                        
                                         <div class="table-responsive">
-                                            {!! Form::open(['method' => 'POST', 'action' => 'NewsController@store' ]) !!}
+                                            <form method='POST' action="URL::to('/news/store')">
                                                 
                                                 <table class="table table-hover">
                                                     <tbody>
                                                     
                                                         <tr>
                                                            <td>
-                                                                {!! Form::label('title', ' Titel ') !!} 
-                                                                {!! Form::text('title', null, ['class' => 'form-control']); !!} 
+                                                                <label>Titel</label>
+                                                                <input type='text' class='form-control' name='title'/>
                                                            </td>
                                                         </tr>
                                                         <tr>
                                                            <td> 
-                                                                {!! Form::label('body', ' Typ hier het nieuwsbericht ') !!} 
-                                                                {!! Form::textarea('body', null, ['class' => 'form-control']); !!}
-                                                           </td>
-
-                                                        </tr>
-                                                        <tr>
-                                                           <td> 
-                                                                {!! Form::label('author', ' Auteur ') !!} 
-                                                                {!! Form::text('author', null, ['class' => 'form-control']); !!} 
+                                                                <label>Nieuwsbericht</label>
+                                                                <textarea class='form-control' name='body'></textarea>
                                                            </td>
 
                                                         </tr>
                                                         <tr>
                                                            <td> 
-                                                                {!! Form::label('publish_date', ' Publicatiedatum ') !!} 
-                                                                {!! Form::date('publish_date', null, ['class' => 'form-control']); !!}
+                                                                <label>Auteur</label>
+                                                                <input type='text' class='form-control' name='author'/>
+                                                           </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                           <td> 
+                                                                <label>Publicatiedatum</label>
+                                                                <input type='date' name='publish_date' class='form-control' />
                                                            </td>
 
                                                         </tr>
                                                          <tr>
                                                            <td> 
-                                                                {!! Form::label('occurence_date', ' Datum ') !!} 
-                                                                {!! Form::date('occurence_date', null, ['class' => 'form-control']); !!}
+                                                                <label>Datum</label>
+                                                                <input type='date' name='occurence_date' class='form-control' />
                                                            </td>
 
                                                         </tr>
@@ -74,7 +74,7 @@
 
                                                     </tbody>
                                                 </table>
-                                            {!! Form::close() !!}
+                                            </form>
                                         </div>
                                        
                                     </div>

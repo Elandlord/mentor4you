@@ -1,11 +1,11 @@
 @extends('cms.master')
 
 @section('title')
-    Mentor toevoegen    
+    Jongere toevoegen    
 @stop
 
 @section('content')
-    <h1>Mentor toevoegen </h1>
+    <h1>Jongere toevoegen </h1>
     <hr>
 
     <div class="row">

@@ -43,29 +43,15 @@
                                                             <td>{{ $object->description }}</td>
                                                             <td>{{ $object->date_started }}</td>
                                                             <td>
-                                                                 {!! Form::open(
-                                                                    array(
-                                                                        'method' => 'GET',
-                                                                        'action' => ['PartnersController@edit', $object->id]
-                                                                        )
-                                                                    )
-                                                                !!}
-
-                                                                <input type='submit' class='btn btn-primary' value='aanpassen' />
-                                                                {!! Form::close() !!}
+                                                                <form method='get' action="URL::to('/partners/{object->id}')">
+                                                                    <input type='submit' class='btn btn-primary' value='aanpassen' />
+                                                                </form>
                                                             </td>
                                                             <!-- Verwijderen form -->
                                                             <td>
-                                                                 {!! Form::open(
-                                                                    array(
-                                                                        'method' => 'DELETE',
-                                                                        'action' => ['PartnersController@destroy', $object->id]
-                                                                        )
-                                                                    )
-                                                                !!}
-
-                                                                <input type='submit' class='btn btn-danger' value='verwijderen' />
-                                                                {!! Form::close() !!}
+                                                                <form method='post' action="URL::to('/partners/{object->id}')">
+                                                                    <input type='submit' class='btn btn-danger' value='verwijderen' />
+                                                                </form>
                                                             </td>
                                                         </tr>
                                                     @endforeach

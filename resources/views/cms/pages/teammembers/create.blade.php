@@ -24,35 +24,34 @@
                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                        
                                         <div class="table-responsive">
-                                            {!! Form::open(['method' => 'POST', 'action' => 'TeamMembersController@store' ]) !!}
-                                                
+                                            <form method='POST' action="URL::to('TeamMembersController@store')">         
                                                 <table class="table table-hover">
                                                     <tbody>
                                                     
                                                         <tr>
                                                            <td>
-                                                                {!! Form::label('first_name', ' Voornaam ') !!} 
-                                                                {!! Form::text('first_name', null, ['class' => 'form-control']); !!} 
+                                                                <label>Voornaam</label>
+                                                                <input type='text' class='form-control' name='first_name'/>
                                                            </td>
                                                         </tr>
                                                         <tr>
                                                            <td>
-                                                                {!! Form::label('last_name', ' Achternaam ') !!} 
-                                                                {!! Form::text('last_name', null, ['class' => 'form-control']); !!} 
+                                                                <label>Achternaam</label>
+                                                                <input type='text' class='form-control' name='last_name'/>
                                                            </td>
 
                                                         </tr>
                                                         <tr>
                                                            <td> 
-                                                                {!! Form::label('description', ' Beschrijving ') !!} 
-                                                                {!! Form::textarea('description', null, ['class' => 'form-control']); !!} 
+                                                                <label>Beschrijving</label>
+                                                                <textarea class='form-control' name='description'></textarea>
                                                            </td>
 
                                                         </tr>
                                                          <tr>
                                                            <td> 
-                                                                {!! Form::label('role', ' Functie ') !!} 
-                                                                {!! Form::text('role', null, ['class' => 'form-control']); !!}
+                                                                <label>Functie</label>
+                                                                <input type='text' class='form-control' name='role'/>
                                                            </td>
 
                                                         </tr>
@@ -67,7 +66,7 @@
 
                                                     </tbody>
                                                 </table>
-                                            {!! Form::close() !!}
+                                            </form>
                                         </div>
                                        
                                     </div>

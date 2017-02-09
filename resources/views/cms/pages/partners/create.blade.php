@@ -24,28 +24,28 @@
                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                        
                                         <div class="table-responsive">
-                                            {!! Form::open(['method' => 'POST', 'action' => 'PartnersController@store' ]) !!}
+                                            <form method='POST' action="URL::to('/partners/store')">
                                                 
                                                 <table class="table table-hover">
                                                     <tbody>
                                                     
                                                         <tr>
                                                            <td>
-                                                                {!! Form::label('name', ' Naam ') !!} 
-                                                                {!! Form::text('name', null, ['class' => 'form-control']); !!} 
+                                                                <label>Naam</label>
+                                                                <input type='text' class='form-control' name='name'/>
                                                            </td>
                                                         </tr>
                                                         <tr>
                                                            <td> 
-                                                                {!! Form::label('description', ' Typ hier de beschrijving ') !!} 
-                                                                {!! Form::textarea('description', null, ['class' => 'form-control']); !!}
+                                                                <label>Beschrijving</label>
+                                                                <textarea class='form-control' name='description'></textarea>
                                                            </td>
 
                                                         </tr>
                                                         <tr>
                                                            <td> 
-                                                                {!! Form::label('date_started', ' Startdatum ') !!} 
-                                                                {!! Form::date('date_started', null, ['class' => 'form-control']); !!} 
+                                                                <label>Startdatum</label>
+                                                                <input type='date' name='date_started' class='form-control' />
                                                            </td>
 
                                                         </tr>
@@ -60,7 +60,7 @@
 
                                                     </tbody>
                                                 </table>
-                                            {!! Form::close() !!}
+                                            </form>
                                         </div>
                                        
                                     </div>

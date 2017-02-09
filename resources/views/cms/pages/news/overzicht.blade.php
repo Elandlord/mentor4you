@@ -47,29 +47,15 @@
                                                             <td>{{ $object->publish_date }}</td>
                                                             <td>{{ $object->occurence_date }}</td> 
                                                             <td>
-                                                                 {!! Form::open(
-                                                                    array(
-                                                                        'method' => 'GET',
-                                                                        'action' => ['NewsController@edit', $object->id]
-                                                                        )
-                                                                    )
-                                                                !!}
-
-                                                                <input type='submit' class='btn btn-primary' value='aanpassen' />
-                                                                {!! Form::close() !!}
+                                                                <form method='get' action="URL::to('/news/{object->id}')">
+                                                                    <input type='submit' class='btn btn-primary' value='aanpassen' />
+                                                                </form>
                                                             </td>
                                                             <!-- Verwijderen form -->
                                                             <td>
-                                                                 {!! Form::open(
-                                                                    array(
-                                                                        'method' => 'DELETE',
-                                                                        'action' => ['NewsController@destroy', $object->id]
-                                                                        )
-                                                                    )
-                                                                !!}
-
-                                                                <input type='submit' class='btn btn-danger' value='verwijderen' />
-                                                                {!! Form::close() !!}
+                                                                <form method='post' action="URL::to('/candidate/{object->id}')">
+                                                                    <input type='submit' class='btn btn-danger' value='verwijderen' />
+                                                                </form>
                                                             </td>
                                                         </tr>
                                                     @endforeach
