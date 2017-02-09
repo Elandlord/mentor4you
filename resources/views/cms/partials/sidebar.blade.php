@@ -64,8 +64,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ URL::to("cms/candidate/mentoren") }}"><i class="fa fa-circle-o text-orange"></i> Aanmeldingen mentoren </a></li>
-            <li><a href="{{ URL::to("cms/candidate/jongeren") }}"><i class="fa fa-circle-o text-orange"></i>Aanmeldingen jongeren </a></li>
+            <li><a href="{{ URL::to("/cms/candidate/mentoren") }}"><i class="fa fa-circle-o text-orange"></i> Aanmeldingen mentoren </a></li>
+            <li><a href="{{ URL::to("/cms/candidate/jongeren") }}"><i class="fa fa-circle-o text-orange"></i>Aanmeldingen jongeren </a></li>
           </ul>
         </li>
         <!-- end of section -->

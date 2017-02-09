@@ -29,6 +29,7 @@ class CandidatesController extends Controller
     }
 
     public function jongeren(){
+
         $data = [
             'candidates' => Candidate::where('choices', '=', 'jongere')->paginate(10),
         ];

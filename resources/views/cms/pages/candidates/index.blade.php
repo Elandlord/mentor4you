@@ -3,12 +3,12 @@
 @section('content')
 <div id="app">
     <section class="content-header">
-      <h1> Mentoroverzicht <small></small> </h1>
+      <h1> Aanmeldingen overzicht <small></small> </h1>
 
       <!--  breadcrumbs -->
       <ol class="breadcrumb">
         <li><a href="{{ URL::to("cms/") }}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Mentoroverzicht</a></li>
+        <li><a href="#">Aanmeldingen overzicht</a></li>
       </ol>
 
     </section>
@@ -36,41 +36,31 @@
               <table class="table table-responsive">
                   <thead>
                     <tr>
-                      <th></th>
-                      <th></th>
                       <th>#<span class='ion-arrow-down-b table-head'></span></th>
                       <th>Voornaam</th>
                       <th>Achternaam</th>
-                      <th>Beschrijving</th>
+                      <th>Telefoonnummer</th>
+                      <th>Emailadres</th>
                       <th>Geboortedatum</th>
+                      <th>Bericht</th>
+                      <th>Aangemeld als</th>
+                      <th>Gemeente</th>
                     </tr>
                   </thead>
                 <tbody>
-                @foreach ($data['mentors'] as $object)
-                  <tr>
-                      <!-- edit form -->
-                      <td>
-                        @include('cms.core.partials.edit_button', [
-                          'type' => 'mentor',
-                          'id' => $object->id
-                        ])
-                      </td>
-                      <!-- Verwijderen form -->
-                      <td>
-                        @include('cms.core.partials.delete_button', [
-                          'type' => 'mentor',
-                          'id' => $object->id
-                        ])
-                      </td>
-
-                      <td>{{ $object->id }}</td>
-                      <td>{{ $object->first_name }}</td>
-                      <td>{{ $object->last_name }}</td>
-                      <td>{{ $object->description }}</td>
-                      <td>{{ $object->date_of_birth }}</td> 
-
-                    </tr>
-                  @endforeach                                        
+                 @foreach ($data['candidates'] as $candidate)
+                      <tr>
+                          <td>{{ $candidate->id }}</td>
+                          <td>{{ $candidate->first_name }}</td>
+                          <td>{{ $candidate->last_name }}</td>
+                          <td>{{ $candidate->telephone_number }}</td>
+                          <td>{{ $candidate->email_address }}</td>
+                          <td>{{ $candidate->date_of_birth }}</td>
+                          <td>{{ $candidate->message }}</td>
+                          <td>{{ $candidate->choices }}</td>     
+                          <td>{{ $candidate->municipality }}</td>   
+                      </tr>
+                  @endforeach                                      
                 </tbody>
               </table>
             </div>

@@ -16,6 +16,11 @@ Route::group(['prefix' => 'cms'],  function () {
         // ----------------- CRM ROUTES GO UNDERNEATH HERE -----------------
 
 
+        // TO DO CLEAN UP NON RESTFUL ROUTES
+        Route::get('candidate/mentoren', 'MentorCandidateController@index');
+        Route::get('candidate/jongeren', 'YouthCandidateController@index');
+
+
 
         // ----------------- CONTENT MANAGEMENT ROUTES GO UNDERNEATH HERE -----------------
 
@@ -28,10 +33,6 @@ Route::group(['prefix' => 'cms'],  function () {
         Route::resource('partner', 'PartnersController');
         Route::resource('teammember', 'TeamMembersController');
         Route::resource('slider', 'ImageSliderController');
-
-        // TO DO CLEAN UP NON RESTFUL ROUTES
-        Route::get('candidate/mentoren', 'CandidatesController@mentoren');
-        Route::get('candidate/jongeren', 'CandidatesController@jongeren');
     });
 });
 
