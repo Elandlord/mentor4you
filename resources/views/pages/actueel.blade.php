@@ -46,8 +46,6 @@ Actueel
 			<div class="col-lg-12">
 				
 				<div class="row">
-					
-				
 
 					@foreach($data['nieuwsberichten'] as $nieuwsbericht)
 
@@ -69,7 +67,7 @@ Actueel
 
 								<p class="space-outside-md ">
 
-									{!! $nieuwsbericht->body !!}
+									{!! $nieuwsbericht->body !!} 
 
 								</p>
 

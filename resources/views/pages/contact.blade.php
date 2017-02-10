@@ -49,7 +49,7 @@ Contact
 
 			</div>
 
-		<form method='post' action="URL::to('/mail/contact-mail')" >
+		<form method='post' action="mail/contact-mail" >
 
 		{{ csrf_field() }}
 

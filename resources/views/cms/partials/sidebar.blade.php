@@ -32,6 +32,20 @@
         <li class="header">CRM Beheer</li>
         <!-- CUSTOM NAVIGATION GOES BETWEEN THIS AND -->
 
+        
+        <!-- section  -->
+        <li class="treeview">
+          <a href="#"><i class="ion ion-clipboard"></i> <span>Aanmeldingen</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ URL::to("/cms/candidate/mentoren") }}"><i class="fa fa-circle-o text-orange"></i> Aanmeldingen mentoren </a></li>
+            <li><a href="{{ URL::to("/cms/candidate/jongeren") }}"><i class="fa fa-circle-o text-orange"></i>Aanmeldingen jongeren </a></li>
+          </ul>
+        </li>
+        <!-- end of section -->
 
 
 
@@ -55,20 +69,6 @@
 
 
         <!-- CUSTOM NAVIGATION LINKS GO UNDERNEATH HERE -->
-
-        <!-- section  -->
-        <li class="treeview">
-          <a href="#"><i class="ion ion-clipboard"></i> <span>Aanmeldingen</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="{{ URL::to("/cms/candidate/mentoren") }}"><i class="fa fa-circle-o text-orange"></i> Aanmeldingen mentoren </a></li>
-            <li><a href="{{ URL::to("/cms/candidate/jongeren") }}"><i class="fa fa-circle-o text-orange"></i>Aanmeldingen jongeren </a></li>
-          </ul>
-        </li>
-        <!-- end of section -->
 
         <!-- section  -->
         <li class="treeview">

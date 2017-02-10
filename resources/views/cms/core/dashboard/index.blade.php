@@ -3,7 +3,7 @@
 @section('content')
 <div id="app">
     <section class="content-header">
-      <h1> Dashboard <small>Welcome to your personalized dashboard</small> </h1>
+      <h1> Dashboard <small>Mentor4you</small> </h1>
 
       <!--  breadcrumbs -->
       <ol class="breadcrumb">
@@ -17,7 +17,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Example</h3>
+              <h3 class="box-title">Maak een keuze uit het menu links</h3>
 
               <div class="box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">

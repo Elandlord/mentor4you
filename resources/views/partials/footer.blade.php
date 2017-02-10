@@ -6,7 +6,7 @@
 			
 			
 
-			<form method ='post' action="URL::to('/newsletters/subscribe')">
+			<form method ='post' action="/newsletters/subscribe">
 
 			{{ csrf_field() }}
 
