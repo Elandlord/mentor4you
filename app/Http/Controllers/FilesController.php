@@ -8,7 +8,7 @@ class FilesController extends Controller
 {
     public function jongereFolder(){
     	   
-    	$file= public_path(). "/files/folder-jongere.pdf";
+    	$file= public_path(). "/files/mentor-zoeken.pdf";
 
     	$headers = array(
               'Content-Type: application/pdf',
@@ -19,7 +19,7 @@ class FilesController extends Controller
 
     public function mentorFolder(){
 
-    	$file= public_path(). "/files/folder-mentor.pdf";
+    	$file= public_path(). "/files/mentor-worden.pdf";
 
     	$headers = array(
               'Content-Type: application/pdf',

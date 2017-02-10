@@ -26,7 +26,7 @@ class PagesController extends Controller
             'sliders' => $this->getSliders(),
         ];
 
-        $laatsteNieuwsbericht = News::take(1)->get();
+        $laatsteNieuwsbericht = News::orderBy('id', 'DESC')->first();
         $partners = Partner::take(4)->get();
         $sections = Section::byPageName('homepage');
         $section = new Section;

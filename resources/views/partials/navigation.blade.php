@@ -15,6 +15,7 @@
 				<li><a href="/team">Team</a></li>
           </ul>
         </li>
+        
 		<li class="{{ Request::path() == '/actueel' ? 'active' : '' }}">
 			<a href="{{ URL::to('actueel') }}">ACTUEEL</a>
 		</li>

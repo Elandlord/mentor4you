@@ -85,69 +85,68 @@ Aanmelden als mentor
 
 			</div>
 
-{!! Form::open(['method' => 'POST', 'action' => 'MailController@mentorMail']) !!}
+		<form method='POST' action='/mail/mentor-mail'>
 
 		{{ csrf_field() }}
 
 		<div class="col-lg-12 space-outside-md">
 
 			<div class="row">
-					
-
+	    		
 				<div class="col-lg-5 space-outside-up-sm"> 
 	    		
-				{!! Form::label('voornaam', 'voornaam') !!}
-	    			{!! Form::text('voornaam', null, ['required', 'placeholder' => 'Voornaam', 'class' => 'input border border-accent space-outside-xs']) !!}
-				
+					<label>Voornaam</label>
+					<input type='text' name='voornaam' placeholder='Voornaam' class='input border border-accent space-outside-xs' required />
+
 	    		</div>
 
 	    		<div class="col-lg-5 clear-left space-outside-up-sm"> 
-	    		{!! Form::label('achternaam', 'achternaam') !!}
-	    			{!! Form::text('achternaam', null, ['required', 'placeholder' => 'Achternaam', 'class' => 'input border border-accent space-outside-xs']) !!}
+
+	    			<label>Achternaam</label>
+					<input type='text' name='achternaam' placeholder='Achternaam' class='input border border-accent space-outside-xs' required />
+
 	    		</div>
 
 				<div class="col-lg-5 clear-left space-outside-up-sm"> 
-	    		{!! Form::label('telefoonnummer', 'telefoonnummer') !!}
-					{!! Form::text('telefoonnummer', null, ['required', 'placeholder' => 'Telefoonnummer', 'class' => 'input border border-accent space-outside-xs']) !!}
-				</div>
 
-				<div class="col-lg-5 clear-left space-outside-up-sm"> 
-				{!! Form::label('emailadres', 'emailadres') !!}
-					
-					{!! Form::text('emailadres', null, ['required', 'placeholder' => 'Uw emailadres', 'class' => 'input border border-accent space-outside-xs']) !!}
-				</div>
-				
-				<div class="col-lg-5 clear-left space-outside-up-sm"> 
-
-				{!! Form::label('Gemeente', 'gemeente') !!}
-					
-
-					{!! Form::select('gemeente', $data['municipalities'], null, [ 'required', 'class' => 'input border border-accent space-outside-xs font-xs']) !!} 
+					<label>Telefoonnummer</label>
+					<input type='text' name='telefoonnummer' placeholder='Telefoonnummer' class='input border border-accent space-outside-xs' required />
 
 				</div>
 
+				<div class="col-lg-5 clear-left space-outside-up-sm"> 
+
+					<label>Emailadres</label>
+					<input type='text' name='emailadres' placeholder='Emailadres' class='input border border-accent space-outside-xs' required />
+
+				</div>
 
 				<div class="col-lg-5 clear-left space-outside-up-sm"> 
-				{!! Form::label('geboortedatum', 'geboortedatum') !!}
+
+					<label>Gemeente</label>
 					
-				{!! Form::date('geboortedatum', null, ['required', 'placeholder' => '', 'class' => 'input border border-accent space-outside-xs font-xs']) !!}
+
+				</div>
+
+				<div class="col-lg-5 clear-left space-outside-up-sm"> 
+
+					<label>Geboortedatum</label>
+					<input type='text' name='geboortedatum' class='input border border-accent space-outside-xs font-xs datepicker' />
+
 				</div>
 				
 				<div class="col-lg-7 clear-left space-outside-up-sm"> 	
-				{!! Form::label('bericht', 'kort bericht') !!}
-
-					{!! Form::textarea('bericht', null, ['required', 'placeholder' => 'Uw bericht of opmerking', 'class' => 'textarea border border-accent space-outside-xs']) !!}
+					<label>Bericht</label>
+					<textarea name='bericht' class='textarea border border-accent space-outside-xs' required></textarea>
 				</div>
 
 				<div class="col-lg-12 space-outside-sm"> 
-					 {!! Form::submit('Verzenden', ['class' => 'btn-standard bg-secondary text-color-light light']) !!}
+					 <input type='submit' name='Verzenden' value='Verzenden' class='btn-standard bg-secondary light text-color-light' />
 				</div>
-				
+
 			</div>
-
+			
 		</div>
-
-			{!! Form::close() !!}
 
 					<div class="col-lg-12">
 

@@ -16,10 +16,8 @@
 			<!-- @include('pages.ervaringen.search') -->
 
 			<!-- attach vue2.js to this element -->
-			<div id="app">
-				<m4y-mentorlist :mentoren="{{ $mentoren }}"> </m4y-mentorlist>
-			</div>
-
+			
+			<m4y-mentorlist :mentoren="{{ $mentoren }}"> </m4y-mentorlist>
 		</div>
 	</section>
 
