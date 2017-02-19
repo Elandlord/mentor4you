@@ -10,7 +10,7 @@
 		<div class="row">
 			@include('pages.partials.page-title', ['pageTitle' => 'Ervaringen'])
 
-			@include('pages.ervaringen.search')
+			<!-- @include('pages.ervaringen.search') -->
 
 			<!-- attach vue2.js to this element -->
 

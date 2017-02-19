@@ -46,7 +46,7 @@ class MentorsController extends Controller
     {
 
         $mentor = Mentor::create($request->all());
-        
+
         return redirect('cms/mentor');
 
     }
@@ -70,12 +70,21 @@ class MentorsController extends Controller
      */
     public function edit($id)
     {
-        
+
         $data =[
             'mentor' => Mentor::find($id),
         ];
 
-        return view('cms.pages.mentors.edit', compact('data'));
+        $photo = Photo::where([
+            ['model_id', $id],
+            ['type', 'partner']
+        ])->first();
+
+
+        return view('cms.pages.mentors.edit', compact(
+            'data',
+            'photo'
+        ));
     }
 
     /**
@@ -90,7 +99,7 @@ class MentorsController extends Controller
         $mentor = Mentor::find($id);
 
         $mentor->update($request->all());
-    
+
         return redirect('cms/mentor');
 
     }
@@ -110,7 +119,7 @@ class MentorsController extends Controller
     }
 
     public function addPhoto($id, Request $request)
-    {   
+    {
 
         // check of er een foto bestaat voor dit nieuws id
         $mentor = Mentor::findOrFail($id);
@@ -122,17 +131,17 @@ class MentorsController extends Controller
         }
 
         $file =  $request->file('file');
-        
+
         $name = time() . $file->getClientOriginalName();
 
         $file->move('mentor/photos', $name);
-           
-        // create a new photo    
+
+        // create a new photo
 
         $photo = Photo::create(['path' => "/mentor/photos/{$name}"]);
-        
+
         $mentor->photos()->attach($photo->id, ['type' => 'original']);
         return 'done';
-    }      
+    }
 
 }

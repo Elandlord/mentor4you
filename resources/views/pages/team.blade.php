@@ -22,6 +22,7 @@
 					</div>
 				</div>
 
+				<div class="divider bg-accent col-lg-12 space-outside-down-md"></div>
 				<?php $iterator->next(); ?>
 
 				<div class="row row-centered ">

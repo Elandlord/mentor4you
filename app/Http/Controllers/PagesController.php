@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\News;
 use App\Page;
+use App\Youth;
 use App\Mentor;
 use App\Section;
 use App\Partner;
@@ -75,17 +76,11 @@ class PagesController extends Controller
             'Aa en Hunze' => 'Aa en Hunze',
         ];
 
-         $data = [
-            'sliders' => $this->getSliders(),
-            'aanmeldenJongeren' => Section::where('id', 32)->first(),
-            'aanmelden' => Section::where('id', 34)->first(),
-            'title' => Section::where('id', 32)->first(),
-        ];
-
         $sliders = $this->getSliders();
+        $iterator = new Iterator(Section::byPageName('jongeren-aanmelden'));
 
 		return view('pages.jongeren-aanmelden', compact(
-            'data',
+            'iterator',
             'sliders',
             'municipalities'
         ));
@@ -166,6 +161,11 @@ class PagesController extends Controller
     public function ervaringen()
     {
         $mentoren = Mentor::all();
+        $jongeren = Youth::all();
+
+        $merged = $mentoren->merge($jongeren);
+        $mentoren = $merged->all();
+        // dd($merged->all());
         $sliders = $this->getSliders();
 
         return view('pages.ervaringen', compact(

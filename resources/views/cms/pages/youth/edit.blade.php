@@ -52,14 +52,14 @@
 
                       </tr>
                       <tr>
-                         <td> 
+                         <td>
                               <label>Beschrijving</label>
                               <textarea class='form-control' name='description'>{{ $data['youth']->description }}</textarea>
                          </td>
 
                       </tr>
                        <tr>
-                         <td> 
+                         <td>
                             <label>Geboortedatum</label>
                             <div class="input-group date">
                                 <div class="input-group-addon">
@@ -79,7 +79,7 @@
                             </div>
 
                         </td>
-                       
+
                       </tr>
 
                     </tbody>
@@ -90,6 +90,20 @@
 
           </div>
           <!-- /.box -->
+          <div id="app">
+              @if($photo != null)
+              <image-display
+                  id="{{$photo->id}}"
+                  model_id="{{$photo->model_id}}"
+                  type="{{$photo->type}}"
+                  filename="{{$photo->filename}}">
+              </image-display>
+
+              @endif
+              <image-uploader route="photo" model_id="{{$data['youth']->id}}" type="youth" >
+                  <cropper route="cropper" aspectheight="9" aspectwidth="16" > </cropper>
+              </image-uploader>
+          </div>
         </div>
         </div>
     </section>

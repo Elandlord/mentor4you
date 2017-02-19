@@ -46,7 +46,7 @@
 
             Dropzone.options.myAwesomeDropzone = {
                 paramName: "file", // The name that will be used to transfer the file
-                maxFilesize: 20, // MB
+                maxFilesize: 500, // MB
                 headers: { "X-CSRF-TOKEN": Laravel.csrfToken },
                 accept: (file, done) => {
                     done();

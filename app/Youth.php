@@ -15,8 +15,24 @@ class Youth extends Model
      	'date_of_birth'
      ];
 
-    public function photos(){
-        return $this->belongsToMany('App\Photo')->withPivot('type')->withTimeStamps();
+    protected $appends = [
+      'thumbnail',
+    ];
+
+    public function photo() {
+        return Photo::where([
+            ['model_id', $this->id],
+            ['type', 'youth'],
+        ])->first();
+    }
+
+    public function getThumbnailAttribute()
+    {
+        if($this->photo() != null){
+            return "/images/youth/{$this->id}/16x9/{$this->photo()->filename}";
+        }else{
+            return "https://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif";
+        }
     }
 
 }

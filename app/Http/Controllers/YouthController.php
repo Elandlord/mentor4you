@@ -43,7 +43,7 @@ class YouthController extends Controller
     public function store(Request $request)
     {
         $youth = Youth::create($request->all());
-        
+
         return redirect('cms/youth');
     }
 
@@ -70,7 +70,17 @@ class YouthController extends Controller
             'youth' => Youth::find($id),
         ];
 
-        return view('cms.pages.youth.edit', compact('data'));
+        $photo = Photo::where([
+            ['model_id', $id],
+            ['type', 'youth']
+        ])->first();
+
+
+
+        return view('cms.pages.youth.edit', compact(
+            'data',
+            'photo'
+        ));
     }
 
     /**
@@ -85,7 +95,7 @@ class YouthController extends Controller
         $youth = Youth::find($id);
 
         $youth->update($request->all());
-    
+
         return redirect('cms/youth');
     }
 
@@ -104,7 +114,7 @@ class YouthController extends Controller
     }
 
     public function addPhoto($id, Request $request)
-    {   
+    {
 
         // check of er een foto bestaat voor dit nieuws id
         $youth = Youth::findOrFail($id);
@@ -116,15 +126,15 @@ class YouthController extends Controller
         }
 
         $file =  $request->file('file');
-        
+
         $name = time() . $file->getClientOriginalName();
 
         $file->move('youth/photos', $name);
-           
-        // create a new photo    
+
+        // create a new photo
 
         $photo = Photo::create(['path' => "/youth/photos/{$name}"]);
-        
+
         $youth->photos()->attach($photo->id, ['type' => 'original']);
         return 'done';
     }

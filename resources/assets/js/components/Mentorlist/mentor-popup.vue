@@ -1,7 +1,7 @@
 <template>
 
 <div>
-  <transition name="fade">
+  <transition name="slide-fade">
   <div v-if="display" @click="closeOverlay()" class="
     mentor-overlay
     space-inside-sides-lg
@@ -34,7 +34,7 @@
     </div>
     <div class="col-lg-5 col-md-5 space-inside-md">
       <div class="image">
-        <img class="width-auto" src="/images/resultaten3.jpeg">
+        <img class="width-auto" :src="mentor.thumbnail">
       </div>
     </div>
 
@@ -45,6 +45,7 @@
 </template>
 
 <style type="text/css">
+
 .mentor-overlay {
   position: fixed;
   top: 0;
@@ -52,17 +53,23 @@
   height: 100%;
   width: 100%;
   z-index: 10;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.8);
   overflow-x: scroll;
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
-  opacity: 0
+.slide-fade-enter-active {
+  transition: all .3s ease;
 }
 
+.slide-fade-leave-active {
+  transition: all .4s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active for <2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
 
 </style>
 

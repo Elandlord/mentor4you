@@ -6,7 +6,7 @@
         <div class="bg-secondary text-color-light text-center text-light font-md space-inside-xs">{{ mentor.first_name }} {{ mentor.last_name }}</div>
 
         <div style="height: 150px;"  class="image">
-            <img class="width: auto;" src="/images/resultaten3.jpeg">
+            <img class="width: auto;" :src="mentor.thumbnail">
         </div>
 
         <div style="border-width: 4px;" class="bg-accent border-top border-main">
