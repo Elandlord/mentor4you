@@ -98,11 +98,13 @@ class PagesController extends Controller
             'vestiging' => Section::where('id', 24)->first(),
             'sliders' => $this->getSliders(),
         ];
+        $iterator = new Iterator(Section::byPageName('contact'));
         $sliders = $this->getSliders();
 
 		return view('pages.contact', compact(
             'data',
-            'sliders'
+            'sliders',
+            'iterator'
         ));
 	}
 
@@ -162,7 +164,7 @@ class PagesController extends Controller
 
     public function ervaringen()
     {
-        $mentoren = Mentor::with('photos')->get();
+        $mentoren = Mentor::all();
         $sliders = $this->getSliders();
 
         return view('pages.ervaringen', compact(

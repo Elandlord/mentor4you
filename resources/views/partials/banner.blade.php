@@ -1,4 +1,4 @@
-<div class="container-fluid border-bottom border-main">
+<div class="container-fluid border-bottom border-main hidden-xs">
   <div class="row">
 
     <image-slider style="height: 400px;"  >

@@ -1,4 +1,5 @@
 <template>
+
 <div>
     <div @click="displayErvaring()" class="col-lg-12 col-centered space-outside-down-md pointer min-width-lg max-width-lg" >
 
@@ -9,7 +10,7 @@
         </div>
 
         <div style="border-width: 4px;" class="bg-accent border-top border-main">
-            <p style="height: 150px;" class="font-md text-color-dark space-inside-sm space-inside-sides-sm">{{ mentor.description }}</p>
+            <p style="max-height: 150px; min-height:150px;" class=" no-overflow font-md text-color-dark space-inside-sm space-inside-sides-sm">{{ mentor.description }}</p>
         </div>
 
     </div>
