@@ -14,6 +14,8 @@ use App\Page;
 use App\Classes\Slot;
 use App\Section;
 
+use App\Photo;
+
 class SectionController extends Controller
 {
     /**
@@ -85,7 +87,12 @@ class SectionController extends Controller
             'page_positions' => $sectionSlots->pluck('position', 'position'),
         ];
 
-        return view('cms.core.sections.edit', compact('data'));
+        $photo = Photo::where([
+            ['model_id', $id],
+            ['type', 'section']
+        ])->first();
+
+        return view('cms.core.sections.edit', compact('data', 'photo'));
     }
 
     /**

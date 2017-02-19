@@ -33,7 +33,7 @@
 
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
-              <form method="POST" action="/cms/teammember/{{$data['teammember']->id}}" >
+              <form method="POST" action="/cms/teammember/{{$teammember->id}}" >
                 {{csrf_field()}}
                 {{ method_field('PUT') }}
                   <table class="table table-responsive">
@@ -41,27 +41,27 @@
                       <tr>
                          <td>
                               <label>Voornaam</label>
-                              <input type='text' class='form-control' value="{{ $data['teammember']->first_name }}" name='first_name'/>
+                              <input type='text' class='form-control' value="{{ $teammember->first_name }}" name='first_name'/>
                          </td>
                       </tr>
                       <tr>
                          <td>
                               <label>Achternaam</label>
-                              <input type='text' class='form-control' value="{{ $data['teammember']->last_name }}"  name='last_name'/>
+                              <input type='text' class='form-control' value="{{ $teammember->last_name }}"  name='last_name'/>
                          </td>
 
                       </tr>
                       <tr>
                          <td> 
                               <label>Beschrijving</label>
-                              <textarea class='form-control' name='description'>{{ $data['teammember']->description }}</textarea>
+                              <textarea class='form-control' name='description'>{{ $teammember->description }}</textarea>
                          </td>
 
                       </tr>
                        <tr>
                          <td> 
                               <label>Functie</label>
-                              <input type='text' class='form-control' value="{{ $data['teammember']->role }}"  name='role'/>
+                              <input type='text' class='form-control' value="{{ $teammember->role }}"  name='role'/>
                          </td>
 
                       </tr>
@@ -83,6 +83,20 @@
             </div>
             <!-- /.box-body -->
 
+          </div>
+          <div id="app">
+              @if($photo != null)
+              <image-display
+                  id="{{$photo->id}}"
+                  model_id="{{$photo->model_id}}"
+                  type="{{$photo->type}}"
+                  filename="{{$photo->filename}}">
+              </image-display>
+
+              @endif
+              <image-uploader route="photo" model_id="{{$teammember->id}}" type="teamMember" >
+                  <cropper route="cropper" aspectheight="1" aspectwidth="1" > </cropper>
+              </image-uploader>
           </div>
           <!-- /.box -->
         </div>

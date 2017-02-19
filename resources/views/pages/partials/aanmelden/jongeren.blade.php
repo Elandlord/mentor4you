@@ -3,7 +3,7 @@
 		<div class="card type-1">
 			<div class="space-outside-down-md text-center">
 				<div class="image circle-lg circle circle-lg inline-block">
-					<img class="width-auto inline-block" src=""
+					<img class="width-auto inline-block" src="{{ $iterator->thumbnail }}"
 						alt="aanmelden als jongere">
 				</div>
 			</div>

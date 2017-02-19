@@ -15,8 +15,31 @@ class News extends Model
     ];
 
 
-    public function photos(){
-        return $this->belongsToMany('App\Photo')->withPivot('type')->withTimeStamps();
+    public function photo() {
+        return Photo::where([
+            ['model_id', $this->id],
+            ['type', 'news'],
+        ])->first();
+    }
+
+    public function getThumbnailAttribute()
+    {
+        if($this->photo() != null){
+            return "/images/news/{$this->id}/16x9/{$this->photo()->filename}";
+        }else{
+            return "https://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif";
+        }
+        
+    }
+
+    public function getSquareAttribute()
+    {
+        if($this->photo() != null){
+            return "/images/news/{$this->id}/1x1/{$this->photo()->filename}";
+        }else{
+            return "https://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif";
+        }
+        
     }
 
     /////////////////////////////

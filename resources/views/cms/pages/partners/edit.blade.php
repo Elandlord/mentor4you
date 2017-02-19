@@ -80,7 +80,20 @@
               </form>
             </div>
             <!-- /.box-body -->
+          </div>
+          <div id="app">
+              @if($photo != null)
+              <image-display
+                  id="{{$photo->id}}"
+                  model_id="{{$photo->model_id}}"
+                  type="{{$photo->type}}"
+                  filename="{{$photo->filename}}">
+              </image-display>
 
+              @endif
+              <image-uploader route="photo" model_id="{{$data['partner']->id}}" type="partner" >
+                  <cropper route="cropper" aspectheight="9" aspectwidth="16" > </cropper>
+              </image-uploader>
           </div>
           <!-- /.box -->
         </div>

@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\TeamMember;
 use App\Http\Requests;
 
+use App\Photo;
+
 class TeamMembersController extends Controller
 {
     /**
@@ -65,11 +67,14 @@ class TeamMembersController extends Controller
      */
     public function edit($id)
     {
-        $data =[
-            'teammember' => TeamMember::find($id),
-        ];
+        $teammember = TeamMember::find($id);
 
-        return view('cms.pages.teammembers.edit', compact('data'));
+        $photo = Photo::where([
+            ['model_id', $id],
+            ['type', 'teamMember']
+        ])->first();
+
+        return view('cms.pages.teammembers.edit', compact('teammember', 'photo'));
     }
 
     /**

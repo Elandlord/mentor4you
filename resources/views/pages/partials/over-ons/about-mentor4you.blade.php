@@ -2,7 +2,7 @@
   <div class="col-lg-7 space-outside-down-lg fadeInDown wow">
     <h3 class="space-outside-down-sm  text-color-main"> {{ $iterator->title }}</h3>
     <p class="font-md ">
-     {{ $iterator->body }}
+     {!! nl2br($iterator->body) !!}
     </p>
   </div>
 </div>

@@ -1,6 +1,6 @@
 <div class="col-lg-4 col-xs-12 space-outside-up-lg xs-space-inside-sides-sm xs-text-center animated fadeInDown wow">
   <div class="image lg-rect-xl">
-    <img class="responsive-image height-auto"  src="{{ $nieuwsbericht->photos->first()['path'] }}" alt='actueel bericht mentor4you' />
+    <img class="responsive-image height-auto"  src="{{ $nieuwsbericht->thumbnail }}" alt='actueel bericht mentor4you' />
   </div>
 </div>
 

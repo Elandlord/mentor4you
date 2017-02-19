@@ -54,9 +54,21 @@ class Section extends Model
         }
     }
 
-    public function photos()
+    public function photo() {
+        return Photo::where([
+            ['model_id', $this->id],
+            ['type', 'section'],
+        ])->first();
+    }
+
+    public function getThumbnailAttribute()
     {
-        return $this->belongsToMany('App\Photo');
+
+        if($this->photo() != null){
+            return "/images/section/{$this->id}/16x9/{$this->photo()->filename}";
+        }else{
+            return "https://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif";
+        }
     }
 
 
