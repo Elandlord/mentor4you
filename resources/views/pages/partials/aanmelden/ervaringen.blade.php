@@ -28,7 +28,7 @@
 					space-inside-sides-sm
 					font-md
 					"
-					href="#bekijk-de-resultaten">Bekijk de ervaringen</a>
+					href="/ervaringen">Bekijk de ervaringen</a>
 			</div>
 		</div>
 	</div>

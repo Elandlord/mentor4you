@@ -32,9 +32,9 @@
 
               </div>
               <div class="text-center">
-                <h3 class='space-outside-down-md'> {{ $teammember->first_name }} {{ $teammember->last_name }}</h3>
-                <h5> {{ $teammember->role }} </h5>
-                <h5 class='space-outside-down-md'> {{ $teammember->description }} </h5>
+                <h3 class='space-outside-down-md text-bold'> {{ $teammember->first_name }} <span class="text-light"> {{ $teammember->last_name }} </span></h3>
+                <p class="text-color-main font-md block"> {{ $teammember->role }} </p>
+                <p class='space-outside-down-md font-md'> {{ $teammember->description }} </p>
               </div>
               <div class="image round inline-block" style='height:200px; width:200px;'>
                 <img class="width-auto" src="{{ $teammember->thumbnail }}">

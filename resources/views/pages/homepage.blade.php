@@ -45,7 +45,7 @@
 
 						<div class="col-lg-4  col-md-4 text-center">
 							<div class=" space-outside-sm xs-space-outside-down-lg inline-block ">
-								<a class="space-inside-xs font-md space-inside-sides-sm bg-secondary text-color-light light" href="#bekijk-de-resultaten">Bekijk de resultaten</a>
+								<a class="space-inside-xs font-md space-inside-sides-sm bg-secondary text-color-light light" href="/ervaringen">Bekijk de ervaringen</a>
 							</div>
 						</div>
 				</div>
