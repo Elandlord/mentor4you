@@ -13,6 +13,8 @@
         },
         mounted() {
 
+            console.log('Lekker naaien');
+
             let photo = {
                 id: this.id,
                 model_id: this.model_id,

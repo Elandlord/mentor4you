@@ -1,4 +1,8 @@
 <?php
+// ----------------- ROUTES IMAGE -----------------
+Route::get('/cropper', 'ImageHelperController@index');
+Route::resource('photo', 'PhotosController');
+
 
 Route::group(['prefix' => 'cms'],  function () {
     Route::group(['middleware' => ['auth']], function(){
@@ -33,6 +37,7 @@ Route::group(['prefix' => 'cms'],  function () {
         Route::resource('partner', 'PartnersController');
         Route::resource('teammember', 'TeamMembersController');
         Route::resource('slider', 'ImageSliderController');
+
     });
 });
 

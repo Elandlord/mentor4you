@@ -33,7 +33,7 @@
 
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
-              <form method="POST" action="/cms/news/{{$data['news']->id}}" >
+              <form method="POST" action="/cms/news/{{$news->id}}" >
                 {{csrf_field()}}
                 {{ method_field('PUT') }}
                   <table class="table table-hover">
@@ -41,20 +41,20 @@
                         <tr>
                            <td>
                                 <label>Titel</label>
-                                <input type='text' class='form-control' value="{{ $data['news']->title }}" name='title'/>
+                                <input type='text' class='form-control' value="{{ $news->title }}" name='title'/>
                            </td>
                         </tr>
                         <tr>
                            <td> 
                                 <label>Nieuwsbericht</label>
-                                <textarea class='form-control' name='body'>{{ $data['news']->body }}</textarea>
+                                <textarea class='form-control' name='body'>{{ $news->body }}</textarea>
                            </td>
 
                         </tr>
                         <tr>
                            <td> 
                                 <label>Auteur</label>
-                                <input type='text' class='form-control' value="{{ $data['news']->author }}" name='author'/>
+                                <input type='text' class='form-control' value="{{ $news->author }}" name='author'/>
                            </td>
 
                         </tr>
@@ -65,7 +65,7 @@
                                   <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                   </div>
-                                  <input type='text' name='publish_date' value="{{ $data['news']->publish_date }}" class='form-control datepicker' />
+                                  <input type='text' name='publish_date' value="{{ $news->publish_date }}" class='form-control datepicker' />
                                 </div>
                            </td>
 
@@ -77,7 +77,7 @@
                                   <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                   </div>
-                                  <input type='text' name='occurence_date' value="{{ $data['news']->occurence_date }}" class='form-control datepicker' />
+                                  <input type='text' name='occurence_date' value="{{ $news->occurence_date }}" class='form-control datepicker' />
                                 </div>
                            </td>
 
@@ -104,6 +104,17 @@
           <!-- /.box -->
         </div>
         </div>
+        @if($photo != null)
+        <image-display
+            id="{{$photo->id}}"
+            model_id="{{$photo->model_id}}"
+            type="{{$photo->type}}"
+            filename="{{$photo->filename}}">
+        </image-display>
+        @endif
+        <image-uploader route="photo" model_id="{{$news->id}}" type="news" >
+            <cropper route="cropper" aspectheight="9" aspectwidth="16" > </cropper>
+        </image-uploader>
     </section>
 </div>
 @stop

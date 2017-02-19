@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class EditPhotosTable extends Migration
+class CreatePhotosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class EditPhotosTable extends Migration
      */
     public function up()
     {
-        Schema::table('photos', function (Blueprint $table) {
-            $table->string('type')->nullable()->change();
+        Schema::create('photos', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('filename')->nullable();
+            $table->string('type')->nullable();
+            $table->integer('model_id')->unsigned();
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,6 @@ class EditPhotosTable extends Migration
      */
     public function down()
     {
-        Schema::table('photos', function (Blueprint $table) {
-            $table->string('type')->change();
-        });
+        Schema::dropIfExists('photos');
     }
 }

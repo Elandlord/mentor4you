@@ -1,8 +1,15 @@
 import Vue from 'vue';
+import Dropzone from 'dropzone';
+import Cropper from 'cropperjs';
+
 window.Vue = Vue;
+window.Dropzone = Dropzone;
+
+require('./Core/Classes'); // Pulls in some helper classes
 
 require('owl-carousel-2/owl.carousel');
 
+// image uploader
 Vue.component('image-display', require('./components/ImageDisplay.vue'));
 Vue.component('image-uploader', require('./components/ImageUploader.vue'));
 Vue.component('cropper', require('./components/Cropper.vue'));
