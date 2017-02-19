@@ -160,6 +160,7 @@ class PagesController extends Controller
 
     public function ervaringen()
     {
+        $teamMembers = TeamMember::all();
         $mentoren = Mentor::all();
         $jongeren = Youth::all();
         $jongeren->each(function($item) use ($mentoren) {
@@ -170,7 +171,8 @@ class PagesController extends Controller
 
         return view('pages.ervaringen', compact(
             'mentoren',
-            'sliders'
+            'sliders',
+            'teamMembers'
         ));
     }
 
