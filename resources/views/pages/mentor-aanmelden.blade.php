@@ -24,7 +24,7 @@ Aanmelden als mentor
 
 			<div class="col-lg-5 space-outside-down-lg">
 				<div class="image aanmelden-foto">
-					<img class="height-auto" src="images/resultaten5.jpg" alt="jongere die zich wil aanmelden">
+					<img class="height-auto" src="images/foto1.jpg" alt="jongere die zich wil aanmelden">
 				</div>
 
 			</div>
