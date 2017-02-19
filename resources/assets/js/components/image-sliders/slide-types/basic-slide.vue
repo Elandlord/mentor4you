@@ -38,7 +38,7 @@
         z-index: -9;
     }
 
-    img{
+    .slider-image-sl img{
         position: absolute;
         top: 0;
         left: 0;

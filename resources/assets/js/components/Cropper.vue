@@ -52,7 +52,7 @@
             });
 
             Event.listen('setCropper', (photo) => {
-                console.log('werkt niet');
+
                 this.photo = null;
                 setTimeout(() => {
                     this.photo = photo;

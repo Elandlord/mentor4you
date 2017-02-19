@@ -21,6 +21,7 @@ class PagesController extends Controller
         return Section::where(
             'page_id', Page::where('name', 'slider')->first()->id
         )->get();
+
     }
 
 
