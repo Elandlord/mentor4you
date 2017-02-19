@@ -31,7 +31,7 @@ Contact
 
 			<div class="col-lg-12 space-outside-down-lg fadeInDown wow">
 
-				<p class="text">
+				<p class="text font-md">
 
 					{{ $data['titel']->body }} 
 
@@ -41,7 +41,7 @@ Contact
 
 			<div class="col-lg-12 space-outside-down-sm fadeInDown wow">
 				
-				<p class="text bold">
+				<p class="text bold font-md">
 					
 					{{ $data['bold']->title }} 
 
@@ -105,7 +105,7 @@ Contact
 
 			<div class="col-lg-8 space-outside-down-lg">
 			
-				<p class="text">
+				<p class="text font-md">
 						
 						{{ $data['vestiging']->body }} 
 
