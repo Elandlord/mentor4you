@@ -1,9 +1,9 @@
 <div class="col-lg-12 space-outside-up-md space-outside-down-sm ">
-  <h3 class="text-center">Ben je enthousiast geworden na het zien van onze website?</h3>
+  <h3 class="text-center text-color-main">Ben je enthousiast geworden na het zien van onze website?</h3>
 </div>
 
 <div class="col-lg-4 col-centered space-outside-down-md">
-  <p class="text-center">
+  <p class="text-center font-md">
     Meld je dan nu aan als mentor of jongere door op één van de onderstaande knoppen te drukken
   </p>
 </div>
@@ -13,12 +13,20 @@
       class="space-inside-xs
              space-inside-sides-sm
              bg-secondary
+             font-sm
              text-color-light
              light
              space-outside-down-md
              text-hover-light
   ">Mentor worden</a>
 
-  <a href="/aanmelden-als-jongere"  class="space-outside-left-sm text-color-light light space-inside-xs
-             space-inside-sides-sm bg-secondary ">Aanmelden als jongere</a>
+  <a href="/aanmelden-als-jongere"  class="
+    space-outside-left-sm
+    text-color-light
+    light
+    space-inside-xs
+    space-inside-sides-sm
+    bg-secondary
+    font-sm
+    ">Aanmelden als jongere</a>
 </div>

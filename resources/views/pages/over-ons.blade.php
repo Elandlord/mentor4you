@@ -26,10 +26,6 @@
 
 			<div text-inject>@include('pages.partials.over-ons.about-mentor4you', ['iterator' => $iterator ])</div>
 
-			<div class="col-lg-12">
-				<div class="divider bg-accent"></div>
-			</div>
-
 		</div>
 	</section>
 

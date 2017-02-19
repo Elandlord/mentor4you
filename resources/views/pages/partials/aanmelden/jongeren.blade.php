@@ -14,7 +14,7 @@
 			</div>
 
 			<div class="space-outside-md inline-block max-width-xl ">
-				<p text-inject>
+				<p class="" text-inject>
 				{{ $iterator->body }}
 
 				</p>

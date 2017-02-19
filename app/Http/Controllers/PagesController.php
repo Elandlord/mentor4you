@@ -52,15 +52,13 @@ class PagesController extends Controller
     }
 
     public function team(){
-
-        $data = [
-            'team' => Section::where('id', 12)->first(),
-            'teammembers' => TeamMember::all(),
-        ];
+        $teamMembers = TeamMember::all();
+        $iterator = new Iterator( Section::byPageName('team') );
         $sliders = $this->getSliders();
 
         return view('pages.team', compact(
-            'data',
+            'teamMembers',
+            'iterator',
             'sliders'
         ));
     }

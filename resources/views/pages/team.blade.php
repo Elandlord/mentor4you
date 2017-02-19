@@ -8,42 +8,22 @@
 
 <section class="container-fluid xs-space-inside-sides-xl-none space-inside-sides-xl space-outside-lg no-overflow">
 		<div class="row">
+			@include('pages.partials.page-title', ['pageTitle' => $iterator->title ])
 
-			<div class="col-lg-12 space-outside-down-lg text-center fadeInDown wow">
-
-				<h1 class="">{{ $data['team']->title }}</h1>
-
-			</div>
-
-
-			<div class="col-lg-12 space-outside-down-md xs-text-center">
-
+			<div class="col-lg-12 space-outside-down-md xs-text-center" text-inject>
 					<div class="col-lg-8 fadeInDown wow">
-
 						<h3 class="space-outside-down-sm ">Onderdeel van Spinn</h3>
-
 						<p class="">
 							Mentor4you is onderdeel van Spinn
 						</p>
-
 						<div class="image rectangular-img ">
-
 							<img class="height-auto" src="/partner/photos/1473166226@2x-spinn-logo-web-top.png" />
-
 						</div>
-
 					</div>
-
-
-
 				</div>
 
-
-
-
-
 				<div class="row row-centered ">
-					@foreach($data['teammembers'] as $teammember)
+					@foreach($teamMembers as $teammember)
 					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-centered">
 						<div class="card type-4">
 							<div class="top background-primary">
