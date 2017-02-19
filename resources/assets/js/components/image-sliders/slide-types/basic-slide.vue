@@ -1,25 +1,25 @@
 <template>
 <div class="banner">
-    <div class="padding">
-        <slot name="content"  class="move"> </slot>
+    <div class="padding-slider">
+        <slot name="content"  > </slot>
     </div>
-    <slot class="slider-image" name="background"></slot>
-    <div v-if="overlay" class="overlay"></div>
+    <slot class="slider-image-sl" name="background"></slot>
+
 </div>
 </template>
 
 <style type="text/css">
-    .padding {
+     .padding-sl {
         padding: 0px 40px;
     }
 
-    .banner{
+    .banner-sl{
         position: relative;
         overflow: hidden;
         height: 440px;
     }
 
-    .background{
+     .background-sl{
         position: absolute;
         top: 0;
         left: 0;
@@ -28,7 +28,7 @@
         z-index: -10;
     }
 
-    .overlay {
+     .overlay-sl {
         position: absolute;
         background: rgba(0,0,0,0.25);
         top: 0;
@@ -38,7 +38,7 @@
         z-index: -9;
     }
 
-    slide .img{
+    img{
         position: absolute;
         top: 0;
         left: 0;

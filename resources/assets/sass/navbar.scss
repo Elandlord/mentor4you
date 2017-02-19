@@ -101,6 +101,9 @@
     .navbar{
         margin-bottom: 0 !important;
     }
+    .navbar-default {
+        float: none;
+    }
 }
 
 /* Portrait phones and smaller */
@@ -109,11 +112,13 @@
     .navbar{
         margin-bottom: 0 !important;
     }
-
+    .navbar-default {
+        float: none;
+    }
 }
 
-.round{
-    border-radius: 2000px;
+.round{ border-radius: 2000px; }
+.dropdown-menu {
+    position: absolute;
+    right: 20px !important;
 }
-
-.dropdown-menu { }

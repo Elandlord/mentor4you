@@ -16,35 +16,40 @@ class PagesController extends Controller
 
     private function getSliders()
     {
-        // return Section::where('page_id', Page::where('name', 'Slider')->first()->id)->get();
+        return Section::where(
+            'page_id', Page::where('name', 'slider')->first()->id
+        )->get();
     }
 
 
 	public function indexHome()
 	{
-        $data = [
-            'sliders' => $this->getSliders(),
-        ];
-
+        $sliders = $this->getSliders();
         $laatsteNieuwsbericht = News::orderBy('id', 'DESC')->first();
         $partners = Partner::take(4)->get();
         $sections = Section::byPageName('homepage');
         $section = new Section;
-		return view('pages.homepage', compact(
+
+    	return view('pages.homepage', compact(
             'data',
             'section',
             'sections',
             'partners',
-            'laatsteNieuwsbericht'
+            'laatsteNieuwsbericht',
+            'sliders'
         ));
 	}
 
     public function werkgebied(){
+        $sliders = $this->getSliders();
         $data = [
             'werkgebied' => Section::where('id', 10)->first(),
         ];
 
-        return view('pages.werkgebied', compact('data'));
+        return view('pages.werkgebied', compact(
+            'data',
+            'sliders'
+        ));
     }
 
     public function team(){
@@ -53,8 +58,12 @@ class PagesController extends Controller
             'team' => Section::where('id', 12)->first(),
             'teammembers' => TeamMember::all(),
         ];
+        $sliders = $this->getSliders();
 
-        return view('pages.team', compact('data'));
+        return view('pages.team', compact(
+            'data',
+            'sliders'
+        ));
     }
 
 	public function jongerenAanmelden()
@@ -71,10 +80,16 @@ class PagesController extends Controller
             'sliders' => $this->getSliders(),
             'aanmeldenJongeren' => Section::where('id', 32)->first(),
             'aanmelden' => Section::where('id', 34)->first(),
-            'municipalities' => $municipalities,
             'title' => Section::where('id', 32)->first(),
         ];
-		return view('pages.jongeren-aanmelden', compact('data'));
+
+        $sliders = $this->getSliders();
+
+		return view('pages.jongeren-aanmelden', compact(
+            'data',
+            'sliders',
+            'municipalities'
+        ));
 	}
 
 	public function contact()
@@ -85,8 +100,12 @@ class PagesController extends Controller
             'vestiging' => Section::where('id', 24)->first(),
             'sliders' => $this->getSliders(),
         ];
+        $sliders = $this->getSliders();
 
-		return view('pages.contact', compact('data'));
+		return view('pages.contact', compact(
+            'data',
+            'sliders'
+        ));
 	}
 
 	public function mentorenAanmelden()
@@ -100,8 +119,12 @@ class PagesController extends Controller
             'municipalities' => $municipalities,
             'sliders' => $this->getSliders(),
         ];
+        $sliders = $this->getSliders();
 
-		return view('pages.mentor-aanmelden', compact('data'));
+		return view('pages.mentor-aanmelden', compact(
+            'data',
+            'sliders'
+        ));
 
 	}
 
@@ -109,9 +132,12 @@ class PagesController extends Controller
 	{
         $data = [
             'titel' => Section::where('id', 15)->first(),
-            'sliders' => $this->getSliders(),
         ];
-		return view('pages.resultaten', compact('data'));
+        $sliders = $this->getSliders();
+		return view('pages.resultaten', compact(
+            'data',
+            'sliders'
+        ));
 	}
 
 	public function overons()
@@ -124,22 +150,28 @@ class PagesController extends Controller
             'kop4' => Section::where('id', 11)->first(),
             'hetteam' => Section::where('id', 12)->first(),
             'aanmeldbox' => Section::where('id', 13)->first(),
-            'sliders' => $this->getSliders(),
         ];
         $sections = Section::byPageName('over-ons');
         $section = new Section;
+        $sliders = $this->getSliders();
+
 		return view('pages.over-ons', compact(
             'data',
             'sections',
-            'section'
+            'section',
+            'sliders'
         ));
 	}
 
     public function ervaringen()
     {
         $mentoren = Mentor::with('photos')->get();
+        $sliders = $this->getSliders();
 
-        return view('pages.resultaten', compact('mentoren'));
+        return view('pages.resultaten', compact(
+            'mentoren',
+            'sliders'
+        ));
     }
 
 	public function steunons()
@@ -153,30 +185,39 @@ class PagesController extends Controller
             'uitleg' => Section::where('id', 21)->first(),
             'sliders' => $this->getSliders(),
         ];
+        $sliders = $this->getSliders();
 
-
-		return view('pages.steun-ons', compact('data'));
+		return view('pages.steun-ons', compact(
+            'data',
+            'sliders'
+        ));
 	}
 
 	public function actueel()
 	{
-        $data = [
-            'titel' => Section::where('id', 14)->first(),
-            'nieuwsberichten' => News::orderBy('id', 'desc')->paginate(2),
-            'sliders' => $this->getSliders(),
-        ];
-		return view('pages.actueel', compact('data'));
+        $titel = Section::where('id', 14)->first();
+        $nieuwsberichten = News::orderBy('id', 'desc')->paginate(2);
+        $sliders = $this->getSliders();
+
+		return view('pages.actueel', compact(
+            'data',
+            'nieuwsberichten',
+            'titel',
+            'sliders'
+        ));
 	}
 
 
     public function doorklikActueel($title, $id){
         $data = [
-             'news' => News::find($id),
-            'sliders' => $this->getSliders(),
+            'news' => News::find($id),
             'aanmeldbox' => Section::where('id', 13)->first(),
         ];
-
-        return view('pages.news.doorklik', compact('data'));
+        $sliders = $this->getSliders();
+        return view('pages.news.doorklik', compact(
+            'data',
+            'sliders'
+        ));
     }
 
 	    /**

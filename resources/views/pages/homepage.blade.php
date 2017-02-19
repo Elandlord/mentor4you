@@ -25,27 +25,27 @@
 									wow
 									fadeInDown
 			">
-				<div text-inject> @include('pages.partials.aanmelden.jongeren', ['section' => $section, 'sections' => $sections]) </div>
-				<div text-inject> @include('pages.partials.aanmelden.mentoren', ['section' => $section, 'sections' => $sections]) </div>
-				<div text-inject> @include('pages.partials.aanmelden.ervaringen', ['section' => $section, 'sections' => $sections]) </div>
+				<div class="text-center " text-inject> @include('pages.partials.aanmelden.jongeren', ['section' => $section, 'sections' => $sections]) </div>
+				<div class="text-center " text-inject> @include('pages.partials.aanmelden.mentoren', ['section' => $section, 'sections' => $sections]) </div>
+				<div class="text-center " text-inject> @include('pages.partials.aanmelden.ervaringen', ['section' => $section, 'sections' => $sections]) </div>
 
 				<div class="col-lg-12 col-md-12 hidden-xs hidden-sm hidden-md">
 
 						<div class="col-lg-4 col-md-4 text-center">
 							<div class="space-outside-sm xs-space-outside-down-lg ">
-								<a class="space-inside-xs space-inside-sides-sm bg-secondary text-color-light light" href="/aanmelden-als-jongere">Aanmelden als jongere</a>
+								<a class="space-inside-xs font-md space-inside-sides-sm bg-secondary text-color-light light" href="/aanmelden-als-jongere">Aanmelden als jongere</a>
 							</div>
 						</div>
 
-						<div class="col-lg-4 col-md-4 text-center">
+						<div class="col-lg-4 col-md-4 text-center ">
 							<div class=" space-outside-sm xs-space-outside-down-lg ">
-								<a class="space-inside-xs space-inside-sides-sm bg-secondary text-color-light light" href="/aanmelden-als-mentor">Aanmelden als mentor</a>
+								<a class="space-inside-xs font-md space-inside-sides-sm bg-secondary text-color-light light" href="/aanmelden-als-mentor">Aanmelden als mentor</a>
 							</div>
 						</div>
 
 						<div class="col-lg-4  col-md-4 text-center">
 							<div class=" space-outside-sm xs-space-outside-down-lg inline-block ">
-								<a class="space-inside-xs space-inside-sides-sm bg-secondary text-color-light light" href="#bekijk-de-resultaten">Bekijk de resultaten</a>
+								<a class="space-inside-xs font-md space-inside-sides-sm bg-secondary text-color-light light" href="#bekijk-de-resultaten">Bekijk de resultaten</a>
 							</div>
 						</div>
 				</div>

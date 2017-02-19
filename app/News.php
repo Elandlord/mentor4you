@@ -16,7 +16,15 @@ class News extends Model
 
 
     public function photos(){
-        return $this->belongsToMany('App\Photo')->withPivot('type')->withTimeStamps();      
-    } 
-    
+        return $this->belongsToMany('App\Photo')->withPivot('type')->withTimeStamps();
+    }
+
+    /////////////////////////////
+    // view specific functions //
+    /////////////////////////////
+
+    public function getPublishedAtAttribute() {
+        $dates = explode('-', $this->publish_date);
+        return $dates[2] . '-' . $dates[1] . '-' . $dates[0];
+    }
 }

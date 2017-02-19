@@ -1,15 +1,9 @@
 <!-- Section voor promotie video en twitter -->
 	<section class="container-fluid xs-space-inside-sides-xl-none space-inside-sides-xl no-overflow">
 		<div class="row row-centered">
+			@include('pages.partials.page-title', ['pageTitle' => 'Actueel'])
 
-			<div class="col-lg-12 text-center">
-				<div class="space-outside-lg">
-					<h1 class="wow fadeInDown" text-inject>
-						<?php $section->render('title', 4, $sections); ?>
-					</h1>
-				</div>
-			</div>
-			<div class="col-lg-6 space-outside-down-lg">
+			<div class="col-lg-6 ">
 				<div class="image wow fadeInDown">
 					<img class="height-auto" src="<?php $section->render('photo', 4, $sections); ?>" alt="actueel nieuws over mentor4you" />
 				</div>

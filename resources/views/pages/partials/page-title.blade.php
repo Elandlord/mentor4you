@@ -4,6 +4,7 @@
             text-center
             fadeInDown
             wow
+
 ">
-  <h1 > {{ $pageTitle }} </h1>
+  <h1 class="text-color-main" > {{ $pageTitle }} </h1>
 </div>
