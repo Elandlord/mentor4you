@@ -5,7 +5,7 @@
 
 			<div class="col-lg-6 ">
 				<div class="image wow fadeInDown">
-					<img class="height-auto" src="<?php $section->render('photo', 4, $sections); ?>" alt="actueel nieuws over mentor4you" />
+					<img class="height-auto" src="" alt="actueel nieuws over mentor4you" />
 				</div>
 			</div>
 			<div class="col-lg-6 space-outside-down-lg wow fadeInDown" >

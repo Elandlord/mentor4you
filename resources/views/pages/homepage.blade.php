@@ -25,9 +25,9 @@
 									wow
 									fadeInDown
 			">
-				<div class="text-center " text-inject> @include('pages.partials.aanmelden.jongeren', ['section' => $section, 'sections' => $sections]) </div>
-				<div class="text-center " text-inject> @include('pages.partials.aanmelden.mentoren', ['section' => $section, 'sections' => $sections]) </div>
-				<div class="text-center " text-inject> @include('pages.partials.aanmelden.ervaringen', ['section' => $section, 'sections' => $sections]) </div>
+				<div class="text-center " text-inject> @include('pages.partials.aanmelden.jongeren'	) </div>
+				<div class="text-center " text-inject> @include('pages.partials.aanmelden.mentoren') </div>
+				<div class="text-center " text-inject> @include('pages.partials.aanmelden.ervaringen') </div>
 
 				<div class="col-lg-12 col-md-12 hidden-xs hidden-sm hidden-md">
 
@@ -57,7 +57,7 @@
 
 
 	@include('pages.partials.laatste-nieuwsbericht', $laatsteNieuwsbericht)
-	<div text-inject> @include('pages.partials.actueel', ['section' => $section, 'sections' => $sections]) </div>
+	<div text-inject> @include('pages.partials.actueel') </div>
 	@include('pages.partials.partners', $partners)
 
 @stop

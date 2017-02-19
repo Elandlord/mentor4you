@@ -5,34 +5,24 @@
 @stop
 
 @section('content')
-
 	<section class="container-fluid xs-space-inside-sides-xl-none space-inside-sides-xl space-outside-lg no-overflow">
 		<div class="row">
-			
-			<div class="col-lg-12 space-outside-down-lg text-center fadeInDown wow">
+			<div text-inject>
+				@include('pages.partials.page-title', ['pageTitle' => $iterator->title])
 
-				<h1 class="">{{ $data['werkgebied']->title }}</h1>
-
+				<div class="col-lg-8 col-md-6 col-sm-12 col-xs-12 space-outside-down-lg fadeInDown wow">
+					<p class=" font-md">
+						{!! nl2br($iterator->body) !!}
+					</p>
+				</div>
 			</div>
 
-			<div class="col-lg-8 col-md-6 col-sm-12 col-xs-12 space-outside-down-lg fadeInDown wow">
-
-				<p class=" ">
-					{!! nl2br($data['werkgebied']->body) !!}
-				</p>
-
-			</div>
-
-			<div class='col-lg-4 col-md-6 col-sm-12 col-xs-12 space-outside-down-lg fadeInDown wow'>
-
-				<img src='/images/drenthe.jpg' class='img-responsive'/>
-
+			<div class='col-lg-4 col-md-6 col-sm-12 col-xs-12 space-outside-down-lg fadeInDown wow text-center'>
+				<div style="width: 300px; height: 200px;" class="image inline-block">
+					<img src='/images/drenthe.jpg' class='img-responsive'/>
+				</div>
 			</div>
 
 		</div>
-
 	</section>
-
-
-
 @stop

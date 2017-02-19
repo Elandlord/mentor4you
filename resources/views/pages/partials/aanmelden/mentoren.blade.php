@@ -1,22 +1,22 @@
+<?php $iterator->next(); ?>
 <a href="/aanmelden-als-mentor">
 	<div class="col-lg-4">
 		<div class="card type-1">
 			<div class="space-outside-down-md text-center">
 				<div class="image circle circle-lg inline-block">
-					<img class="width-auto" src="
-						<?php $section->render('photo', 2, $sections); ?>"
+					<img class="width-auto" src=""
 						alt="aanmelden als jongere">
 				</div>
 			</div>
 			<div class=" space-outside-sm ">
 				<h3 class="text-color-main">
-					<?php $section->render('title', 2, $sections); ?>
+				{{ $iterator->title }}
 				</h3>
 			</div>
 
 			<div class="space-outside-md inline-block max-width-xl ">
 				<p text-inject>
-					<?php $section->render('body', 2, $sections); ?>
+					{{ $iterator->body }}
 				</p>
 			</div>
 

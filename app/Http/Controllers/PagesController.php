@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+
 use App\News;
 use App\Page;
 use App\Mentor;
 use App\Section;
 use App\Partner;
-use App\Http\Requests;
 use App\TeamMember;
+use App\Http\Requests;
+use App\Classes\Iterator;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -28,26 +30,23 @@ class PagesController extends Controller
         $laatsteNieuwsbericht = News::orderBy('id', 'DESC')->first();
         $partners = Partner::take(4)->get();
         $sections = Section::byPageName('homepage');
-        $section = new Section;
-
+        $iterator = new Iterator($sections);
     	return view('pages.homepage', compact(
             'data',
-            'section',
-            'sections',
             'partners',
             'laatsteNieuwsbericht',
-            'sliders'
+            'sliders',
+            'iterator'
         ));
 	}
 
     public function werkgebied(){
         $sliders = $this->getSliders();
-        $data = [
-            'werkgebied' => Section::where('id', 10)->first(),
-        ];
+        $sections = Section::byPageName('werkgebied');
+        $iterator = new Iterator($sections);
 
         return view('pages.werkgebied', compact(
-            'data',
+            'iterator',
             'sliders'
         ));
     }
@@ -152,13 +151,12 @@ class PagesController extends Controller
             'aanmeldbox' => Section::where('id', 13)->first(),
         ];
         $sections = Section::byPageName('over-ons');
-        $section = new Section;
+        $iterator = new Iterator($sections);
         $sliders = $this->getSliders();
 
 		return view('pages.over-ons', compact(
             'data',
-            'sections',
-            'section',
+            'iterator',
             'sliders'
         ));
 	}
