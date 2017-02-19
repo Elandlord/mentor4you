@@ -7,7 +7,7 @@
 		@foreach($partners as $partner)
 		<div class="col-lg-3 fadeInDown wow text-center">
 			<div class="image rectangular-img text-center">
-				<img class="height-auto inline-block" src="{{ $partner->photos->first()['path'] }}"   />
+				<img class="height-auto inline-block" src="{{ $partner->thumbnail }}"   />
 			</div>
 		</div>
 		@endforeach

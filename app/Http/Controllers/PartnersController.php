@@ -70,7 +70,12 @@ class PartnersController extends Controller
             'partner' => Partner::find($id),
         ];
 
-        return view('cms.pages.partners.edit', compact('data'));
+        $photo = Photo::where([
+            ['model_id', $id],
+            ['type', 'partner']
+        ])->first();
+
+        return view('cms.pages.partners.edit', compact('data', 'photo'));
     }
 
     /**

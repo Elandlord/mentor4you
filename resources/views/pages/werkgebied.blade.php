@@ -18,7 +18,7 @@
 			</div>
 
 			<div class='col-lg-4 col-md-6 col-sm-12 col-xs-12 space-outside-down-lg fadeInDown wow text-center'>
-				<div style="width: 300px; height: 200px;" class="image inline-block">
+				<div style="width: 300px; height: 300px;" class="image inline-block">
 					<img src='/images/drenthe.jpg' class='img-responsive'/>
 				</div>
 			</div>

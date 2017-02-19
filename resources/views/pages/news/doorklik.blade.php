@@ -21,7 +21,7 @@
 
 			<div class="col-lg-5 col-md-12 col-xs-12 col-sm-12">
 				<div class="image lg-rect-xl">
-					<img class="height-auto" src="{{ $data['news']->photos->first()['path'] }}">
+					<img class="height-auto" src="{{ $data['news']->thumbnail }}">
 				</div>
 			</div>
 

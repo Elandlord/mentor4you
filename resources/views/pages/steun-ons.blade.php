@@ -13,27 +13,21 @@ Steun ons
 
 			<div class="col-lg-12 space-outside-down-lg text-center fadeInDown wow">
 
-				<h1>{{ $data['titel']->title }}</h1>
+				<h1>Steun ons</h1>
 
 			</div>
 
 			<div class="col-lg-8 col-xs-12 space-outside-down-lg xs-text-center fadeInDown wow">
 
-				<h3 class="space-outside-down-md ">{{ $data['eerste_kop']->title }}</h3>
+				<h3 class="space-outside-down-md" text-inject>{{ $iterator->title }}</h3>
 
 				<p class="space-outside-down-lg xs-space-inside-right-lg-none space-inside-right-lg">
 					
-					{!! nl2br($data['eerste_kop']->body) !!}
+					{!! nl2br($iterator->body) !!}
 
 				</p>
 
-				<h3 class="space-outside-down-md">{{ $data['tweede_kop']->title }}</h3>
-
-				<p class="text">
-					
-					{!! nl2br($data['tweede_kop']->body) !!}
-				
-				</p>
+				<?php $iterator->next(); ?>
 
 			</div>
 
@@ -53,9 +47,11 @@ Steun ons
 
 							</div>
 
-							<div class="col-lg-10 col-sm-10 col-xs-12 space-outside-sm">
+							<div class="col-lg-10 col-sm-10 col-xs-12 space-outside-sm" text-inject>
 								
-								<p class="text">{{ $data['rekeningnummer']->body }}</p>
+								<p class="text">{{ $iterator->body }}</p>
+
+								<?php $iterator->next(); ?>
 
 							</div>
 
@@ -76,9 +72,11 @@ Steun ons
 
 							</div>
 
-							<div class="col-lg-10 col-sm-10 col-xs-12 space-outside-sm">
+							<div class="col-lg-10 col-sm-10 col-xs-12 space-outside-sm" text-inject>
 								
-								<p class="">{{ $data['tav']->body }}</p>
+								<p class="">{{ $iterator->body }}</p>
+
+								<?php $iterator->next(); ?>
 
 							</div>
 
@@ -87,13 +85,15 @@ Steun ons
 
 					</div>
 			
-					<div class="col-lg-12 space-outside-up-md  space-outside-down-lg xs-text-center">
+					<div class="col-lg-12 space-outside-up-md  space-outside-down-lg xs-text-center" text-inject>
 						
 						<p class="text">
 
-							{{ $data['uitleg']->body }}
+							{{ $iterator->body }}
 
 						</p>
+
+						<?php $iterator->next(); ?>
 						
 					</div>
 

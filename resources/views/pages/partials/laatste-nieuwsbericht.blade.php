@@ -6,7 +6,7 @@
 			<div class="col-lg-12 xs-space-inside-sides-xl-none space-inside-sides-xl xs-space-inside-sides-xs">
 				<div class="col-lg-4 col-md-4 col-xs-12 xs-space-outside-down-xs space-outside-xl xs-text-center sm-text-center ">
 						<div class="image circle circle-xl wow fadeInDown inline-block">
-							<img class="width-auto " src="{{ $laatsteNieuwsbericht->photos->first()['path'] }}" alt="{{ $laatsteNieuwsbericht->title }} ">
+							<img class="width-auto " src="{{ $laatsteNieuwsbericht->square }}" alt="{{ $laatsteNieuwsbericht->title }} ">
 						</div>
 				</div>
 				<!-- Titel, tekst en link bij foto  -->

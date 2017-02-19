@@ -112,6 +112,7 @@
 
               @endif
               <image-uploader route="photo" model_id="{{$news->id}}" type="news" >
+                  <cropper route="cropper" aspectheight="9" aspectwidth="16" > </cropper>
                   <cropper route="cropper" aspectheight="1" aspectwidth="1" > </cropper>
               </image-uploader>
           </div>

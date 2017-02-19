@@ -32,6 +32,7 @@ class PagesController extends Controller
         $partners = Partner::take(4)->get();
         $sections = Section::byPageName('homepage');
         $iterator = new Iterator($sections);
+
     	return view('pages.homepage', compact(
             'data',
             'partners',
@@ -184,11 +185,14 @@ class PagesController extends Controller
             'uitleg' => Section::where('id', 21)->first(),
             'sliders' => $this->getSliders(),
         ];
+
+        $iterator = new Iterator(Section::byPageName('steun-ons'));
         $sliders = $this->getSliders();
 
 		return view('pages.steun-ons', compact(
             'data',
-            'sliders'
+            'sliders',
+            'iterator'
         ));
 	}
 
