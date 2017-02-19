@@ -13,7 +13,7 @@ Contact
 
 			<div class="col-lg-12 space-outside-down-lg fadeInDown wow">
 
-				<h1> {{ $iterator->title }} </h1>
+				<h1 class='text-color-main'> {{ $iterator->title }} </h1>
 
 			</div>
 
@@ -39,9 +39,11 @@ Contact
 
 			</div>
 
+			{{ $iterator->next() }}
+
 			<div class="col-lg-12 space-outside-down-sm fadeInDown wow">
 
-				<p class="text bold font-md">
+				<p class="text bold text-color-main font-md">
 
 					{{ $iterator->title }}
 
@@ -94,6 +96,8 @@ Contact
 		<div class="divider bg-accent"></div>
 
 	</section>
+
+	{{ $iterator->next() }}
 
 	<section class="container-fluid xs-space-inside-sides-sm space-inside-sides-xl space-outside-lg xs-space-outside-down-xs fadeInDown wow">
 
