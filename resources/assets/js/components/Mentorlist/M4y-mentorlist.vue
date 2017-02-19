@@ -1,11 +1,12 @@
 <template>
-<div  class="row row-centered">
-    <m4y-mentor  v-for="mentor in mentoren"
-        :mentor="mentor"
-
-    > </m4y-mentor>
+<div>
+    <div v-if="mentoren != null" v-for="mentor in mentoren" class="col-lg-3 col-md-4">
+        <div class="row row-centered">
+            <mentor :mentor="mentor" > </mentor>
+        </div>
+    </div>
+    <mentor-popup> </mentor-popup>
 </div>
-
 </template>
 
 <script>
@@ -21,8 +22,8 @@
 
             }
         },
-
         created() {
+            console.log(this.mentoren);
         },
     }
 </script>

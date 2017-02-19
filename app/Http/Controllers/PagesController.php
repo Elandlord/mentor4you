@@ -164,7 +164,7 @@ class PagesController extends Controller
         $mentoren = Mentor::with('photos')->get();
         $sliders = $this->getSliders();
 
-        return view('pages.resultaten', compact(
+        return view('pages.ervaringen', compact(
             'mentoren',
             'sliders'
         ));

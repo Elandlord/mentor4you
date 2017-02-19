@@ -18,7 +18,7 @@
           " href="">Meer lezen</a>
         </div>
 
-        <img slot='background' class="background" src="images/resultaten4.jpeg">
+        <img slot='background' class="background" src="/images/resultaten4.jpeg">
       </slide>
       @endforeach
     </image-slider>

@@ -40,55 +40,36 @@
 
 				</div>
 
-			@if ($errors->has('email'))
-			<div class="col-lg-4 col-xs-12 space-outside-sm">
-
-                    <span>
-
-                        <p class='text-color-light' >Dit emailadres is al in gebruik!</p>
-
-                    </span>
-
-			</div>
-			@endif
-
+				@if ($errors->has('email'))
+					<div class="col-lg-4 col-xs-12 space-outside-sm">
+		        <span>
+		            <p class='text-color-light' >Dit emailadres is al in gebruik!</p>
+		        </span>
+					</div>
+				@endif
 			</form>
-		</div>
 
+		</div>
 	</div>
 
 	<div class="container-fluid xs-space-inside-sides-md space-inside-sides-xl bg-main no-overflow">
-
 		<div class="row space-outside-lg">
 
 			<div class="col-lg-3 col-sm-6 col-xs-12 xs-space-outside-down-md  space-inside-right-lg">
-
-				<p class=" space-outside-xs text-color-light block"> info@mentor4you.nl </p>
-
-				<p class="space-outside-down-xs text-color-light block"> 06-24967211 </p>
-
-				<p class="space-outside-down-xs space-inside-right-md text-color-light left"> Nieuwe Rijksweg  </p>
-
-				<p class=" space-outside-down-xs text-color-light left"> 37 </p>
-
-				<p class=" space-outside-down-xs text-color-light clear-left space-inside-right-md left"> Vries  </p>
-
-				<p class=" space-outside-down-xs text-color-light left"> 9481 AP </p>
-
+				<p class=" space-outside-xs text-color-light block font-md"> info@mentor4you.nl </p>
+				<p class="space-outside-down-xs text-color-light block font-md"> 06-24967211 </p>
+				<p class="space-outside-down-xs space-inside-right-md text-color-light left font-md"> Nieuwe Rijksweg  </p>
+				<p class=" space-outside-down-xs text-color-light left font-md"> 37 </p>
+				<p class=" space-outside-down-xs text-color-light clear-left space-inside-right-md left font-md"> Vries  </p>
+				<p class=" space-outside-down-xs text-color-light left font-md"> 9481 AP </p>
 			</div>
 
 			<div class="col-lg-4 col-sm-6 col-xs-12 ">
-
-				<p class="space-outside-xs text-color-light block"> Algemene voorwaarden</p>
-
-				<p class="space-outside-xs text-color-light block"> <a class="text-color-light" href='/aanmelden-als-mentor'>Mentor worden</a> </p>
-
-				<p class="space-outside-xs block"> <a class="text-color-light" href='/aanmelden-als-jongere'>Aanmelden als jongere</a></p>
-
+				<p class="space-outside-xs text-color-light block font-md"> Algemene voorwaarden</p>
+				<p class="space-outside-xs text-color-light block font-md"> <a class="text-color-light" href='/aanmelden-als-mentor'>Mentor worden</a> </p>
+				<p class="space-outside-xs block"> <a class="text-color-light font-md" href='/aanmelden-als-jongere'>Aanmelden als jongere</a></p>
 			</div>
 
 		</div>
-
 	</div>
-
 </footer>
