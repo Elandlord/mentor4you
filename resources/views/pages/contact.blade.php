@@ -11,7 +11,7 @@ Contact
 
 		<div class="row">
 
-			<div class="col-lg-12 space-outside-down-lg fadeInDown wow">
+			<div class="col-lg-12 space-outside-down-lg fadeInDown wow" text-inject>
 
 				<h1 class='text-color-main'> {{ $iterator->title }} </h1>
 
@@ -41,7 +41,7 @@ Contact
 
 			{{ $iterator->next() }}
 
-			<div class="col-lg-12 space-outside-down-sm fadeInDown wow">
+			<div class="col-lg-12 space-outside-down-sm fadeInDown wow" text-inject>
 
 				<p class="text bold text-color-main font-md">
 
@@ -99,7 +99,7 @@ Contact
 
 	{{ $iterator->next() }}
 
-	<section class="container-fluid xs-space-inside-sides-sm space-inside-sides-xl space-outside-lg xs-space-outside-down-xs fadeInDown wow">
+	<section class="container-fluid xs-space-inside-sides-sm space-inside-sides-xl space-outside-lg xs-space-outside-down-xs fadeInDown wow" text-inject>
 
 
 		<div class="row">
