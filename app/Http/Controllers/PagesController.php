@@ -162,10 +162,10 @@ class PagesController extends Controller
     {
         $mentoren = Mentor::all();
         $jongeren = Youth::all();
+        $jongeren->each(function($item) use ($mentoren) {
+            $mentoren->push($item);
+        });
 
-        $merged = $mentoren->merge($jongeren);
-        $mentoren = $merged->all();
-        // dd($merged->all());
         $sliders = $this->getSliders();
 
         return view('pages.ervaringen', compact(

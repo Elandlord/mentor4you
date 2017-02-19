@@ -3,7 +3,10 @@
 <div>
     <div @click="displayErvaring()" class="col-lg-12 col-centered space-outside-down-md pointer min-width-lg max-width-lg" >
 
-        <div class="bg-secondary text-color-light text-center text-light font-md space-inside-xs">{{ mentor.first_name }} {{ mentor.last_name }}</div>
+        <div v-if="mentor.type == 'youth'" class="bg-main text-color-light text-center text-light font-md space-inside-xs">{{ mentor.first_name }} {{ mentor.last_name }}</div>
+
+
+        <div v-if="mentor.type == 'mentor'" class="bg-secondary text-color-light text-center text-light font-md space-inside-xs">{{ mentor.first_name }} {{ mentor.last_name }}</div>
 
         <div style="height: 150px;"  class="image">
             <img class="width: auto;" :src="mentor.thumbnail">

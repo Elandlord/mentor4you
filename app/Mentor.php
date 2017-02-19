@@ -16,7 +16,14 @@ class Mentor extends Model
 
     protected $appends = [
       'thumbnail',
+      'type',
     ];
+
+
+    public function getTypeAttribute()
+    {
+        return 'mentor';
+    }
 
     public function photo() {
         return Photo::where([

@@ -17,7 +17,13 @@ class Youth extends Model
 
     protected $appends = [
       'thumbnail',
+      'type',
     ];
+
+    public function getTypeAttribute()
+    {
+        return 'youth';
+    }
 
     public function photo() {
         return Photo::where([
