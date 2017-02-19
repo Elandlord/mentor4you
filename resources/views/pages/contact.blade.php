@@ -56,8 +56,6 @@ Contact
 		<div class="col-lg-12 space-outside-sm fadeInDown wow">
 
 			<div class="row">
-				
-
 				<div class="col-lg-5 clear-left"> 
 	    			<input type='text' name='naam' placeholder='Uw volledige naam' class='input border border-accent space-outside-xs' required />
 	    		</div>

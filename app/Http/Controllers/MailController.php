@@ -25,6 +25,8 @@ class MailController extends Controller
 	                ->subject('Contactbericht van ' . $name);
 	        });
 
+
+
       $beautymail = app()->make(\Snowfire\Beautymail\Beautymail::class);
           $beautymail->send('emails.bevestiging', [], function($message) use ($name, $email)
           {
