@@ -116,10 +116,13 @@ class PagesController extends Controller
             'sliders' => $this->getSliders(),
         ];
         $sliders = $this->getSliders();
+        $iterator = new Iterator(Section::byPageName('mentor-aanmelden'));
 
 		return view('pages.mentor-aanmelden', compact(
             'data',
-            'sliders'
+            'sliders',
+            'iterator',
+            'municipalities'
         ));
 
 	}
