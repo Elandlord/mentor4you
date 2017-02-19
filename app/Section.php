@@ -72,6 +72,28 @@ class Section extends Model
     }
 
 
+    public function getSquareAttribute()
+    {
+
+        if($this->photo() != null){
+            return "/images/section/{$this->id}/1x1/{$this->photo()->filename}";
+        }else{
+            return "https://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif";
+        }
+    }
+
+
+    public function getBannerAttribute()
+    {
+
+        if($this->photo() != null){
+            return "/images/section/{$this->id}/10x4/{$this->photo()->filename}";
+        }else{
+            return "https://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif";
+        }
+    }
+
+
     /**
      * Description: create an array of sections where the order is based on their chosen pagePosition ( this is set in the cms )
      * @param type $sections

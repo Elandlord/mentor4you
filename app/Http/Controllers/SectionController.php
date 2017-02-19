@@ -82,17 +82,19 @@ class SectionController extends Controller
             $sectionSlots->prepend($slot);
         }
 
-        $data = [
-            'section' => $section,
-            'page_positions' => $sectionSlots->pluck('position', 'position'),
-        ];
+        $section = $section;
+        $page_positions = $sectionSlots->pluck('position', 'position');
 
         $photo = Photo::where([
             ['model_id', $id],
             ['type', 'section']
         ])->first();
 
-        return view('cms.core.sections.edit', compact('data', 'photo'));
+        return view('cms.core.sections.edit', compact(
+            'section',
+            'photo',
+            'page_positions'
+        ));
     }
 
     /**

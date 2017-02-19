@@ -33,7 +33,7 @@
 
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
-            <form method="POST" action="/cms/section/{{$data['section']->id}}" >
+            <form method="POST" action="/cms/section/{{$section->id}}" >
                 {{csrf_field()}}
                 {{ method_field('PUT') }}
                 <table class="table table-hover">
@@ -41,14 +41,23 @@
                       <tr>
                          <td>
                             <label>Titel</label>
-                            <input type='text' class='form-control' value="{{ $data['section']->title }}" name='title'/>
+                            <input type='text' class='form-control' value="{{ $section->title }}" name='title'/>
                          </td>
                       </tr>
                       <tr>
                          <td>
                             <label>Body</label>
-                            <input type='text' class='form-control' value="{{ $data['section']->body }}" name='body'/>
+                            <input type='text' class='form-control' value="{{ $section->body }}" name='body'/>
                          </td>
+                      </tr>
+                      <tr>
+                        <td>
+                        @include('partials.select', [
+                          'name' => 'page_position',
+                          'options' => $page_positions,
+                          'selected' => $section->page_position
+                        ])
+                        </td>
                       </tr>
                       <tr>
                         <td>
@@ -75,8 +84,17 @@
               </image-display>
 
               @endif
-              <image-uploader route="photo" model_id="{{$data['section']->id}}" type="section" >
-                  <cropper route="cropper" aspectheight="9" aspectwidth="16" > </cropper>
+              <image-uploader route="photo" model_id="{{$section->id}}" type="section" >
+                  @if($section->page->name == 'homepage')
+                    <cropper route="cropper" aspectheight="1" aspectwidth="1" > </cropper>
+                  @endif
+                  @if($section->page->name == 'slider')
+                    <cropper route="cropper" aspectheight="4" aspectwidth="10" > </cropper>
+                  @endif
+                  <?php if($section->page->name != 'homepage' && $section->page->name != 'slider') {
+                    echo '<cropper route="cropper" aspectheight="9" aspectwidth="16" > </cropper>';
+                  } ?>
+
               </image-uploader>
         </div>
     </section>
