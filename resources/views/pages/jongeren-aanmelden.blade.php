@@ -29,7 +29,7 @@ Aanmelden als jongere
 			</div>
 
 			<div class="col-lg-7 space-inside-sides-md">
-			<a href='folder-mentor' class="inline-block left space-inside-xs space-inside-sides-sm font-sm text-uppercase bg-main text-color-light light space-outside-down-sm">DOWNLOAD DEZE INFORMATIE ALS PDF</a>
+			<a href='folder-jongere' class="inline-block left space-inside-xs space-inside-sides-sm font-sm text-uppercase bg-main text-color-light light space-outside-down-sm">DOWNLOAD DEZE INFORMATIE ALS PDF</a>
 				<p class="text space-outside-down-lg font-md " >
 					{!! nl2br($iterator->body) !!}
 				</p>
