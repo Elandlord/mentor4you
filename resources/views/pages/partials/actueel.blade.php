@@ -1,11 +1,13 @@
 <!-- Section voor promotie video en twitter -->
+	<?php $iterator->next(); ?>
+
 	<section class="container-fluid xs-space-inside-sides-xl-none space-inside-sides-xl no-overflow">
 		<div class="row row-centered">
 			@include('pages.partials.page-title', ['pageTitle' => 'Actueel'])
 
 			<div class="col-lg-6 ">
-				<div class="image wow fadeInDown">
-					<img class="height-auto" src="" alt="actueel nieuws over mentor4you" />
+				<div class="image wow fadeInDown" style='width:600px; height: 600px;'>
+					<img class="width-auto" src="{{ $iterator->square }}" alt="actueel nieuws over mentor4you" />
 				</div>
 			</div>
 			<div class="col-lg-6 space-outside-down-lg wow fadeInDown" >
