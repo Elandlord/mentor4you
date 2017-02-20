@@ -10,7 +10,7 @@
           <div class="row">
             <div class="col-lg-5 space-outside-up-sm">
               <label class='font-md text-light xs-text-center'>Voornaam</label>
-              <input type='text' name='voornaam' placeholder='Voornaam' class='space-inside-xs font-md space-inside-sides-sm
+              <input type='text' name='voornaam' placeholder='Voornaam' class='space-inside-xs space-inside-sides-sm
           font-sm xs-text-center height-auto border border-accent space-outside-xs' required />
             </div>
             <div class="col-lg-5 clear-left space-outside-up-sm">
