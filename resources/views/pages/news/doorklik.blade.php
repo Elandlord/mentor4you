@@ -15,7 +15,7 @@
 
 			<div class="col-lg-7 xs-space-inside-sides-md space-outside-down-lg space-inside-right-lg">
 				<p class="font-md">
-					{!! htmlentities(nl2br($data['news']->body)) !!}
+					{!! nl2br($data['news']->body) !!}
 				</p>
 			</div>
 
