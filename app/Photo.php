@@ -103,7 +103,7 @@ class Photo extends Model
         // save the image
     // checks if the directory exists  else makes that directory
         Self::checkDirectory($photo->dir());
-        Image::make($file)->save($photo->dir() . $photo->filename);
+        Image::make($file)->encode('png', 35)->save($photo->dir() . $photo->filename);
 		return $photo;
 	}
 

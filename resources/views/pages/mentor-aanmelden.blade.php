@@ -5,7 +5,7 @@ Aanmelden als mentor
 @stop
 
 @section('content')
-	
+
 <section class="container-fluid xs-space-inside-sides-sm space-inside-sides-xl no-overflow ">
 		<div class="row fadeInDown wow">
 			<div class="col-lg-12 space-outside-lg xs-text-center " text-inject>
@@ -34,7 +34,7 @@ Aanmelden als mentor
 				<p class="text space-outside-down-lg font-md " >
 					{!! nl2br($iterator->body) !!}
 				</p>
-				<a href="/over-ons" class="space-inside-xs space-inside-sides-sm font-sm bg-secondary text-uppercase text-color-light light inline-block space-outside-down-lg "> Meer over mentor4you</a>
+				<a href="/mentor4you" class="space-inside-xs space-inside-sides-sm font-sm bg-secondary text-uppercase text-color-light light inline-block space-outside-down-lg "> Meer over mentor4you</a>
 			</div>
 		</div>
 		<div class="divider bg-accent"></div>
@@ -43,9 +43,9 @@ Aanmelden als mentor
 
 	<section class="container-fluid space-outside-lg xs-space-inside-sides-sm space-inside-sides-xl fadeInDown wow">
 
-			
+
 		<div class="row">
-			
+
 			<div class="col-lg-12 col-xs-12 xs-space-inside-sides-md space-outside-down-lg xs-text-center" text-inject>
 				<h1 class="text-color-main"> {{ $iterator->title }}	 </h1>
 			</div>

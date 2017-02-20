@@ -33,7 +33,7 @@ Aanmelden als jongere
 				<p class="text space-outside-down-lg font-md " >
 					{!! nl2br($iterator->body) !!}
 				</p>
-				<a href="/over-ons" class="space-inside-xs space-inside-sides-sm font-sm bg-secondary text-uppercase text-color-light light inline-block space-outside-down-lg "> Meer over mentor4you</a>
+				<a href="/mentor4you" class="space-inside-xs space-inside-sides-sm font-sm bg-secondary text-uppercase text-color-light light inline-block space-outside-down-lg "> Meer over mentor4you</a>
 			</div>
 		</div>
 		<div class="divider bg-accent"></div>
