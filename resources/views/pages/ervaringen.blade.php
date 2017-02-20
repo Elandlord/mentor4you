@@ -6,7 +6,7 @@
 
 @section('content')
 
-	<section class="container-fluid space-inside-sides-xl ">
+	<section class="container-fluid space-inside-sides-xl xs-space-inside-sides-xl-none">
 		<div class="row">
 			@include('pages.partials.page-title', ['pageTitle' => 'Ervaringen'])
 
