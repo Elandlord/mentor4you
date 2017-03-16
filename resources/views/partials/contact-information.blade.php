@@ -4,6 +4,8 @@
 		<div class="col-lg-6 col-md-6 col-sm-6 -col-xs-12 space-inside-sm xs-clear-float">
 			<div class="row space-inside-sides-md">
 				<a class='inline xs-space-inside-left-xs space-inside-right-xs' href='https://www.facebook.com/Mentor4You-Drenthe-599475793411930/'><img src='images/facebook.png' style='max-width:30px;' /></a></span>
+				<a class='inline xs-space-inside-left-xs space-inside-right-xs' href='https://twitter.com/m4ydrenthe'><img src='images/twitter.png' style='max-width:30px;' /></a></span>
+
 				<a class='inline xs-space-inside-left-xs'' href='https://twitter.com/m4ydrenthe'><img src='images/twitter.png' style='max-width:30px;' /></a></span>
 			</div>
 		</div>
