@@ -58,10 +58,10 @@
 			<div class="col-lg-3 col-sm-6 col-xs-12 xs-space-outside-down-md  space-inside-right-lg">
 				<p class=" space-outside-xs text-color-light block font-md"> info@mentor4you.nl </p>
 				<p class="space-outside-down-xs text-color-light block font-md"> 06-24967211 </p>
-				<p class="space-outside-down-xs space-inside-right-md text-color-light left font-md"> Nieuwe Rijksweg  </p>
-				<p class=" space-outside-down-xs text-color-light left font-md"> 37 </p>
-				<p class=" space-outside-down-xs text-color-light clear-left space-inside-right-md left font-md"> Vries  </p>
-				<p class=" space-outside-down-xs text-color-light left font-md"> 9481 AP </p>
+				<p class="space-outside-down-xs space-inside-right-md text-color-light left font-md"> Nieuwe Rijksweg 37 </p>
+				<p class=" space-outside-down-xs text-color-light left font-md">  </p>
+				<p class=" space-outside-down-xs text-color-light clear-left space-inside-right-md left font-md"> 9481 AP te Vries  </p>
+				<p class=" space-outside-down-xs text-color-light left font-md">  </p>
 			</div>
 
 			<div class="col-lg-4 col-sm-6 col-xs-12 ">

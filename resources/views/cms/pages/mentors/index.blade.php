@@ -40,7 +40,7 @@
                       <th></th>
                       <th>#<span class='ion-arrow-down-b table-head'></span></th>
                       <th>Voornaam</th>
-                      <th>Achternaam</th>
+                      <th>Quote</th>
                       <th>Beschrijving</th>
                       <th>Geboortedatum</th>
                     </tr>

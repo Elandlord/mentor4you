@@ -46,7 +46,7 @@
                         </tr>
                         <tr>
                            <td>
-                                <label>Achternaam</label>
+                                <label>Quote</label>
                                 <input type='text' class='form-control' name='last_name'/>
                            </td>
                         </tr>
