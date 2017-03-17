@@ -15,7 +15,7 @@
               space-outside-up-sm
               font-sm
               text-color-light
-          " href="">Meer lezen</a>
+          " href="/mentor4you">Meer lezen</a>
         </div>
 
         <img slot='background' class="background" src="{{ $slider->banner }}">
