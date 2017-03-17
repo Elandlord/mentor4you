@@ -8,7 +8,7 @@
     space-inside-lg
   ">
     <div class="col-lg-12">
-      <h1 class="text-color-light">{{ mentor.first_name  }} {{ mentor.last_name }}</h1>
+      <h1 class="text-color-light">{{ mentor.first_name  }}</h1>
     </div>
 
     <div class="col-lg-7 col-md-7">
