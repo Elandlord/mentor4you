@@ -70,3 +70,5 @@ Route::post('/mail/contact-mail', 'MailController@contactMail');
 Route::post('/mail/jongere-mail', 'MailController@jongereMail');
 Route::post('/mail/mentor-mail', 'MailController@mentorMail');
 Route::post('/newsletters/subscribe', 'NewslettersWebsiteController@addEmail');
+
+Route::get('/factuur', 'PagesController@factuur');

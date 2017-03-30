@@ -25,6 +25,11 @@ class PagesController extends Controller
 
     }
 
+    public function factuur()
+    {
+        return view('pages.factuur');
+    }
+
 
 	public function indexHome()
 	{
