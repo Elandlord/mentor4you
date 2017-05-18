@@ -7,7 +7,7 @@
 				{{ csrf_field() }}
 				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 xs-space-outside-up-sm space-outside-sm">
 
-					<div class="col-lg-6 col-md-6 col-sm-12 reset-padding">
+					<!-- <div class="col-lg-6 col-md-6 col-sm-12 reset-padding">
 						<input type="email" class="
 							space-inside-sides-sm
 							font-sm
@@ -37,7 +37,7 @@
 							bg-main light
 							" href="#nieuwsbrief">Abbonneer op de nieuwsbrief</button>
 					</div>
-
+ -->
 				</div>
 
 				@if ($errors->has('email'))
