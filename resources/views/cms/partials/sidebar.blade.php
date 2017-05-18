@@ -29,6 +29,9 @@
       <!-- /.search form -->
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
+
+        <?php if(Auth::user()->admin == 1){?>
+
         <li class="header">CRM Beheer</li>
         <!-- CUSTOM NAVIGATION GOES BETWEEN THIS AND -->
 
@@ -47,7 +50,19 @@
         </li>
         <!-- end of section -->
 
-
+         <!-- section  -->
+        <li class="treeview">
+          <a href="#"><i class="ion ion-android-person-add"></i> <span>Gebruikers</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+              <li><a href="{{ URL::to("cms/user") }}"><i class="fa fa-circle-o text-orange"></i>Overzicht </a></li>
+              <li><a href="{{ URL::to("cms/user/create") }}"><i class="fa fa-circle-o text-orange"></i> Toevoegen </a></li>
+          </ul>
+        </li>
+        <!-- end of section -->
 
 
         <!-- ////////////  THIS  ////////////////////// -->
@@ -140,9 +155,24 @@
         </li>
         <!-- end of section -->
 
+        <?php }else{?>
 
+         <li class="header">Bestanden</li>
 
+         <!-- section  -->
+        <li class="treeview">
+          <a href="#"><i class="ion ion-ios-folder-outline"></i> <span>Bestanden</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ URL::to("cms/files") }}"><i class="fa fa-circle-o text-orange"></i> Overzicht </a></li>
+          </ul>
+        </li>
+        <!-- end of section -->
 
+        <?php }?>
 
       </ul>
       <!-- /.sidebar-menu -->
