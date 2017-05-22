@@ -64,13 +64,15 @@
                     </td>
                     @if($object->admin == 1)
                     <td>
-                      <form method='POST' action=''>
+                      <form method='POST' action='deleteAdmin'>
+                      {{ csrf_field() }}
                           <button class="btn btn-danger"> <i class="ion ion-minus-circled"> </i></button>
                       </form>
                     </td>
                     @else
                     <td>
                       <form method='POST' action=''>
+                      {{ csrf_field() }}
                           <button style="padding-left:15px;padding-right:15px;" class="btn btn-warning"> <i class="ion ion-key"> </i></button>
                       </form>
                     </td>

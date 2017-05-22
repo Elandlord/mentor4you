@@ -3,6 +3,8 @@ require('./admin-lte'); // pulls in the admin-lte2 admin dashboard
 require('./Core/Classes'); // Pulls in some helper classes
 require('owl-carousel-2/owl.carousel');
 
+Vue.component('file-uploader', require('./components/FileUploader.vue'))
+
 Vue.component('image-display', require('./components/ImageDisplay.vue'));
 Vue.component('image-uploader', require('./components/ImageUploader.vue'));
 Vue.component('cropper', require('./components/Cropper.vue'));

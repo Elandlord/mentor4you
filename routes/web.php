@@ -38,6 +38,7 @@ Route::group(['prefix' => 'cms'],  function () {
         Route::resource('teammember', 'TeamMembersController');
         Route::resource('slider', 'ImageSliderController');
         Route::resource('user', 'UserController');
+        Route::resource('maps', 'MapController');
     });
 });
 
