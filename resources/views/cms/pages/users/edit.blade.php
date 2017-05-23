@@ -3,12 +3,12 @@
 @section('content')
 <div id="app">
     <section class="content-header">
-      <h1> Pagina {{$page->name }} <small>U bent deze pagina aan het aanpassen.</small> </h1>
+      <h1> User {{$user->name }} <small>U bent deze user aan het aanpassen.</small> </h1>
 
       <!--  breadcrumbs -->
       <ol class="breadcrumb">
         <li><a href="{{ URL::to("cms/") }}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Pagina {{ $page->name }}</a></li>
+        <li><a href="#">User: {{ $user->name }}</a></li>
       </ol>
 
     </section>
@@ -19,7 +19,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Secties</h3>
+              <h3 class="box-title">Gegevens</h3>
 
               <div class="box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
@@ -29,112 +29,32 @@
 
             <!-- /.box-header -->
           <div class="box-body table-responsive no-padding">
-            <table class="table table-hover">
-              <tbody>
-
-                @foreach($page->sections as $section)
-                  <tr>
-                    <td>
-                      @include('cms.core.partials.delete_button', [
-                        'type' => 'section',
-                        'id' => $section->id
-                      ])
-                    </td>
-                    <td>
-                      @include('cms.core.partials.edit_button', [
-                        'type' => 'section',
-                        'id' => $section->id
-                      ])
-                    </td>
-                    <td>
-                      {{$section->title}}
-                    </td>
-                    <td>
-                      {{$section->body}}
-                    </td>
-
-                  </tr>
-                @endforeach
-
-
-                @if($page->sections->isEmpty())
-                <tr>
-                  <td><strong>Er zijn nog geen secties toegevoegd.</strong></td>
-                </tr>
-                @endif
-              </tbody>
-            </table>
-          </div>
-            <!-- /.box-body -->
-        </div>
-          <!-- /.box -->
-      </div>
-
-    </div>
-  </section>
-
-<!--  adding sections -->
-<section class="content">
-      <div class="row">
-
-        <div class="col-xs-12">
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Secties toevoegen</h3>
-
-              <div class="box-tools">
-                <div class="input-group input-group-sm" style="width: 150px;">
-
-                </div>
-              </div>
-            </div>
-
-            <!-- /.box-header -->
-          <div class="box-body table-responsive no-padding">
-            <form method="POST" action="{{ URL::to('cms/section') }}">
-              {{csrf_field()}}
-              <table class="table table-hover">
+             <form method="POST" action="/cms/user/{{$user->id}}" >
+                {{csrf_field()}}
+                {{ method_field('PUT') }}
+              <table class="table table-responsive">
                 <tbody>
                   <tr>
-                    <td>
-                      <!-- title -->
-                      <div class="form-group">
-                        <label>Titel</label>
-                        <input type="text" id="titel" class="form-control" name="title">
-                      </div>
-                    </td>
+                     <td>
+                          <label>Naam</label>
+                          <input type='text' value="{{ $user->name }}" class='form-control' name='name'/>
+                     </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <label>Email</label>
+                          <input type='text' value="{{ $user->email }}" class='form-control' name='email'/>
+                     </td>
                   </tr>
                   <tr>
                     <td>
-                    <!-- description -->
-                      <div class="form-group">
-                        <label>De tekst die op de website wordt weergegeven.</label>
-                        <textarea name="body" id="body" class="form-control"></textarea>
-                      </div>
+                        <div class="form-group">
+                          <button class="btn btn-success" type="submit" >Aanpassen</button>
+                        </div>
                     </td>
-                  </tr>
-                  <!-- page position -->
-                  <tr>
-                    <td>
-                      <div class="form-group">
-                        <label>Positie op de pagina</label>
-                        <select name="page_position" class="form-control">
-                          @foreach($page_positions as $value => $name )
-                            <option value="{{ $value }}"> {{ $name }} </option>
-                          @endforeach
-                        </select>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <input type="hidden" id="page_id" value="{{$page->id}}" class="form-control" name="page_id">
-                      <button class="btn btn-success" type="submit">Toevoegen</button>
-                    </td>
-                  </tr>
+                    </tr>
                 </tbody>
               </table>
-            </form>
           </div>
             <!-- /.box-body -->
         </div>
@@ -142,10 +62,7 @@
       </div>
 
     </div>
-
   </section>
-
-
 </div>
 @stop
 @section('scripts')

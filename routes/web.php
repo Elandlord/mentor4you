@@ -38,7 +38,12 @@ Route::group(['prefix' => 'cms'],  function () {
         Route::resource('teammember', 'TeamMembersController');
         Route::resource('slider', 'ImageSliderController');
         Route::resource('user', 'UserController');
+        Route::post('deleteAdmin/{id}', 'AdminController@destroy');
+        Route::post('makeAdmin/{id}', 'AdminController@update');
+
         Route::resource('maps', 'MapController');
+        Route::get('mappen/overzicht', 'MapController@overzicht');
+        Route::get('mappen/{id}/edit', 'MapController@mapEdit');
     });
 });
 

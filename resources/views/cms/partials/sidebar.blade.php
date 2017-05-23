@@ -74,6 +74,7 @@
           <ul class="treeview-menu">
             <li><a href="{{ URL::to("cms/maps") }}"><i class="fa fa-circle-o text-orange"></i> Overzicht </a></li>
             <li><a href="{{ URL::to("cms/maps/create") }}"><i class="fa fa-circle-o text-orange"></i> Map toevoegen </a></li>
+            <li><a href="{{ URL::to("cms/mappen/overzicht") }}"><i class="fa fa-circle-o text-orange"></i> Map bewerken </a></li>
           </ul>
         </li>
         <!-- end of section -->

@@ -31,7 +31,7 @@
             </div>
 
             <div class='col-lg-12' style='margin-top: 10px; margin-bottom: 10px;'>
-              <a href='/cms/maps' class='btn btn-success'>Ga terug</a>
+              <a href='{{ redirect()->back()->getTargetUrl() }}' class='btn btn-success'>Ga terug</a>
             </div>
             <!-- /.box-header -->
             <!-- Check if there are children in currentMap, if there are no children, no div-->
@@ -74,13 +74,15 @@
             <!-- /.box-body -->
         </div>
 
-        <div id="app">
+        <?php if(Auth::user()->admin == 1){?>
+          <div id="app">
 
-          <file-uploader>
+            <file-uploader>
 
-          </file-uploader>
+            </file-uploader>
 
-        </div>
+          </div>
+        <?php } ?>
           <!-- /.box -->
       </div>
 

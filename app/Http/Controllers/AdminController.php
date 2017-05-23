@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 
-class UserController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-
-
-        return view('cms.pages.users.index', compact('users'));
+        //
     }
 
     /**
@@ -27,7 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('cms.pages.users.create');
+        //
     }
 
     /**
@@ -38,16 +35,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-
-        $user = new User;
-
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = bcrypt($request->password);
-
-        $user->save();
-        
-        return redirect('cms/user');
+        //
     }
 
     /**
@@ -69,9 +57,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
-
-        return view('cms.pages.users.edit', compact('user'));
+        //
     }
 
     /**
@@ -84,10 +70,10 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::find($id);
+        $user->admin = 1;
+        $user->update();
 
-        $user->update($request->all());
-    
-        return redirect('cms/user');
+        return redirect()->back();
     }
 
     /**
@@ -99,8 +85,9 @@ class UserController extends Controller
     public function destroy($id)
     {
         $user = User::find($id);
-        $user->delete();
+        $user->admin = 0;
+        $user->update();
 
-        return redirect('cms/user');
+        return redirect()->back();
     }
 }

@@ -3,12 +3,12 @@
 @section('content')
 <div id="app">
     <section class="content-header">
-      <h1> Example's <small>Example description</small> </h1>
+      <h1> User <small>voeg gebruiker toe</small> </h1>
 
       <!--  breadcrumbs -->
       <ol class="breadcrumb">
         <li><a href="{{ URL::to("cms/") }}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Example</a></li>
+        <li><a href="#">User toevoegen</a></li>
       </ol>
 
     </section>
@@ -18,7 +18,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Example</h3>
+              <h3 class="box-title">Gegevens invoeren</h3>
 
               <div class="box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
@@ -29,15 +29,36 @@
 
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
+            <form method="POST" action="{{ URL::to('cms/user') }}" >
+              {{csrf_field()}}
               <table class="table table-hover">
                 <tbody>
                   <tr>
                     <td>
-                      <form method="POST" action="{{ URL::to('cms/page') }}" >
-                        {{csrf_field()}}
-                        <div class="form-group">
-                          <button class="btn btn-success" type="submit" >Haal pagina's op</button>
-                        </div>
+                      
+                        <tr>
+                           <td>
+                                <label>Naam</label>
+                                <input type='text' class='form-control' name='name'/>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>
+                                <label>Email</label>
+                                <input type='text' class='form-control' name='email'/>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>
+                                <label>Wachtwoord</label>
+                                <input type='password' class='form-control' name='password'/>
+                           </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <button class="btn btn-success" type="submit" >Toevoegen</button>
+                          </td>
+                        </tr>
                       </form>
                     </td>
                   </tr>

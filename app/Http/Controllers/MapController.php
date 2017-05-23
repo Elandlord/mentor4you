@@ -8,6 +8,22 @@ use App\File;
 
 class MapController extends Controller
 {
+    public function overzicht()
+    {
+        $maps = Map::all();
+
+        return view('cms.pages.maps.overzicht', compact('maps'));
+    }
+
+    public function mapEdit($id)
+    {
+        $maps = Map::all();
+
+        $currentMap = Map::find($id);
+
+        return view('cms.pages.maps.map_aanpassen', compact('currentMap', 'maps'));
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -92,7 +108,19 @@ class MapController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $name = $request->input('name');
+        $parent = $request->input('parent');
+
+        if($parent == 'null'){
+            $parent = null;
+        }
+
+        $map = Map::find($id);
+        $map->name = $name;
+        $map->parent_id = $parent;
+        $map->save();
+
+        return redirect('cms/mappen/overzicht');
     }
 
     /**

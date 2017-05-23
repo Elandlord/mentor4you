@@ -3,12 +3,12 @@
 @section('content')
 <div id="app">
     <section class="content-header">
-      <h1> Partner aanpassen<small></small> </h1>
+      <h1> Map aanpassen<small></small> </h1>
 
       <!--  breadcrumbs -->
       <ol class="breadcrumb">
         <li><a href="{{ URL::to("cms/") }}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Partner aanpassen</a></li>
+        <li><a href="#">Map aanpassen</a></li>
       </ol>
 
     </section>
@@ -33,7 +33,7 @@
 
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
-              <form method="POST" action="/cms/partner/{{$data['partner']->id}}" >
+              <form method="POST" action="/cms/maps/{{$currentMap->id}}" >
                 {{csrf_field()}}
                 {{ method_field('PUT') }}
                   <table class="table table-responsive">
@@ -41,30 +41,33 @@
                       <tr>
                          <td>
                               <label>Naam</label>
-                              <input type='text' value="{{ $data['partner']->name }}" class='form-control' name='name'/>
+                              <input type='text' value="{{ $currentMap->name }}" class='form-control' name='name'/>
                          </td>
                       </tr>
-                      <tr>
-                         <td> 
-                              <label>Beschrijving</label>
-                              <textarea class='form-control' name='description'>{{ $data['partner']->description }}</textarea>
-                         </td>
+                       <tr>
+                           <td>
+                              <label>Bovenliggende map?</label>
+                              <select name='parent' class='form-control'>
+                                @foreach($maps as $index => $map)
 
-                      </tr>
-                      
-                      <tr>
-                         <td> 
-                              <label>Startdatum</label>
-                              <div class="input-group date">
-                                <div class="input-group-addon">
-                                  <i class="fa fa-calendar"></i>
-                                </div>
-                                <input type='text' name='date_started' value="{{ $data['partner']->date_started }}" class='form-control datepicker' />
-                              </div>
-                         </td>
+                                  <!-- Check if parent_id == null, selected option 'GEEN' if true-->
+                                  @if($index == 0)
+                                    @if($currentMap->parent_id == null)
+                                      <option selected value='null'>Geen</option>
+                                    @endif
+                                  @endif
 
-                      </tr>
-
+                                  <!-- Check if parent of currentMap is equal to foreach map index parent-->
+                                  @if($currentMap->parent_id == $map->id)
+                                     <option selected value='{{ $map->id }}'>{{ $map->name }}</option>
+                                  @else
+                                    <option value='{{ $map->id }}'>{{ $map->name }}</option>
+                                  @endif
+                                  
+                                @endforeach
+                              </select>
+                           </td>
+                        </tr>
                       <tr>
                         <td>
 
@@ -82,20 +85,7 @@
             </div>
             <!-- /.box-body -->
           </div>
-          <div id="app">
-              @if($photo != null)
-              <image-display
-                  id="{{$photo->id}}"
-                  model_id="{{$photo->model_id}}"
-                  type="{{$photo->type}}"
-                  filename="{{$photo->filename}}">
-              </image-display>
 
-              @endif
-              <image-uploader route="photo" model_id="{{$data['partner']->id}}" type="partner" >
-                  <cropper route="cropper" aspectheight="9" aspectwidth="16" > </cropper>
-              </image-uploader>
-          </div>
           <!-- /.box -->
         </div>
         </div>
