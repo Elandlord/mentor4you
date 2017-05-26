@@ -1,17 +1,12 @@
 <template>
-<div class="container">
-    <div class="row">
-        <slot></slot>
-        <div class="col-lg-12">
-            <form :action="'/' + route"
-                  class="dropzone"
-                  id="my-awesome-dropzone">
-                  <input type="hidden" name="model_id" :value="model_id">
-                  <input type="hidden" name="model_type" :value="type">
-            </form>
-        </div>
+<div class="row">
+    <slot></slot>
+    <div class="col-lg-12">
+        <form :action="'/' + route"
+              class="dropzone"
+              id="my-awesome-dropzone">
+        </form>
     </div>
-
 </div>
 </template>
 
@@ -24,16 +19,29 @@
 <script>
     export default {
         props: {
-
+            route: "",
+            map_id: ""
         },
         data() {
+            return {
 
+            };
         },
 
         created() {
         },
         mounted() {
-
+            Dropzone.options.myAwesomeDropzone = {
+                paramName: "file", // The name that will be used to transfer the file
+                maxFilesize: 500, // MB
+                headers: { "X-CSRF-TOKEN": Laravel.csrfToken },
+                accept: (file, done) => {
+                    done();
+                },
+                success: (file, response) => {
+                    console.log(response);
+                },
+            }
         },
 
         methods: {

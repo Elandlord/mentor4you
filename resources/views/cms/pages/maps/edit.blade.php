@@ -10,15 +10,36 @@
         <li><a href="{{ URL::to("cms/") }}"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="#">Map: {{ $currentMap->name }}</a></li>
       </ol>
+    </section>
 
+    <section class="row space-inside-left-sm space-outside-up-sm">
+      <div class='col-lg-12 space-inside-left-xs' style='margin-top: 10px; margin-bottom: 10px;'>
+        <a href='{{ redirect()->back()->getTargetUrl() }}' class='btn btn-success'>Ga terug</a>
+      </div>
+    </section>
+
+
+    <section class="row">
+      <div class="col-lg-12">
+        <div class="row">
+          <div class="col-lg-4 space-inside-sm">
+            <form method="GET" action="/cms/childMap/create/{{ $currentMap->id }}">
+              {{ csrf_field()}}
+                <button style="border: none; background: none;" class="">
+                  <img style="width: 90px;"
+                        class="inline-block space-outside-left-sm space-outside-right-sm"
+                   src='/images/cms/directory.png' class='img-responsive'/>
+                  <span class=" inline-block relative" style="top: 5px;">Een nieuwe map toevoegen</span>
+                </button>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="content">
       <div class="row">
-
-
-
-        <div class="col-xs-6">
+        <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Inhoud</h3>
@@ -30,17 +51,20 @@
               </div>
             </div>
 
-            <div class='col-lg-12' style='margin-top: 10px; margin-bottom: 10px;'>
-              <a href='{{ redirect()->back()->getTargetUrl() }}' class='btn btn-success'>Ga terug</a>
-            </div>
             <!-- /.box-header -->
             <!-- Check if there are children in currentMap, if there are no children, no div-->
-            <div class="box-body no-padding">
+            <div class="box-body">
               @if(!$childrenMaps->isEmpty())
-                <div class='row' style='margin-left: 30px;'>
-                  <h4>Mappen</h4>
+                <div class='row ' >
+
+                  <div class="col-lg-12">
+                    <h4>Mappen</h4>
+                  </div>
+                  <div class="col-lg-12 space-inside-left-sm">
+                    <div class="row">
+
                     @foreach($childrenMaps as $map)
-                        <div class="col-lg-3 text-center">
+                        <div class="col-lg-1 text-center">
 
                           <a href='/cms/maps/{{ $map->id }}/edit?'>
                             <img src='/images/cms/directory.png' class='img-responsive'/>
@@ -50,6 +74,8 @@
 
                         </div>
                     @endforeach
+                    </div>
+                  </div>
               </div>
               @endif
 
@@ -74,15 +100,11 @@
             <!-- /.box-body -->
         </div>
 
-        <?php if(Auth::user()->admin == 1){?>
+        @if(Auth::user()->admin == 1)
           <div id="app">
-
-            <file-uploader>
-
-            </file-uploader>
-
+            <file-uploader route="map/upload/file" map_id="{{ $currentMap->id }}"></file-uploader>
           </div>
-        <?php } ?>
+        @endif
           <!-- /.box -->
       </div>
 

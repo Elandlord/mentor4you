@@ -13,9 +13,27 @@
 
     </section>
 
+    <section class="row">
+      <div class="col-lg-12">
+        <div class="row">
+          <div class="col-lg-4 space-inside-sm">
+            <form method="GET" action="/cms/maps/create">
+              {{ csrf_field()}}
+                <button style="border: none; background: none;" class="">
+                  <img style="width: 90px;"
+                        class="inline-block space-outside-left-sm space-outside-right-sm"
+                   src='/images/cms/directory.png' class='img-responsive'/>
+                  <span class=" inline-block relative" style="top: 5px;">Een nieuwe map toevoegen</span>
+                </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="content">
       <div class="row">
-        <div class="col-xs-6">
+        <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Mappenstructuur</h3>
@@ -27,16 +45,13 @@
             </div>
 
             <!-- /.box-header -->
-            <div class="box-body no-padding">
+            <div class="box-body no-padding space">
             @foreach($maps as $map)
-                <div class="col-lg-3 text-center">
-
+                <div class="col-lg-1 text-center">
                   <a href='maps/{{ $map->id }}/edit?'>
                     <img src='/images/cms/directory.png' class='img-responsive'/>
                   </a>
-
                   <p>{{ $map->name }}</p>
-
                 </div>
             @endforeach
             </div>

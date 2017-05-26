@@ -12,7 +12,7 @@ class MapController extends Controller
     {
         $maps = Map::all();
 
-        return view('cms.pages.maps.overzicht', compact('maps'));
+        return view('cms.pages.maps.index', compact('maps'));
     }
 
     public function mapEdit($id)
@@ -43,9 +43,7 @@ class MapController extends Controller
      */
     public function create()
     {
-        $maps = Map::all();
-
-        return view('cms.pages.maps.create', compact('maps'));
+        return view('cms.pages.maps.create');
     }
 
     /**
@@ -67,7 +65,7 @@ class MapController extends Controller
         $map->name = $name;
         $map->parent_id = $parent;
         $map->save();
-        
+
         return redirect('cms/maps');
     }
 
@@ -91,9 +89,7 @@ class MapController extends Controller
     public function edit($id)
     {
         $currentMap = Map::find($id);
-
         $childrenMaps = Map::where('parent_id', $id)->get();
-
         $files = File::where('map_id', $id)->get();
 
         return view('cms.pages.maps.edit', compact('childrenMaps', 'files', 'currentMap'));

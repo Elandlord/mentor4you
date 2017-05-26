@@ -2,7 +2,7 @@
 // ----------------- ROUTES IMAGE -----------------
 Route::get('/cropper', 'ImageHelperController@index');
 Route::resource('photo', 'PhotosController');
-
+Route::post('/map/upload/file', 'FilesController@store');
 
 Route::group(['prefix' => 'cms'],  function () {
     Route::group(['middleware' => ['auth']], function(){
@@ -25,7 +25,6 @@ Route::group(['prefix' => 'cms'],  function () {
         Route::get('candidate/jongeren', 'YouthCandidateController@index');
 
 
-
         // ----------------- CONTENT MANAGEMENT ROUTES GO UNDERNEATH HERE -----------------
 
         Route::resource('candidate', 'CandidatesController');
@@ -42,8 +41,12 @@ Route::group(['prefix' => 'cms'],  function () {
         Route::post('makeAdmin/{id}', 'AdminController@update');
 
         Route::resource('maps', 'MapController');
+
+        // ----------------- CMS GET ROUTES GO UNDERNEATH HERE -----------------
+        Route::get('/childMap/create/{id}', 'ChildMapController@create');
+
         Route::get('mappen/overzicht', 'MapController@overzicht');
-        Route::get('mappen/{id}/edit', 'MapController@mapEdit');
+        // Route::get('mappen/{id}/edit', 'MapController@mapEdit');
     });
 });
 

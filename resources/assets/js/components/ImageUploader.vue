@@ -39,9 +39,6 @@
                 photo: null,
             }
         },
-
-        created() {
-        },
         mounted() {
 
             Dropzone.options.myAwesomeDropzone = {

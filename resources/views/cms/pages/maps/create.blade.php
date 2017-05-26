@@ -40,7 +40,14 @@
                                 <input type='text' class='form-control' name='name'/>
                            </td>
                         </tr>
+                        @if(isset($parentMap))
                         <tr>
+                          <td>
+                            <input type="hidden" name="parent" value="{{ $parentMap->id }}">
+                          </td>
+                        </tr>
+                        @endif
+{{--                        <tr>
                            <td>
                               <label>Bovenliggende map?</label>
                               <select name='parent' class='form-control'>
@@ -50,14 +57,14 @@
                                 @endforeach
                               </select>
                            </td>
-                        </tr>
+                        </tr>--}}
                         <tr>
                           <td>
                             <div class="form-group">
                               <button class="btn btn-success" type="submit" >Toevoegen</button>
                             </div>
                           </td>
-                        </tr>  
+                        </tr>
                       </td>
                     </tr>
                   </tbody>

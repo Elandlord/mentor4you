@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class FilesController extends Controller
 {
     public function jongereFolder(){
-    	   
+
     	$file= public_path(). "/files/mentor-zoeken.pdf";
 
     	$headers = array(
@@ -24,8 +24,11 @@ class FilesController extends Controller
     	$headers = array(
               'Content-Type: application/pdf',
             );
-    	
-    	return response()->download($file, 'Folder - ik wil mentor worden.pdf', $headers);
 
+    	return response()->download($file, 'Folder - ik wil mentor worden.pdf', $headers);
+    }
+
+    public function store(Request $request) {
+        return response()->json(['succeedd' => 'ja gelukt'], 200);
     }
 }
