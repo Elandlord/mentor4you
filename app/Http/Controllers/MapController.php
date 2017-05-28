@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+
+// Models
 use App\Map;
 use App\File;
 
@@ -90,7 +93,9 @@ class MapController extends Controller
     {
         $currentMap = Map::find($id);
         $childrenMaps = Map::where('parent_id', $id)->get();
-        $files = File::where('map_id', $id)->get();
+        $files = $currentMap->files();
+
+
 
         return view('cms.pages.maps.edit', compact('childrenMaps', 'files', 'currentMap'));
     }

@@ -5,6 +5,7 @@
         <form :action="'/' + route"
               class="dropzone"
               id="my-awesome-dropzone">
+              <input type="hidden" name="mapId" :value="map_id">
         </form>
     </div>
 </div>

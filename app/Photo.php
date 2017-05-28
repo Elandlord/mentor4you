@@ -11,7 +11,6 @@ use Symfony\Component\Process\Process;
 use Illuminate\Database\Eloquent\Model;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 
-
 class Photo extends Model
 {
 	public $multiple;

@@ -79,18 +79,19 @@
               </div>
               @endif
 
+
+
               <!-- Check if there are files in directory, if there are no files, don't show div-->
               @if(!$files->isEmpty())
                 <div class='row' style='margin-top: 50px; margin-bottom: 25px; margin-left: 30px;'>
                   <h4>Bestanden</h4>
                   @foreach($files as $file)
                       <div class="col-lg-2 text-center">
-
-                        <a href='urltofile'>
-                          <img src='/images/cms/{{ $file->getExtension() }}.png' class='img-responsive'/>
+                        <a href='{{ $file->getUrl() }}'>
+                          <img src='{{ $file->getType() }}' class='img-responsive'/>
                         </a>
 
-                        <p>{{ $file->filename }}</p>
+                        <p>{{ $file->getFileName() }}</p>
 
                       </div>
                   @endforeach

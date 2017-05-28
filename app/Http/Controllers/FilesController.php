@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
+// models
+use App\Map;
+use App\File;
 
 class FilesController extends Controller
 {
@@ -29,6 +34,11 @@ class FilesController extends Controller
     }
 
     public function store(Request $request) {
+        $file = $request->file;
+        $map = Map::find($request->get('mapId'));
+
+        $contents = file_get_contents($file->getPathname() );
+        Storage::put($map->name . '/' . $file->getClientOriginalName(), $contents );
         return response()->json(['succeedd' => 'ja gelukt'], 200);
     }
 }
