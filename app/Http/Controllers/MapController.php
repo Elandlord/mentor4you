@@ -15,7 +15,7 @@ class MapController extends Controller
     {
         $maps = Map::all();
 
-        return view('cms.pages.maps.index', compact('maps'));
+        return view('cms.pages.maps.overzicht', compact('maps'));
     }
 
     public function mapEdit($id)
@@ -110,15 +110,15 @@ class MapController extends Controller
     public function update(Request $request, $id)
     {
         $name = $request->input('name');
-        $parent = $request->input('parent');
+        // $parent = $request->input('parent');
 
-        if($parent == 'null'){
-            $parent = null;
-        }
+        // if($parent == 'null'){
+        //     $parent = null;
+        // }
 
         $map = Map::find($id);
         $map->name = $name;
-        $map->parent_id = $parent;
+        // $map->parent_id = $parent;
         $map->save();
 
         return redirect('cms/mappen/overzicht');

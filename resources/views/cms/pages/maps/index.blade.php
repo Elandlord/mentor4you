@@ -13,6 +13,7 @@
 
     </section>
 
+    @if(Auth::user()->admin == 1)
     <section class="row">
       <div class="col-lg-12">
         <div class="row">
@@ -30,6 +31,7 @@
         </div>
       </div>
     </section>
+    @endif
 
     <section class="content">
       <div class="row">
@@ -54,8 +56,17 @@
                   <p>{{ $map->name }}</p>
                 </div>
             @endforeach
+
             </div>
+
+            @if(Auth::user()->admin == 1)
             <!-- /.box-body -->
+            <div class="box-body no-padding space-outside-up-sm">
+              <div class="col-lg-12">
+                <h4>Dit is de hoofdmap, er kunnen hier geen bestanden geupload worden.</h4>
+              </div>
+            </div>
+            @endif
 
           </div>
           <!-- /.box -->

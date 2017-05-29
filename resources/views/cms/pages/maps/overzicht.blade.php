@@ -13,12 +13,12 @@
 
     </section>
 
-    <section class="content">
+  <section class="content">
       <div class="row">
-        <div class="col-xs-6">
+        <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Overzicht</h3>
+              <h3 class="box-title">Klik op de map om aan te passen</h3>
 
               <div class="box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
@@ -26,42 +26,16 @@
               </div>
             </div>
 
-             <!-- /.box-header -->
-            <div class="box-body table-responsive no-padding">
-              <table class="table table-responsive">
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th></th>
-                      <th>#<span class='ion-arrow-down-b table-head'></span></th>
-                      <th>Naam</th>
-                    </tr>
-                  </thead>
-                <tbody>
-                @foreach ($maps as $object)
-                  <tr>
-                      <!-- edit form -->
-                      <td>
-                        @include('cms.core.partials.edit_button', [
-                          'type' => 'mappen',
-                          'id' => $object->id
-                        ])
-                      </td>
-                      <!-- Verwijderen form -->
-                      <td>
-                        @include('cms.core.partials.delete_button', [
-                          'type' => 'mappen',
-                          'id' => $object->id
-                        ])
-                      </td>
-
-                      <td>{{ $object->id }}</td>
-                      <td>{{ $object->name }}</td>
-
-                    </tr>
-                  @endforeach                                        
-                </tbody>
-              </table>
+            <!-- /.box-header -->
+            <div class="box-body no-padding space">
+            @foreach($maps as $map)
+                <div class="col-lg-1 text-center">
+                  <a href='/cms/mappen/{{ $map->id }}/edit?'>
+                    <img src='/images/cms/directory.png' class='img-responsive'/>
+                  </a>
+                  <p>{{ $map->name }}</p>
+                </div>
+            @endforeach
             </div>
             <!-- /.box-body -->
 

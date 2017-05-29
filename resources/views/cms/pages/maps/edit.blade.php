@@ -18,7 +18,7 @@
       </div>
     </section>
 
-
+    @if(Auth::user()->admin == 1)
     <section class="row">
       <div class="col-lg-12">
         <div class="row">
@@ -36,13 +36,14 @@
         </div>
       </div>
     </section>
+    @endif
 
     <section class="content">
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Inhoud</h3>
+           
 
 
               <div class="box-tools">
@@ -86,14 +87,30 @@
                 <div class='row' style='margin-top: 50px; margin-bottom: 25px; margin-left: 30px;'>
                   <h4>Bestanden</h4>
                   @foreach($files as $file)
-                      <div class="col-lg-2 text-center">
+                     <div class='row space-outside-md'>
+
+                      <div class="col-lg-3 text-center">
                         <a href='{{ $file->getUrl() }}'>
-                          <img src='{{ $file->getType() }}' class='img-responsive'/>
+                          <img src='{{ $file->getType() }}' style='max-height:150px; max-width:150px;' class='img-responsive'/>
                         </a>
-
-                        <p>{{ $file->getFileName() }}</p>
-
                       </div>
+
+                      <div class='col-lg-5'>
+                          <p class='space-outside-up-sm'>{{ str_limit($file->getFileName(), 40, $end = '...') }}</p>
+                      </div>
+
+                      <div class='col-lg-2'>
+                        <a href='{{ $file->getUrl() }}' class='btn btn-success space-outside-up-sm' download>Downloaden</a>
+                      </div>
+
+                      <div class='col-lg-2'>
+
+                        @if(Auth::user()->admin == 1)
+                          <button class='btn btn-danger space-outside-up-sm'>Verwijderen</button>
+                        @endif
+                      </div>
+
+                    </div>
                   @endforeach
                 </div>
               @endif

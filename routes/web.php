@@ -46,7 +46,7 @@ Route::group(['prefix' => 'cms'],  function () {
         Route::get('/childMap/create/{id}', 'ChildMapController@create');
 
         Route::get('mappen/overzicht', 'MapController@overzicht');
-        // Route::get('mappen/{id}/edit', 'MapController@mapEdit');
+        Route::get('mappen/{id}/edit', 'MapController@mapEdit');
     });
 });
 

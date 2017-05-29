@@ -44,30 +44,30 @@
                               <input type='text' value="{{ $currentMap->name }}" class='form-control' name='name'/>
                          </td>
                       </tr>
-                       <tr>
+<!--                        <tr>
                            <td>
                               <label>Bovenliggende map?</label>
                               <select name='parent' class='form-control'>
-                                @foreach($maps as $index => $map)
+                                @foreach($maps as $index => $map) -->
 
                                   <!-- Check if parent_id == null, selected option 'GEEN' if true-->
-                                  @if($index == 0)
+<!--                                   @if($index == 0)
                                     @if($currentMap->parent_id == null)
                                       <option selected value='null'>Geen</option>
                                     @endif
-                                  @endif
+                                  @endif -->
 
                                   <!-- Check if parent of currentMap is equal to foreach map index parent-->
-                                  @if($currentMap->parent_id == $map->id)
+                          <!--         @if($currentMap->parent_id == $map->id)
                                      <option selected value='{{ $map->id }}'>{{ $map->name }}</option>
                                   @else
                                     <option value='{{ $map->id }}'>{{ $map->name }}</option>
-                                  @endif
-                                  
+                                  @endif -->
+<!--                                   
                                 @endforeach
                               </select>
                            </td>
-                        </tr>
+                        </tr> -->
                       <tr>
                         <td>
 
