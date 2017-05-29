@@ -3,6 +3,7 @@
 Route::get('/cropper', 'ImageHelperController@index');
 Route::resource('photo', 'PhotosController');
 Route::post('/map/upload/file', 'FilesController@store');
+Route::post('/file/delete', 'FilesController@destroy');
 
 Route::group(['prefix' => 'cms'],  function () {
     Route::group(['middleware' => ['auth']], function(){

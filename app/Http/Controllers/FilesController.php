@@ -41,4 +41,11 @@ class FilesController extends Controller
         Storage::put($map->name . '/' . $file->getClientOriginalName(), $contents );
         return response()->json(['succeedd' => 'ja gelukt'], 200);
     }
+
+    public function destroy(Request $request){
+
+        $map = Map::find($request->input('map_id'));
+        Storage::delete($map->name . '/' . $request->input('filename'));
+        return back();
+    }
 }

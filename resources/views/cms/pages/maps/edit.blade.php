@@ -14,7 +14,12 @@
 
     <section class="row space-inside-left-sm space-outside-up-sm">
       <div class='col-lg-12 space-inside-left-xs' style='margin-top: 10px; margin-bottom: 10px;'>
-        <a href='{{ redirect()->back()->getTargetUrl() }}' class='btn btn-success'>Ga terug</a>
+      <!-- if directory has no parent, show standard overview page -->
+      @if($currentMap->parent_id == null)
+       <a href='/cms/maps' class='btn btn-success'>Ga terug</a>
+      @else
+        <a href='/cms/maps/{{ $currentMap->parent_id }}/edit?' class='btn btn-success'>Ga terug</a>
+      @endif
       </div>
     </section>
 
@@ -106,7 +111,12 @@
                       <div class='col-lg-2'>
 
                         @if(Auth::user()->admin == 1)
-                          <button class='btn btn-danger space-outside-up-sm'>Verwijderen</button>
+                          <form method='POST' action='/file/delete'>
+                            {{ csrf_field() }}
+                                <input type='hidden' value='{{ $currentMap->id }}' name='map_id'/>
+                                <input type='hidden' value='{{ $file->getFileName() }}' name='filename' />
+                                <button class="btn btn-danger space-outside-up-sm"> Verwijderen </button>
+                          </form>
                         @endif
                       </div>
 

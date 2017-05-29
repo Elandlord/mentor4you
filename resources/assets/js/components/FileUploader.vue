@@ -40,7 +40,7 @@
                     done();
                 },
                 success: (file, response) => {
-                    console.log(response);
+                    location.reload();
                 },
             }
         },

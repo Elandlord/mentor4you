@@ -21,4 +21,8 @@ class Map extends Model
     });
   }
 
+  public function getParentDirectory(){
+
+  }
+
 }
