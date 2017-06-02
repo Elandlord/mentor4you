@@ -28,7 +28,7 @@ class files{
   public function getUrl()
   {
 
-    $parts = explode('/', Storage::url($this->map->name . '/' . $this->getFileName()));
+    $parts = explode('/', Storage::url($this->map->id . '/' . $this->getFileName()));
     array_shift($parts);
     array_shift($parts);
     array_shift($parts);

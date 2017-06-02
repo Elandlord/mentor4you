@@ -21,6 +21,14 @@
         <a href='/cms/maps/{{ $currentMap->parent_id }}/edit?' class='btn btn-success'>Ga terug</a>
       @endif
       </div>
+      <div class="col-xs-12">
+          <form action="/cms/maps/{{ $currentMap->id }}" method="POST">
+              {{ csrf_field() }}
+              {{ method_field('DELETE') }}
+
+              <button class="btn btn-danger">MAP VERWIJDEREN</button>
+          </form>
+        </div>
     </section>
 
     @if(Auth::user()->admin == 1)

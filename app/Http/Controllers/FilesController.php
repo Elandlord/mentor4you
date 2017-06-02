@@ -38,14 +38,14 @@ class FilesController extends Controller
         $map = Map::find($request->get('mapId'));
 
         $contents = file_get_contents($file->getPathname() );
-        Storage::put($map->name . '/' . $file->getClientOriginalName(), $contents );
+        Storage::put($map->id . '/' . $file->getClientOriginalName(), $contents );
         return response()->json(['succeedd' => 'ja gelukt'], 200);
     }
 
     public function destroy(Request $request){
 
         $map = Map::find($request->input('map_id'));
-        Storage::delete($map->name . '/' . $request->input('filename'));
+        Storage::delete($map->id . '/' . $request->input('filename'));
         return back();
     }
 }

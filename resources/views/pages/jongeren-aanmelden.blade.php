@@ -7,6 +7,19 @@ Aanmelden als jongere
 @section('content')
 	<section class="container-fluid xs-space-inside-sides-sm space-inside-sides-xl no-overflow ">
 		<div class="row fadeInDown wow">
+
+		    <div class="col-lg-12">
+        
+		      @if (count($errors) > 0)
+		          <div class="alert alert-danger">
+		              <ul>
+		                  @foreach ($errors->all() as $error)
+		                      <li>{{ $error }}</li>
+		                  @endforeach
+		              </ul>
+		          </div>
+		      @endif
+		      </div>
 			<div class="col-lg-12 space-outside-lg xs-text-center " text-inject>
 				<h1 class="text-color-main ">{{ $iterator->title }}</h1>
 			</div>

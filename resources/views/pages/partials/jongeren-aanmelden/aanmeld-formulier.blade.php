@@ -1,3 +1,5 @@
+  
+
       <div class="col-lg-12">
         <p class="text-bold text-color-main">
           Vul het onderstaand formulier in
@@ -16,12 +18,12 @@
             <div class="col-lg-5 clear-left space-outside-up-sm">
               <label class='font-md text-light xs-text-center'>Achternaam</label>
               <input type='text' name='achternaam' placeholder='Achternaam' class='space-inside-xs space-inside-sides-sm
-          font-sm xs-text-center height-auto border border-accent space-outside-xs' required />
+          font-sm xs-text-center height-auto border border-accent space-outside-xs' required  />
             </div>
             <div class="col-lg-5 clear-left space-outside-up-sm">
               <label class='font-md text-light xs-text-center'>Telefoonnummer</label>
               <input type='text' name='telefoonnummer' placeholder='Telefoonnummer' class='space-inside-xs space-inside-sides-sm
-          font-sm xs-text-center height-auto border border-accent space-outside-xs' required />
+          font-sm xs-text-center height-auto border border-accent space-outside-xs' required  />
             </div>
             <div class="col-lg-5 clear-left space-outside-up-sm">
               <label class='font-md text-light xs-text-center'>Emailadres</label>
@@ -35,11 +37,11 @@
             <div class="col-lg-5 clear-left space-outside-up-sm">
               <label class='font-md text-light xs-text-center'>Geboortedatum</label>
               <input type='date' name='geboortedatum' class='space-inside-xs space-inside-sides-sm
-          font-sm xs-text-center height-auto border border-accent space-outside-xs datepicker' required/>
+          font-sm xs-text-center height-auto border border-accent space-outside-xs datepicker' required />
             </div>
             <div class="col-lg-7 clear-left space-outside-up-sm">
               <label class='font-md text-light xs-text-center'>Bericht</label>
-              <textarea name='bericht' class='textarea border border-accent space-outside-xs' required></textarea>
+              <textarea name='bericht' class='textarea border border-accent space-outside-xs' required ></textarea>
             </div>
             <div class="col-lg-12 space-outside-sm">
               <input type='submit' name='Verzenden' value='Verzenden' class='space-inside-xs space-inside-sides-sm border-none font-sm bg-secondary light text-color-light' />

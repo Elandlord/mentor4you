@@ -95,8 +95,6 @@ class MapController extends Controller
         $childrenMaps = Map::where('parent_id', $id)->get();
         $files = $currentMap->files();
 
-
-
         return view('cms.pages.maps.edit', compact('childrenMaps', 'files', 'currentMap'));
     }
 
@@ -132,6 +130,11 @@ class MapController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $map = Map::find($id);
+        $parent = $map->parent();
+        $map->deleteFiles();
+        $map->deleteChildren();
+       
+        return redirect('/cms/maps/' . $parent->id . '/edit');
     }
 }

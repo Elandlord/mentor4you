@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\SignupYouthRequest;
+use App\Http\Requests\SignupMentorRequest;
+
 
 use App\Http\Requests;
 use App\Candidate;
@@ -10,7 +13,7 @@ use App\Candidate;
 class CandidatesWebsiteController extends Controller
 {
 
-	public function createJongere(Request $request)
+	public function createJongere(SignupYouthRequest $request)
 	{
         $candidate = new Candidate();
 
@@ -31,7 +34,7 @@ class CandidatesWebsiteController extends Controller
 
 	}
 
-	public function createMentoren(Request $request)
+	public function createMentoren(SignupMentorRequest $request)
 	{
 
 
