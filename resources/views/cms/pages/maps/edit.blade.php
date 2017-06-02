@@ -12,7 +12,6 @@
       </ol>
     </section>
 
-    @if(Auth::user()->admin == 1)
     <section class="row space-inside-left-sm space-outside-up-sm">
       <div class='col-lg-12 space-inside-left-xs' style='margin-top: 10px; margin-bottom: 10px;'>
       <!-- if directory has no parent, show standard overview page -->
@@ -22,6 +21,7 @@
         <a href='/cms/maps/{{ $currentMap->parent_id }}/edit?' class='btn btn-success'>Ga terug</a>
       @endif
       </div>
+      @if(Auth::user()->admin == 1)
       <div class="col-xs-12">
           <form action="/cms/maps/{{ $currentMap->id }}" method="POST">
               {{ csrf_field() }}
@@ -30,9 +30,10 @@
               <button class="btn btn-danger">MAP VERWIJDEREN</button>
           </form>
         </div>
+      @endif
     </section>
 
-    
+    @if(Auth::user()->admin == 1)
     <section class="row">
       <div class="col-lg-12">
         <div class="row">
