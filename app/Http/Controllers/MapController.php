@@ -131,10 +131,14 @@ class MapController extends Controller
     public function destroy($id)
     {
         $map = Map::find($id);
-        $parent = $map->parent();
         $map->deleteFiles();
+        $parent = $map->parent();
         $map->startDelete();
-        
-        return redirect('/cms/maps/' . $parent->id . '/edit');
+        if($parent != null) {
+
+            return redirect('/cms/maps/' . $parent->id . '/edit');
+        } else {
+            return redirect('cms/maps');
+        }
     }
 }

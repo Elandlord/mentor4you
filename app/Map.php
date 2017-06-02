@@ -36,6 +36,7 @@ class Map extends Model
   public function deleteFiles() 
   { 
       $directory = Storage::url($this->id);
+  
        File::cleanDirectory($directory);
   }
 
@@ -52,6 +53,12 @@ class Map extends Model
 
   public function startDelete()
   {
+      
+      if(!$this->hasChildren()) {
+        $this->delete();
+        return;
+      }
+
       $children = $this->children();
 
       foreach($children as $child) {
