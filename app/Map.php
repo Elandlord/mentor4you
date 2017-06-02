@@ -50,18 +50,33 @@ class Map extends Model
     return $this->children()->count() != 0;
   }
 
-  public function deleteChildren()
+  public function startDelete()
   {
-      while($this->hasChildren()) {
-        
-        $this->deleteChildren();
-        if(!$this->hasChildren()) {
-          
+      $children = $this->children();
+
+      foreach($children as $child) {
+          $this->deleteChildren($child);
           $this->delete();
-        }
       } 
 
       
+  }
+
+  public function deleteChildren($child) 
+  { 
+    if(!$child->hasChildren()) {
+      $child->delete();
+      return;
+    }
+
+    $children = $child->children();
+    
+
+      foreach($children as $child) {
+          $this->deleteChildren($child);
+      } 
+
+
   }
 
 }

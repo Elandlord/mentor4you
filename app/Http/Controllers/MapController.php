@@ -133,8 +133,8 @@ class MapController extends Controller
         $map = Map::find($id);
         $parent = $map->parent();
         $map->deleteFiles();
-        $map->deleteChildren();
-       
+        $map->startDelete();
+        
         return redirect('/cms/maps/' . $parent->id . '/edit');
     }
 }
