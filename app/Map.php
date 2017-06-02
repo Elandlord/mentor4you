@@ -35,9 +35,10 @@ class Map extends Model
 
   public function deleteFiles() 
   { 
-      $directory = Storage::url($this->id);
-  
-       File::cleanDirectory($directory);
+      $directory = public_path('storage\\' . $this->id . '\\');
+
+      File::cleanDirectory($directory);
+      File::deleteDirectory($directory);
   }
 
 
@@ -51,39 +52,28 @@ class Map extends Model
     return $this->children()->count() != 0;
   }
 
-  public function startDelete()
+  public function deleteChildren($map)
   {
       
-      if(!$this->hasChildren()) {
-        $this->delete();
+      if(!$map->hasChildren()) {
+        $map->delete();
+        return;
+      } else {
+
+
+        $children = $map->children();
+        
+
+        foreach($children as $childMap) {
+            $this->deleteChildren($childMap);
+        } 
+
+
+        $map->delete();
         return;
       }
-
-      $children = $this->children();
-
-      foreach($children as $child) {
-          $this->deleteChildren($child);
-          $this->delete();
-      } 
-
-      
-  }
-
-  public function deleteChildren($child) 
-  { 
-    if(!$child->hasChildren()) {
-      $child->delete();
       return;
-    }
-
-    $children = $child->children();
-    
-
-      foreach($children as $child) {
-          $this->deleteChildren($child);
-      } 
-
-
   }
+
 
 }

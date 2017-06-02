@@ -62,6 +62,8 @@ class MapController extends Controller
 
         if($parent == 'null'){
             $parent = null;
+        } else {
+
         }
 
         $map = new Map;
@@ -69,7 +71,33 @@ class MapController extends Controller
         $map->parent_id = $parent;
         $map->save();
 
-        return redirect('cms/maps');
+
+        if($parent == null) {
+            $directory = $map->id;
+            mkdir(public_path() . '\storage\\' . $directory);
+        } else {
+
+            $parent = $map->parent();
+            $directory = public_path() . '\storage';
+            $parentMaps = collect();
+
+            while($parent != null) {
+                $parentMaps->push($parent->id);
+                $parent = $parent->parent();
+            }
+            
+            $parentMaps = $parentMaps->reverse();
+
+            foreach($parentMaps as $id) {
+               $directory .= '\\' . $id; 
+            }
+
+            $directory .= '\\' . $map->id;
+            
+            mkdir($directory);
+        }
+
+        return redirect('cms/maps/' . $map->id . '\edit');
     }
 
     /**
@@ -133,9 +161,8 @@ class MapController extends Controller
         $map = Map::find($id);
         $map->deleteFiles();
         $parent = $map->parent();
-        $map->startDelete();
+        $map->deleteChildren($map);
         if($parent != null) {
-
             return redirect('/cms/maps/' . $parent->id . '/edit');
         } else {
             return redirect('cms/maps');
