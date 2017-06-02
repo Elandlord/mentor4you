@@ -12,6 +12,7 @@
       </ol>
     </section>
 
+    @if(Auth::user()->admin == 1)
     <section class="row space-inside-left-sm space-outside-up-sm">
       <div class='col-lg-12 space-inside-left-xs' style='margin-top: 10px; margin-bottom: 10px;'>
       <!-- if directory has no parent, show standard overview page -->
@@ -31,7 +32,7 @@
         </div>
     </section>
 
-    @if(Auth::user()->admin == 1)
+    
     <section class="row">
       <div class="col-lg-12">
         <div class="row">
