@@ -9,7 +9,19 @@
 @import "node_modules/admin-lte/dist/css/skins/skin-blue.min";
 @import "node_modules/dropzone/dist/min/dropzone.min";
 @import "node_modules/cropperjs/dist/cropper.min";
+
+
+@import "_variables";
 @import "base-rules";
+@import "huisstijl/backgrounds";
+@import "huisstijl/block-displays";
+@import "huisstijl/borders";
+@import "huisstijl/floats";
+@import "huisstijl/heights-and-widths";
+@import "huisstijl/shadows";
+@import "huisstijl/text-and-heading-colors";
+@import "huisstijl/text-transforms-and-font-classes";
+@import "huisstijl/animations";
 
 /*!
  * Datepicker for Bootstrap

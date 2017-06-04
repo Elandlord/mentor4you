@@ -32,25 +32,51 @@
     </section>
 
     <section class="row space-inside-left-sm space-outside-up-sm">
-      <div class='col-lg-12 space-inside-left-xs' style='margin-top: 10px; margin-bottom: 10px;'>
+      <div class='col-lg-12 space-inside-left-xs' style=''>
       <!-- if directory has no parent, show standard overview page -->
       @if(!$currentMap->hasParent())
-       <a href='/cms/maps' class='btn btn-success'>Ga terug</a>
+       <a href='/cms/maps' 
+        class='
+            space-inside-sides-sm space-inside-xs 
+            bg-main 
+            text-color-light 
+            shadow-xs
+            inline-block
+            '
+       >Ga terug</a>
       @else
-        <a href='/cms/maps/{{ $currentMap->parent()->id }}/edit?' class='btn btn-success'>Ga terug</a>
-      @endif
-      </div>
+        <a href='/cms/maps/{{ $currentMap->parent()->id }}/edit?' 
+          class='
+            space-inside-sides-sm space-inside-xs 
+            bg-main 
+            text-color-light 
+            shadow-xs
+            inline-block
+            '>Ga terug</a>
 
+
+      @endif
       @if(Auth::user()->admin == 1)
-      <div class="col-xs-12">
-          <form action="/cms/maps/{{ $currentMap->id }}" method="POST">
+
+          <form class="inline-block" action="/cms/maps/{{ $currentMap->id }}" method="POST">
               {{ csrf_field() }}
               {{ method_field('DELETE') }}
 
-              <button class="btn btn-danger">map verwijderen</button>
+              <button 
+                class="
+                  inline-block 
+                  border-none outline-none
+                  space-inside-sides-sm space-inside-xs
+                  shadow-xs 
+                  text-color-light
+                  bg-secondary
+                ">map verwijderen</button>
           </form>
-        </div>
+
       @endif
+      </div>
+
+      
 
     </section>
 
@@ -58,14 +84,12 @@
     <section class="row">
       <div class="col-lg-12">
         <div class="row">
-          <div class="col-lg-4 space-inside-sm">
+          <div class="col-lg-5 space-inside-sm">
             <form method="GET" action="/cms/childMap/create/{{ $currentMap->id }}">
               {{ csrf_field()}}
-                <button style="border: none; background: none;" class="">
-                  <img style="width: 90px;"
-                        class="inline-block space-outside-left-sm space-outside-right-sm"
-                   src='/images/cms/directory.png' class='img-responsive'/>
-                  <span class=" inline-block relative" style="top: 5px;">Een nieuwe map toevoegen</span>
+                <button style="border: none; background: none; " class="">
+                  <i class="material-icons relative space-outside-right-sm" style="font-size: 50px; top: 25px;">folder</i>
+                  <span class=" inline-block relative inline-block" style="top: 5px;">Een nieuwe map toevoegen</span>
                 </button>
             </form>
           </div>
@@ -94,9 +118,6 @@
               @if(!$childrenMaps->isEmpty())
                 <div class='row ' >
 
-                  <div class="col-lg-12">
-                    <h4>Mappen</h4>
-                  </div>
                   <div class="col-lg-12 space-inside-left-sm">
                     <div class="row">
 
@@ -104,7 +125,8 @@
                         <div class="col-lg-1 text-center">
 
                           <a href='/cms/maps/{{ $map->id }}/edit?'>
-                            <img src='/images/cms/directory.png' class='img-responsive'/>
+
+                          <i class="material-icons relative space-outside-right-sm" style="font-size: 80px;">folder</i>
                           </a>
 
                           <p>{{ $map->name }}</p>
@@ -123,11 +145,11 @@
                 <div class='row' style='margin-top: 50px; margin-bottom: 25px; margin-left: 30px;'>
                   <h4>Bestanden</h4>
                   @foreach($files as $file)
-                     <div class='row space-outside-md'>
+                     <div class='row space-outside-md border-bottom border-accent space-inside-xs'>
 
-                      <div class="col-lg-3 text-center">
+                      <div class="col-lg-2 text-center relative" style="bottom: 10px;">
                         <a href='{{ $file->getUrl() }}'>
-                          <img src='{{ $file->getType() }}' style='max-height:150px; max-width:150px;' class='img-responsive'/>
+                          <img src='{{ $file->getType() }}' style='max-height:80px; max-width:80px;' class='img-responsive'/>
                         </a>
                       </div>
 
