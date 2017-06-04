@@ -27,7 +27,7 @@
           });
 
         ?>
-        <li>{{ $currentMap->name  }}</li>
+        <li> <a href='#' >{{ $currentMap->name }} </li>
       </ol>
     </section>
 
