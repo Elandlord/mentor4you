@@ -1,37 +1,80 @@
 
-// Body
-$body-bg: #f5f8fa;
 
-// Borders
-$laravel-border-color: darken($body-bg, 10%);
-$list-group-border: $laravel-border-color;
-$navbar-default-border: $laravel-border-color;
-$panel-default-border: $laravel-border-color;
-$panel-inner-border: $laravel-border-color;
+/* --------------------------------------------- COLOR VARIABLES -------------------------------------------- */
 
-// Brands
-$brand-primary: #3097D1;
-$brand-info: #8eb4cb;
-$brand-success: #2ab27b;
-$brand-warning: #cbb956;
-$brand-danger: #bf5329;
 
-// Typography
-$font-family-sans-serif: "Raleway", sans-serif;
-$font-size-base: 14px;
-$line-height-base: 1.6;
-$text-color: #636b6f;
+$light-color: white;
+$dark-color: #2C3636;
+$main-color : #01569B;
+$secondary-color : #E65100;
+$accent-color : #F1F1F1;
 
-// Navbar
-$navbar-default-bg: #fff;
+$background-color-light: white;
+$background-color-dark: #000000;
 
-// Buttons
-$btn-default-color: $text-color;
 
-// Inputs
-$input-border: lighten($text-color, 40%);
-$input-border-focus: lighten($brand-primary, 25%);
-$input-color-placeholder: lighten($text-color, 30%);
 
-// Panels
-$panel-default-heading-bg: #fff;
+/* --------------------------------------------- FONT VARIABLES -------------------------------------------- */
+
+
+$font: 'Lato', sans-serif;
+$font-heading: 'Lato', sans-serif;
+
+
+
+
+/* --------------------------------------------- FONT SIZE VARIABLES -------------------------------------------- */
+
+
+/* font-size variables */
+
+
+$font-size-xs: 11px;
+$font-size-sm: 12px;
+$font-size-md: 15px;
+$font-size-lg: 24.5px;
+$font-size-xl: 42px;
+
+
+/* --------------------------------------------- SHAPE SIZE VARIABLES -------------------------------------------- */
+
+
+$circle-dist-xs: 25px;
+$circle-dist-sm: 30px;
+$circle-dist-md: 50px;
+$circle-dist-lg: 150px;
+$circle-dist-xl: 225px;
+
+
+/* --------------------------------------------- FORM ELEMENT VARIABLES -------------------------------------------- */
+
+
+$input-height: 33px;
+
+
+/* --------------------------------------------- AESTHETIC VARIABLES -------------------------------------------- */
+
+
+$opacity-xs: 0.85;
+$opacity-sm: 0.70;
+$opacity-md: 0.55;
+$opacity-lg: 0.40;
+$opacity-xl: 0.25;
+
+
+/* --------------------------------------------- HTML STRUCTURE VARIABLES -------------------------------------------- */
+
+
+$border-thickness: 2px;
+
+$limit-width-xs: 200px;
+$limit-width-sm: 240px;
+$limit-width-md: 280px;
+$limit-width-lg: 320px;
+$limit-width-xl: 360px;
+
+$limit-height-xs: 200px;
+$limit-height-sm: 220px;
+$limit-height-md: 240px;
+$limit-height-lg: 260px;
+$limit-height-xl: 280px;

@@ -8,29 +8,50 @@
       <!--  breadcrumbs -->
       <ol class="breadcrumb">
         <li><a href="{{ URL::to("cms/") }}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Map: {{ $currentMap->name }}</a></li>
+        <?php 
+
+          $map = $currentMap;
+          $maps = collect();
+
+          while($map->hasParent()) {
+            $maps->push($map->parent());
+
+            if($map->hasParent()) {
+              $map = $map->parent();
+            }
+
+          }
+
+          $maps->reverse()->each(function($map) {
+            echo "<li> <a href='/cms/maps/". $map->id ."/edit' >" . $map->name . " </li>";
+          });
+
+        ?>
+        <li>{{ $currentMap->name  }}</li>
       </ol>
     </section>
 
     <section class="row space-inside-left-sm space-outside-up-sm">
       <div class='col-lg-12 space-inside-left-xs' style='margin-top: 10px; margin-bottom: 10px;'>
       <!-- if directory has no parent, show standard overview page -->
-      @if($currentMap->parent_id == null)
+      @if(!$currentMap->hasParent())
        <a href='/cms/maps' class='btn btn-success'>Ga terug</a>
       @else
-        <a href='/cms/maps/{{ $currentMap->parent_id }}/edit?' class='btn btn-success'>Ga terug</a>
+        <a href='/cms/maps/{{ $currentMap->parent()->id }}/edit?' class='btn btn-success'>Ga terug</a>
       @endif
       </div>
+
       @if(Auth::user()->admin == 1)
       <div class="col-xs-12">
           <form action="/cms/maps/{{ $currentMap->id }}" method="POST">
               {{ csrf_field() }}
               {{ method_field('DELETE') }}
 
-              <button class="btn btn-danger">MAP VERWIJDEREN</button>
+              <button class="btn btn-danger">map verwijderen</button>
           </form>
         </div>
       @endif
+
     </section>
 
     @if(Auth::user()->admin == 1)

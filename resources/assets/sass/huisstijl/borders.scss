@@ -1,0 +1,69 @@
+
+
+/* --------------------------------------------- BORDERS -------------------------------------------- */
+
+/* ----------------------- */
+/* || --base settings-- || */
+/* ----------------------- */
+
+/* ----------------- */
+/* || --classes-- || */
+/* ----------------- */
+
+
+.border{
+	border-style: solid;
+	border-width: $border-thickness;
+}
+
+.border-none{ border: none; }
+
+/* ---- color ---- */
+
+.border-light{ border-color: $background-color-light; }
+.border-dark{ border-color: $background-color-dark; }
+.border-accent{ border-color: $accent-color; }
+.border-secondary{ border-color: $secondary-color; }
+.border-main{ border-color: $main-color; }
+
+/* border specifics */
+
+.border-right{ border-right-width: $border-thickness; border-right-style: solid; }
+.border-left{ border-left-width: $border-thickness; border-left-style: solid; }
+.border-top{ border-top-width: $border-thickness; border-top-style: solid; }
+.border-bottom{ border-bottom-width: $border-thickness; border-bottom-style: solid; }
+
+/* ---- appearence ---- */
+
+.border-curved { border-radius: 5px; }
+
+.border-curved-down { border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; }
+
+.border-curved-up { border-top-left-radius: 5px; border-top-right-radius: 5px; }
+
+.border-curved-right { border-top-right-radius: 5px; border-bottom-right-radius: 5px; }
+
+.border-curved-left { border-top-left-radius: 5px; border-bottom-left-radius: 5px; }
+
+
+/* ------------------ */
+/* || -- hovers -- || */
+/* ------------------ */
+
+
+/* ---- border hovers ---- */
+
+
+.border-hover-light:hover{ border-color: $light-color; }
+.border-hover-dark:hover{ border-color: $dark-color;  }
+.border-hover-main:hover{ border-color: $main-color; }
+.border-hover-secondary:hover{ border-color: $secondary-color; }
+.border-hover-accent:hover{ border-color: $accent-color; }
+
+
+/* ----------------------- */
+/* || --media queries-- || */
+/* ----------------------- */
+
+
+

@@ -33,6 +33,12 @@ class Map extends Model
 
   }
 
+
+  public function hasParent()
+  {
+    return $this->parent() != null;
+  }
+
   public function deleteFiles() 
   { 
       $directory = public_path('storage\\' . $this->id . '\\');

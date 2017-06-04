@@ -3,9 +3,31 @@
 @import "node_modules/owl-carousel-2/assets/owl.theme.default.min";
 
 
+@import "_variables";
 @import "reset";
 @import "common_used_classes";
+
+// huisstijl
+@import "huisstijl/backgrounds";
+@import "huisstijl/buttons";
+@import "huisstijl/form-elements";
+@import "huisstijl/borders";
+@import "huisstijl/text-and-heading-colors";
+@import "huisstijl/text-transforms-and-font-classes";
+@import "huisstijl/animations";
+@import "huisstijl/shadows";
+@import "huisstijl/client-manipulators";
+@import "huisstijl/images";
+@import "huisstijl/shapes";
+@import "huisstijl/floats";
+@import "huisstijl/block-limits";
+@import "huisstijl/block-displays";
+@import "huisstijl/heights-and-widths";
+
+
 @import "huisstijl";
 @import "base-rules";
 @import "master";
 @import "navbar";
+
+
