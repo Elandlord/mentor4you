@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use File;
 use Image;
 use App\Photo;
+use App\Classes\PhotoUploader\PhotoUploader;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+
 
 class PhotosController extends Controller
 {
@@ -37,8 +39,11 @@ class PhotosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        return Photo::forModel($request->get('model_type'), $request->get('model_id'), $request->file('file') );
+    {   
+        $photoUploader = new PhotoUploader();
+
+        return $photoUploader->create($request);
+        // return Photo::forModel($request->get('model_type'), $request->get('model_id'), $request->file('file') );
     }
 
     /**

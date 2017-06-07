@@ -106,6 +106,10 @@ class Photo extends Model
 		return $photo;
 	}
 
+
+
+
+
 	// 1. run composer
 	// 2. run npm
 	// 3. todo make migrations
