@@ -9,7 +9,7 @@
 
     @include('beautymail::templates.sunny.contentStart')
 
-        <p>Wij proberen zo spoedig mogelijk contact op te nemen.</p>
+        <p>Opmerking: tussen 21 juli en 21 augustus is Mentor4You met vakantie. Wij proberen zo spoedig mogelijk contact op te nemen.</p>
 
         <p>Met vriendelijke groet,</p>
 
