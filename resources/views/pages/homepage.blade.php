@@ -14,6 +14,16 @@
 	">
 		<div class="row row-centered">
 
+			<div class="col-lg-12 space-outside-down-xs fadeInDown wow">
+				<div class="alert alert-success" role="alert">
+					<p class="text bold font-md">
+
+						Opmerking: tussen 21 juli en 21 augustus is Mentor4You met vakantie.
+
+					</p>
+				</div>
+			</div>
+
 			@include('pages.partials.page-title', ['pageTitle' => 'Aanmelden'])
 
 			<!-- aanmelden kopjes  -->
