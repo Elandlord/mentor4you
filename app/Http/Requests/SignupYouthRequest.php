@@ -25,11 +25,11 @@ class SignupYouthRequest extends FormRequest
     {
         return [
             'voornaam' => 'required',
-            'aachternaam' => 'required',
+            'achternaam' => 'required',
             'telefoonnummer' => 'required',
             'geboortedatum' => 'required',
             'emailadres' => 'required',
-            'gemeente' => 'required',
+            'municipality' => 'required',
             'bericht' => 'required',
         ];
     }
