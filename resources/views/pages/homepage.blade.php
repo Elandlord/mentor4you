@@ -14,7 +14,7 @@
 	">
 		<div class="row row-centered">
 
-			<div class="col-lg-12 space-outside-down-xs fadeInDown wow">
+			<!-- <div class="col-lg-12 space-outside-down-xs fadeInDown wow">
 				<div class="alert alert-success" role="alert">
 					<p class="text bold font-md">
 
@@ -22,7 +22,7 @@
 
 					</p>
 				</div>
-			</div>
+			</div> -->
 
 			@include('pages.partials.page-title', ['pageTitle' => 'Aanmelden'])
 

@@ -10,9 +10,7 @@
     ])
 
     @include('beautymail::templates.sunny.contentStart')
-
-        <p>Opmerking: tussen 21 juli en 21 augustus is Mentor4You met vakantie.</p>
-
+    
         <p>De persoon heeft het volgende bericht achtergelaten</p>
 
         <p>Telefoonnummer: {{ $telefoonnummer }}</p>
