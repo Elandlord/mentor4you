@@ -1,7 +1,7 @@
 @extends('cms.master')
 
 @section('content')
-<div id="app">
+<div>
     <section class="content-header">
       <h1> Partner aanpassen<small></small> </h1>
 
