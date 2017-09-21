@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use Carbon\Carbon;
+
 class MailController extends Controller
 {
    public function contactMail(Request $request)
@@ -43,16 +45,18 @@ class MailController extends Controller
 
    public function jongereMail(Request $request)
    {
+       $date = new Carbon();
+
        $name = $request->input('voornaam') . " " . $request->input('achternaam');
        $email = $request->input('emailadres');
        $birthdate = $request->input('geboortedatum');
 
        $telefoonnummer = $request->input('telefoonnummer');
-       $gemeente = $request->input('gemeente');
+       $gemeente = $request->input('municipality');
        $bericht = $request->input('bericht');
 
        $beautymail = app()->make(\Snowfire\Beautymail\Beautymail::class);
-           $beautymail->send('emails.aanmelding-jongere', ['geboortedatum' => $birthdate, 'telefoonnummer' => $telefoonnummer, 'bericht' => $bericht], function($message) use ($name, $email)
+           $beautymail->send('emails.aanmelding-jongere', ['naam' => $name, 'geboortedatum' => $birthdate, 'telefoonnummer' => $telefoonnummer, 'bericht' => $bericht, 'datum' => $date], function($message) use ($name, $email)
            {
                $message
                    ->from($email, $name)
@@ -70,23 +74,24 @@ class MailController extends Controller
           });
 
 
-          return redirect()->action('CandidatesWebsiteController@createJongere', [ $request]);
+          return redirect()->action('CandidatesWebsiteController@createJongere', [$request]);
 
    }
 
    public function mentorMail(Request $request)
    {
+       $date = new Carbon();
 
        $name = $request->input('voornaam') . " " . $request->input('achternaam');
        $email = $request->input('emailadres');
        $birthdate = $request->input('geboortedatum');
 
        $telefoonnummer = $request->input('telefoonnummer');
-       $gemeente = $request->input('gemeente');
+       $gemeente = $request->input('municipality');
        $bericht = $request->input('bericht');
 
        $beautymail = app()->make(\Snowfire\Beautymail\Beautymail::class);
-           $beautymail->send('emails.aanmelding-mentor', ['geboortedatum' => $birthdate, 'telefoonnummer' => $telefoonnummer, 'bericht' => $bericht], function($message) use ($name, $email)
+           $beautymail->send('emails.aanmelding-mentor', ['naam' => $name, 'geboortedatum' => $birthdate, 'telefoonnummer' => $telefoonnummer, 'bericht' => $bericht, 'datum' => $date], function($message) use ($name, $email)
            {
                $message
                    ->from($email, $name)

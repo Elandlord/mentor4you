@@ -9,7 +9,7 @@ class MentorCandidateController extends Controller
 {
     public function index(){
     	$data = [
-            'candidates' => Candidate::where('choices', '=', 'mentor')->paginate(10),
+            'candidates' => Candidate::where('choices', '=', 'mentor')->get(),
         ];
 
         return view('cms.pages.candidates.index', compact('data'));

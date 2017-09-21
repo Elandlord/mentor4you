@@ -10,7 +10,7 @@ class YouthCandidateController extends Controller
     public function index(){
 
     	$data = [
-            'candidates' => Candidate::where('choices', '=', 'jongere')->paginate(10),
+            'candidates' => Candidate::where('choices', '=', 'jongere')->get(),
         ];
 
         return view('cms.pages.candidates.index', compact('data'));
