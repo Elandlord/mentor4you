@@ -213,7 +213,7 @@ class PagesController extends Controller
         $date = new Carbon(); 
 
         $titel = Section::where('id', 14)->first();
-        $nieuwsberichten = News::orderBy('id', 'desc')->where('publish_date', '>', $date->addWeeks(-26))->paginate(2);
+        $nieuwsberichten = News::orderBy('id', 'desc')->where('publish_date', '>', $date->addWeeks(-39))->paginate(2);
         $sliders = $this->getSliders();
 
 		return view('pages.actueel', compact(
@@ -228,7 +228,7 @@ class PagesController extends Controller
     {
         $date = new Carbon(); 
 
-        $nieuwsberichten = News::orderBy('id', 'desc')->where('publish_date', '<', $date->addWeeks(-26))->paginate(2);
+        $nieuwsberichten = News::orderBy('id', 'desc')->where('publish_date', '<', $date->addWeeks(-39))->paginate(2);
         $sliders = $this->getSliders();
 
         return view('pages.archief', compact(
