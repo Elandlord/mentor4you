@@ -14,6 +14,8 @@ use App\Http\Requests;
 use App\Classes\Iterator;
 use Illuminate\Http\Request;
 
+use Carbon\Carbon;
+
 class PagesController extends Controller
 {
 
@@ -208,8 +210,10 @@ class PagesController extends Controller
 
 	public function actueel()
 	{
+        $date = new Carbon(); 
+
         $titel = Section::where('id', 14)->first();
-        $nieuwsberichten = News::orderBy('id', 'desc')->paginate(2);
+        $nieuwsberichten = News::orderBy('id', 'desc')->where('publish_date', '>', $date->addWeeks(-26))->paginate(2);
         $sliders = $this->getSliders();
 
 		return view('pages.actueel', compact(
@@ -219,6 +223,21 @@ class PagesController extends Controller
             'sliders'
         ));
 	}
+
+    public function archief()
+    {
+        $date = new Carbon(); 
+
+        $nieuwsberichten = News::orderBy('id', 'desc')->where('publish_date', '<', $date->addWeeks(-26))->paginate(2);
+        $sliders = $this->getSliders();
+
+        return view('pages.archief', compact(
+            'nieuwsberichten',
+            'titel',
+            'sliders'
+        ));
+    }
+
 
 
     public function doorklikActueel($title, $id){

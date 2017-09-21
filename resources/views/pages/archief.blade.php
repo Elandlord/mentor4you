@@ -8,9 +8,17 @@ Actueel
 	<section class="container-fluid xs-space-inside-sides-xl-none space-inside-sides-xl space-outside-lg no-overflow">
 		<div class="row">
 
-			@include('pages.partials.page-title', ['pageTitle' => 'Actueel'])
+			<div class="col-lg-12
+            space-outside-lg
+            text-center
+            fadeInDown
+            wow
 
-			<p class="col-lg-12 space-outside-down-sm text-center font-md">Hieronder worden recente nieuwsberichten van mentor4you weergegeven. Voor oudere berichten, bekijk dan nu het <a class='bold' href="/archief">archief</a>.</p>
+			">
+			  <h1 class="text-color-main" > Archief </h1>
+			</div>
+
+			<p class="col-lg-12 space-outside-down-sm text-center font-md">Hieronder wordt het archief van de nieuwsberichten van mentor4you weergegeven. Voor de nieuwste berichten, bekijk dan nu <a class='bold' href="/actueel">actueel</a>.</p>
 
 			<div class="col-lg-12 space-outside-down-sm text-center">
 				{{ $nieuwsberichten->links() }}

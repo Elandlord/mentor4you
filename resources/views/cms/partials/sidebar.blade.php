@@ -93,7 +93,6 @@
             [
               'header' => "Pagina's",
               'cms/page' => 'Overzicht',
-              'cms/page/create' => 'Toevoegen',
             ],
           ]
         ])

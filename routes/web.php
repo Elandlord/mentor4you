@@ -70,6 +70,7 @@ Route::get('/steun-ons', 'PagesController@steunons');
 Route::get('/ervaringen', 'PagesController@ervaringen');
 
 Route::get('/actueel', 'PagesController@actueel');
+Route::get('/archief', 'PagesController@archief');
 Route::get('/actueel/{title}-{id}', 'PagesController@doorklikActueel');
 Route::get('/aanmeldingen/nieuwe-jongere-aanmelding', 'CandidatesWebsiteController@createJongere');
 Route::get('/aanmeldingen/nieuwe-mentor-aanmelding', 'CandidatesWebsiteController@createMentoren');

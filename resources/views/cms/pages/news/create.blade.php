@@ -1,7 +1,7 @@
 @extends('cms.master')
 
 @section('content')
-<div id="app">
+<div>
     <section class="content-header">
       <h1> Nieuws toevoegen<small></small> </h1>
 
@@ -58,7 +58,7 @@
 
                         </tr>
                         <tr>
-                           <td> 
+                          <td>
                                 <label>Publicatiedatum</label>
                                 <div class="input-group date">
                                   <div class="input-group-addon">
@@ -70,8 +70,8 @@
 
                         </tr>
                          <tr>
-                           <td> 
-                                <label>Datum</label>
+                          <td>
+                              <label>Datum</label>
                                 <div class="input-group date">
                                   <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
