@@ -1,11 +1,11 @@
 <?php $iterator->next() ?>
 
-<a href="/behaalde-resultaten">
+<a href="/ervaringen">
 	<div class="col-lg-4 ">
 		<div class="card type-1">
 			<div class="space-outside-down-md text-center">
 				<div class="image circle circle-lg inline-block">
-					<img class="width-auto" src="{{ $iterator->square }}" alt="aanmelden als jongere
+					<img class="width-auto" src="{{ $iterator->square }}" alt="ervaringen
 					">
 				</div>
 			</div>

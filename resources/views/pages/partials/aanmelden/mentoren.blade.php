@@ -5,7 +5,7 @@
 			<div class="space-outside-down-md text-center">
 				<div class="image circle circle-lg inline-block">
 					<img class="width-auto" src="{{ $iterator->square }}"
-						alt="aanmelden als jongere">
+						alt="aanmelden als mentor">
 				</div>
 			</div>
 			<div class=" space-outside-sm ">

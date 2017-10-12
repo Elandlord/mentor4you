@@ -1,5 +1,5 @@
 <a href="/aanmelden-als-jongere">
-	<div class="col-lg-4 col-xs-12">
+	<div class="col-lg-4">
 		<div class="card type-1">
 			<div class="space-outside-down-md text-center">
 				<div class="image circle-lg circle circle-lg inline-block">

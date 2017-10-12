@@ -17,7 +17,7 @@
 
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
 					<p class="text-color-light font-xs xs-clear-float  right">
-						<span class="bold text-color-main xs-space-inside-left-xs space-inside-left-md space-inside-right-sm xs-space-insi "> T </span> 06-24967211
+						<span class="bold text-color-main xs-space-inside-left-xs space-inside-left-md space-inside-right-sm xs-space-insi "> T </span> 06-30675863
 					</p>
 				</div>
 				<div class="col-lg-6 col-xs-12 col-md-6 col-sm-6 xs-space-outside-down-xs">
