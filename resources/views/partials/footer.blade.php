@@ -65,7 +65,6 @@
 			</div>
 
 			<div class="col-lg-4 col-sm-6 col-xs-12 ">
-				<p class="space-outside-xs text-color-light block font-md"> Algemene voorwaarden</p>
 				<p class="space-outside-xs text-color-light block font-md"> <a class="text-color-light" href='/aanmelden-als-mentor'>Mentor worden</a> </p>
 				<p class="space-outside-xs block"> <a class="text-color-light font-md" href='/aanmelden-als-jongere'>Aanmelden als jongere</a></p>
 			</div>
